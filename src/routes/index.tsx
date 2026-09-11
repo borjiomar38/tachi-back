@@ -48,7 +48,7 @@ export const Route = createFileRoute('/')({
   head: () =>
     buildPublicPageHead(
       'Manhwa & Manga Translator App for Android',
-      'Read manhwa, manga, and manhua in your language on Android with Nayovi. Download the APK and try about two average chapters free—no card required.',
+      'Read manhwa, manga, and manhua in your language on Android with Nayovi. Download the APK and Try free translation tokens—no card required.',
       '/',
       {
         keywords: [

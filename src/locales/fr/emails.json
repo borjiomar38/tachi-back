@@ -1,4 +1,13 @@
 {
+  "tokenPurchase": {
+    "subject": "Vos tokens Nayovi — {{pack}}",
+    "preview": "Vos tokens et votre code d'activation de secours",
+    "title": "Votre achat de tokens est confirmé",
+    "pack": "{{pack}} : {{tokens}} tokens. Achat unique, sans abonnement.",
+    "return": "Revenez dans Nayovi pour activer votre achat. S'il est déjà activé, vos tokens sont prêts.",
+    "redeem": "Si le retour dans l'app n'a pas fonctionné, choisissez « Saisir un code » et utilisez ce code de secours :",
+    "recovery": "Ce code récupère le même achat. Il n'ajoute pas les tokens deux fois. Nayovi est gratuit ; les traductions et les fonctions IA optionnelles utilisent des tokens."
+  },
   "loginCode": {
     "subject": "Votre code de vérification",
     "preview": "Vérifiez votre identité",

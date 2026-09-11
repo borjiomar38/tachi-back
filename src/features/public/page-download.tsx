@@ -100,7 +100,7 @@ export const PageDownload = ({
               href={androidApkDownload.href}
               className={cn(
                 buttonVariants({ variant: 'default', size: 'lg' }),
-                'mt-6 min-h-12 w-full justify-center px-7 sm:w-fit',
+                'mt-6 min-h-12 w-full justify-center px-7 sm:w-fit'
               )}
             >
               <span className="flex items-center gap-2">
@@ -179,9 +179,11 @@ export const PageDownload = ({
         <Card className="public-brand-panel-muted mt-3 rounded-2xl py-0">
           <CardContent className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between md:px-5">
             <div className="space-y-1">
-              <h2 className="text-lg font-semibold">Start with the free trial</h2>
+              <h2 className="text-lg font-semibold">
+                Start with the free trial
+              </h2>
               <p className="text-sm text-brand-950/75 dark:text-brand-100/80">
-                Try about two average chapters. No card required.
+                Try free translation tokens. No card required.
               </p>
             </div>
             <div className="flex flex-wrap gap-2">

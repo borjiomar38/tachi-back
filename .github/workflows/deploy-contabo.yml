@@ -76,7 +76,7 @@ jobs:
           CONTABO_SSH_HOST: ${{ secrets.CONTABO_SSH_HOST }}
           CONTABO_SSH_PORT: ${{ secrets.CONTABO_SSH_PORT || '22' }}
           CONTABO_SSH_USER: ${{ secrets.CONTABO_SSH_USER }}
-          CONTABO_APP_DIR: ${{ secrets.CONTABO_APP_DIR || '/opt/tachi-back' }}
+          CONTABO_APP_DIR: ${{ steps.target.outputs.target == 'staging' && '/opt/tachi-back-staging' || secrets.CONTABO_APP_DIR || '/opt/tachi-back' }}
         run: |
           set -euo pipefail
 
@@ -110,10 +110,15 @@ jobs:
           CONTABO_SSH_HOST: ${{ secrets.CONTABO_SSH_HOST }}
           CONTABO_SSH_PORT: ${{ secrets.CONTABO_SSH_PORT || '22' }}
           CONTABO_SSH_USER: ${{ secrets.CONTABO_SSH_USER }}
-          CONTABO_APP_DIR: ${{ secrets.CONTABO_APP_DIR || '/opt/tachi-back' }}
+          CONTABO_APP_DIR: ${{ steps.target.outputs.target == 'staging' && '/opt/tachi-back-staging' || secrets.CONTABO_APP_DIR || '/opt/tachi-back' }}
           TARGET_ENV: ${{ steps.target.outputs.target }}
         run: |
           set -euo pipefail
 
-          ssh -i ~/.ssh/contabo_key -p "${CONTABO_SSH_PORT}" "${CONTABO_SSH_USER}@${CONTABO_SSH_HOST}" \
-            "chmod +x '${CONTABO_APP_DIR}/deploy/contabo/deploy-from-ci.sh' && TACHI_APP_DIR='${CONTABO_APP_DIR}' '${CONTABO_APP_DIR}/deploy/contabo/deploy-from-ci.sh' '${TARGET_ENV}'"
+          if [ "${TARGET_ENV}" = staging ]; then
+            ssh -i ~/.ssh/contabo_key -p "${CONTABO_SSH_PORT}" "${CONTABO_SSH_USER}@${CONTABO_SSH_HOST}" \
+              "TACHI_APP_DIR='${CONTABO_APP_DIR}' bash '${CONTABO_APP_DIR}/deploy/contabo/deploy-staging-only.sh'"
+          else
+            ssh -i ~/.ssh/contabo_key -p "${CONTABO_SSH_PORT}" "${CONTABO_SSH_USER}@${CONTABO_SSH_HOST}" \
+              "chmod +x '${CONTABO_APP_DIR}/deploy/contabo/deploy-from-ci.sh' && TACHI_APP_DIR='${CONTABO_APP_DIR}' '${CONTABO_APP_DIR}/deploy/contabo/deploy-from-ci.sh' '${TARGET_ENV}'"
+          fi

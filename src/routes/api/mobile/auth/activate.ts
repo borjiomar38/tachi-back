@@ -16,9 +16,11 @@ import {
   zMobileActivationResponse,
 } from '@/server/mobile-auth/schema';
 import {
+  authenticateMobileAccessToken,
   createMobileSession,
   MobileAuthError,
 } from '@/server/mobile-auth/session';
+import { prepareTokenPurchaseClaim } from '@/server/payments/token-purchase-claim';
 
 export const Route = createFileRoute('/api/mobile/auth/activate')({
   server: {
@@ -95,6 +97,21 @@ export const Route = createFileRoute('/api/mobile/auth/activate')({
         }
 
         try {
+          const currentAuth = request.headers.has('authorization')
+            ? await authenticateMobileAccessToken(request)
+            : null;
+          if (
+            currentAuth &&
+            currentAuth.device.installationId !==
+              parsedInput.data.installationId
+          ) {
+            throw new MobileAuthError('installation_mismatch', 409);
+          }
+          await prepareTokenPurchaseClaim({
+            redeemCode: parsedInput.data.redeemCode,
+            installationId: parsedInput.data.installationId,
+            currentLicenseId: currentAuth?.license.id,
+          });
           const redemption = await redeemLicenseToDeviceWithContext(
             parsedInput.data,
             {

@@ -79,7 +79,7 @@ const reviewerActivationChecks = [
     icon: CircleDollarSignIcon,
     title: 'Paid signal',
     description:
-      'Use a trial, paid plan, or scoped review code that matches the monthly chapter volume being demonstrated.',
+      'Use a trial, paid plan, or scoped review code that matches the translation workload being demonstrated.',
   },
   {
     icon: MessageSquareTextIcon,
@@ -88,8 +88,6 @@ const reviewerActivationChecks = [
       'Evaluate hosted OCR, translation output, glossary consistency, activation, cancellation support, and source-boundary messaging.',
   },
 ] as const;
-
-
 
 const glossaryChecklistRows = [
   {
@@ -121,11 +119,6 @@ const glossaryChecklistRows = [
       'Permission status decides whether results can stay private, become a case note, or must not be shared.',
   },
 ] as const;
-
-
-
-
-
 
 const mediaKitSourceRows = [
   {
@@ -228,7 +221,7 @@ const androidTranslatorDecisionRows = [
   {
     label: 'Paid reader fit',
     detail:
-      'Move to a monthly token plan when translation becomes a repeat reading workflow and support, device recovery, and usage controls matter.',
+      'Move to a one-time token pack when translation becomes a repeat reading workflow and support, device recovery, and usage controls matter.',
   },
   {
     label: 'Reviewer fit',
@@ -289,7 +282,7 @@ const androidTranslatorReadinessRows = [
     signal:
       'They translate more than one sample, care about device recovery and support, and want one official APK source instead of juggling generic upload tools.',
     nextStep:
-      'Start with the free trial, then compare monthly token plans after OCR quality and reading cadence are clear.',
+      'Start with the free trial, then compare one-time token packs after OCR quality and reading cadence are clear.',
   },
   {
     audience: 'Reviewers and directories',
@@ -422,7 +415,6 @@ const approvedSampleReadinessRows = [
   },
 ] as const;
 
-
 const trialTokenDecisionRows = [
   {
     title: 'Start with the free trial',
@@ -432,7 +424,7 @@ const trialTokenDecisionRows = [
   {
     title: 'Upgrade only after repeat use',
     description:
-      'Choose a monthly token plan when you have recurring manga, manhwa, or manhua translation needs and the hosted OCR workflow saves enough time to justify paid access.',
+      'Choose a one-time token pack when you have recurring manga, manhwa, or manhua translation needs and the hosted OCR workflow saves enough time to justify paid access.',
   },
   {
     title: 'Use review or pilot codes for public tests',
@@ -527,12 +519,12 @@ const tokenPlanContinuationRows = [
   {
     label: 'Continue',
     detail:
-      'Keep the paid plan when the same reader, title, or language pair creates repeat hosted OCR work and the monthly token volume is predictable.',
+      'Keep the paid plan when the same reader, title, or language pair creates repeat hosted OCR work and the token usage is predictable.',
   },
   {
     label: 'Adjust',
     detail:
-      'Ask support before renewing when activation, device recovery, or expected page volume changed enough that the current plan no longer fits.',
+      'Ask support before buying another pack when activation, device recovery, or expected page volume changed enough that the current plan no longer fits.',
   },
   {
     label: 'Review code',
@@ -542,7 +534,7 @@ const tokenPlanContinuationRows = [
   {
     label: 'Stop',
     detail:
-      'Do not renew when the user only needed a one-off translation, cannot confirm source permission, or the approved sample did not meet the quality bar.',
+      'Do not buy more tokens when the user only needed a one-off translation, cannot confirm source permission, or the approved sample did not meet the quality bar.',
   },
 ] as const;
 
@@ -573,7 +565,7 @@ const tokenPlanCommercialRows = [
   {
     label: 'Volume reader',
     detail:
-      'Ask for expected pages, language pair, device count, and support needs before moving beyond the standard monthly token plans.',
+      'Ask for expected pages, language pair, device count, and support needs before moving beyond the standard one-time token packs.',
   },
   {
     label: 'Public coverage',
@@ -596,7 +588,7 @@ const tokenPlanAccessGuardrailRows = [
   {
     label: 'Discount request',
     detail:
-      'Do not discount recurring access just because a contact offers traffic. Ask what approved sample, qualified install path, or paid-use signal the discount would prove.',
+      'Do not discount token purchases just because a contact offers traffic. Ask what approved sample, qualified install path, or paid-use signal the discount would prove.',
   },
   {
     label: 'Trial extension',
@@ -614,10 +606,6 @@ const tokenPlanAccessGuardrailRows = [
       'Decline requests that trade free access for vague promotion, hide pricing or support links, require an APK mirror, or cannot explain source permission.',
   },
 ] as const;
-
-
-
-
 
 const pilotOnePagerRows = [
   {
@@ -757,22 +745,6 @@ const pilotContactPathRows = [
   },
 ] as const;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const standaloneChecklistSections = [
   {
     title: 'Responsible sample scope',
@@ -891,7 +863,8 @@ const citationResourceRows = [
   },
   {
     label: 'Review help and pilot path',
-    detail: 'https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot',
+    detail:
+      'https://tachiyomiat.com/guides/permission-safe-manga-translation-pilot',
   },
 ];
 
@@ -1003,7 +976,7 @@ export const translationSupportWorkflowFaqs = [
   {
     title: 'Can support help with my trial, plan, or activation?',
     description:
-      'Yes. The same official support page handles free-chapter access, monthly plans, billing, installation, account access, and activation questions.',
+      'Yes. The same official support page handles free-chapter access, token packs, billing, installation, account access, and activation questions.',
   },
   {
     title: 'How can a rights holder contact Nayovi?',
@@ -1058,8 +1031,8 @@ export const PageComicOcrChecklist = () => {
         <Card className="public-brand-panel-muted rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-brand-950 md:p-6 dark:text-brand-100">
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
-              This checklist is intentionally useful without requiring a
-              product link. It helps reviewers separate sample permission, OCR
+              This checklist is intentionally useful without requiring a product
+              link. It helps reviewers separate sample permission, OCR
               completeness, reading order, glossary review, and public sharing
               decisions.
             </div>
@@ -1131,7 +1104,9 @@ export const PageComicOcrChecklist = () => {
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"
               >
-                <span className="font-semibold text-foreground">{row.label}</span>
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
                 <span>{row.detail}</span>
               </div>
             ))}
@@ -1151,7 +1126,9 @@ export const PageComicOcrChecklist = () => {
                 key={row.label}
                 className="grid gap-1 rounded-xl border border-border/70 px-4 py-3 md:grid-cols-[14rem_1fr] md:gap-4"
               >
-                <span className="font-semibold text-foreground">{row.label}</span>
+                <span className="font-semibold text-foreground">
+                  {row.label}
+                </span>
                 <span className="break-words">{row.detail}</span>
               </div>
             ))}
@@ -1295,7 +1272,7 @@ export const PageMediaKit = () => {
               <CardHeader>
                 <CardTitle className="text-lg">{row.label}</CardTitle>
               </CardHeader>
-              <CardContent className="break-words text-sm leading-7 text-muted-foreground">
+              <CardContent className="text-sm leading-7 break-words text-muted-foreground">
                 {row.detail}
               </CardContent>
             </Card>
@@ -1550,8 +1527,8 @@ export const PageBestAndroidMangaTranslatorApk = () => {
               paid token plan fits repeat reading.
             </div>
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
-              Boundary: Nayovi does not host or distribute chapters. Use it
-              for owned content, public-domain material, official samples, or
+              Boundary: Nayovi does not host or distribute chapters. Use it for
+              owned content, public-domain material, official samples, or
               content you have permission to process.
             </div>
           </CardContent>
@@ -1740,7 +1717,7 @@ export const PageApprovedSampleTestingGuide = () => {
               anyone treats the output as review evidence.
             </div>
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
-              Continue to a monthly token plan only when the test shows repeat
+              Continue to a one-time token pack only when the test shows repeat
               translation demand, not just a one-off curiosity.
             </div>
           </CardContent>
@@ -1910,9 +1887,9 @@ export const PageFreeTrialVsTokenPlanGuide = () => {
       </PublicSection>
 
       <PublicSection
-        eyebrow="Renewal decision"
+        eyebrow="Next-purchase decision"
         title="Continue only when the plan still matches real usage"
-        description="Use the first paid month or reviewer test to decide whether Nayovi should continue as recurring access, move to support, use a separate review code, or stop cleanly."
+        description="Use the first token purchase or reviewer test to decide whether Nayovi should continue as token purchases, move to support, use a separate review code, or stop cleanly."
       >
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
@@ -2163,7 +2140,7 @@ export const PageFreeTrialVsPaidTokenPlan = () => {
       <PublicSection
         eyebrow="Pricing decision"
         title="Free trial vs paid token plan for manga translation"
-        description="Use the free trial to prove fit. Move to a monthly token plan only when hosted OCR and AI translation become a repeat Android workflow."
+        description="Use the free trial to prove fit. Move to a one-time token pack only when hosted OCR and AI translation become a repeat Android workflow."
         className="pt-10"
       >
         <div className="grid gap-4 lg:grid-cols-2">
@@ -2181,7 +2158,7 @@ export const PageFreeTrialVsPaidTokenPlan = () => {
       <PublicSection
         eyebrow="Upgrade signals"
         title="Pay for repeat value, not first-click curiosity"
-        description="A durable subscription signal appears after a user has tested official install confidence, translation quality, and repeat need."
+        description="A durable paid-use signal appears after a user has tested official install confidence, translation quality, and repeat need."
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {tokenPlanSignals.map((signal) => (
@@ -2211,8 +2188,8 @@ export const PageFreeTrialVsPaidTokenPlan = () => {
               consistency, and translation readability on permitted content.
             </div>
             <div className="rounded-xl border border-border/70 bg-background/45 px-4 py-3">
-              Upgrade only when the workflow is recurring enough that monthly
-              token access is more useful than one-off testing.
+              Buy more tokens only when you need additional translations.
+              Reading stays free, without a subscription.
             </div>
           </CardContent>
         </Card>
@@ -2328,7 +2305,7 @@ export const PageTranslationSupportWorkflow = () => {
         'Ask what is included, why trial access is not appearing, or how to start testing Nayovi before choosing a plan.',
     },
     {
-      title: 'Monthly plans and billing',
+      title: 'Token packs and billing',
       description:
         'Include the billing email and a non-sensitive payment reference when support needs to locate a purchase. Never post payment details publicly.',
     },
@@ -2345,7 +2322,7 @@ export const PageTranslationSupportWorkflow = () => {
         eyebrow="Nayovi support"
         title="Get help with Nayovi manhwa translation"
         titleAs="h1"
-        description="A simple support workflow for Android readers who need help with manhwa, manga, or manhua translation, text detection, installation, trial access, or a monthly plan."
+        description="A simple support workflow for Android readers who need help with manhwa, manga, or manhua translation, text detection, installation, trial access, or a one-time token pack."
         className="pt-10"
       >
         <div className="grid gap-4 md:grid-cols-2">
@@ -2448,7 +2425,7 @@ export const PageTranslationSupportWorkflow = () => {
       <PublicSection
         eyebrow="Access help"
         title="Help with trials, plans, and accounts"
-        description="Use the same official support page for free-chapter access, monthly subscriptions, billing questions, installation, and activation."
+        description="Use the same official support page for free-chapter access, token purchases and legacy subscriptions, billing questions, installation, and activation."
       >
         <div className="grid gap-4 lg:grid-cols-3">
           {helpTopics.map((topic) => (
@@ -2465,7 +2442,7 @@ export const PageTranslationSupportWorkflow = () => {
             href="/pricing"
             className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
-            See monthly plans
+            See token packs
           </a>
           <a
             href="/download"
@@ -2621,7 +2598,10 @@ export const PageOfficialSourcesTakedown = () => {
         <Card className="rounded-[1.5rem]">
           <CardContent className="grid gap-3 p-5 text-sm leading-7 text-muted-foreground md:p-6">
             {takedownSteps.map((step) => (
-              <div key={step} className="rounded-xl border border-border/70 px-4 py-3">
+              <div
+                key={step}
+                className="rounded-xl border border-border/70 px-4 py-3"
+              >
                 {step}
               </div>
             ))}

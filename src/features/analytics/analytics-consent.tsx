@@ -25,7 +25,7 @@ export const AnalyticsConsentManager = () => {
   const [preferencesOpen, setPreferencesOpen] = useState(false);
 
   useEffect(() => {
-    if (!measurementId) return;
+    if (!measurementId || window.location.pathname === '/app/payment') return;
 
     setStoredConsent(readAnalyticsConsent(window.localStorage));
     void getAnalyticsConsentRequirement()
@@ -50,7 +50,13 @@ export const AnalyticsConsentManager = () => {
           : undefined));
 
   useEffect(() => {
-    if (!measurementId || consent === undefined || consent === null) return;
+    if (
+      window.location.pathname === '/app/payment' ||
+      !measurementId ||
+      consent === undefined ||
+      consent === null
+    )
+      return;
 
     if (!canLoadGoogleAnalytics(consent)) {
       updateGoogleAnalyticsConsent('denied');

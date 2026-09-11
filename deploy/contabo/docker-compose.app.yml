@@ -15,6 +15,7 @@ services:
       target: runner
       args:
         VITE_BASE_URL: ${VITE_BASE_URL:?set VITE_BASE_URL}
+        VITE_ANDROID_APP_ID: ${VITE_ANDROID_APP_ID:-app.tachiback.tachiyomi.at}
         VITE_ENV_NAME: ${VITE_ENV_NAME:-PRODUCTION}
         VITE_ENV_EMOJI: ${VITE_ENV_EMOJI:-}
         VITE_ENV_COLOR: ${VITE_ENV_COLOR:-plum}

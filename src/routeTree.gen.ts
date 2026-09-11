@@ -45,8 +45,10 @@ import { Route as CheckoutSuccessRouteImport } from './routes/checkout/success'
 import { Route as CheckoutCancelRouteImport } from './routes/checkout/cancel'
 import { Route as CheckoutTokenPackKeyRouteImport } from './routes/checkout/$tokenPackKey'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as AppPaymentRouteImport } from './routes/app_.payment'
 import { Route as ApiUploadRouteImport } from './routes/api/upload'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
+import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
 import { Route as ManhwaSlugRouteRouteImport } from './routes/manhwa/$slug/route'
 import { Route as ManhwaSlugIndexRouteImport } from './routes/manhwa/$slug/index'
 import { Route as ManagerVersionsIndexRouteImport } from './routes/manager/versions/index'
@@ -72,10 +74,12 @@ import { Route as BlogCategoryCategoryRouteImport } from './routes/blog/category
 import { Route as ApiRpcSplatRouteImport } from './routes/api/rpc.$'
 import { Route as ApiRestSplatRouteImport } from './routes/api/rest.$'
 import { Route as ApiPaymentsWebhookRouteImport } from './routes/api/payments/webhook'
+import { Route as ApiPaymentsStatusRouteImport } from './routes/api/payments/status'
 import { Route as ApiPaymentsCheckoutRouteImport } from './routes/api/payments/checkout'
 import { Route as ApiOpenapiAuthRouteImport } from './routes/api/openapi/auth'
 import { Route as ApiOpenapiAppRouteImport } from './routes/api/openapi/app'
 import { Route as ApiMobileTranslationRatingFeedbackRouteImport } from './routes/api/mobile/translation-rating-feedback'
+import { Route as ApiMobileTokenPacksRouteImport } from './routes/api/mobile/token-packs'
 import { Route as ApiMobileJobsRouteImport } from './routes/api/mobile/jobs'
 import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/heartbeat'
 import { Route as ApiMobileFunnelEventsRouteImport } from './routes/api/mobile/funnel-events'
@@ -84,6 +88,7 @@ import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobil
 import { Route as ApiDownloadTachiyomiatLatestDotapkRouteImport } from './routes/api/download/tachiyomiat-latest[.]apk'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
 import { Route as ApiCronSeoDistributionRouteImport } from './routes/api/cron/seo-distribution'
+import { Route as ApiCronPurchaseEmailsRouteImport } from './routes/api/cron/purchase-emails'
 import { Route as ApiCronPublishCodexBlogArticleRouteImport } from './routes/api/cron/publish-codex-blog-article'
 import { Route as ApiCronGenerateCodexBlogPromptRouteImport } from './routes/api/cron/generate-codex-blog-prompt'
 import { Route as ApiCronGenerateBlogArticleRouteImport } from './routes/api/cron/generate-blog-article'
@@ -109,6 +114,8 @@ import { Route as ApiMobileSourceDiscoveryTitleCorrectionRouteImport } from './r
 import { Route as ApiMobileSourceDiscoveryResultsRouteImport } from './routes/api/mobile/source-discovery/results'
 import { Route as ApiMobileSourceDiscoveryPlanRouteImport } from './routes/api/mobile/source-discovery/plan'
 import { Route as ApiMobileSourceDiscoveryMethodFeedbackRouteImport } from './routes/api/mobile/source-discovery/method-feedback'
+import { Route as ApiMobilePaymentsCheckoutRouteImport } from './routes/api/mobile/payments/checkout'
+import { Route as ApiMobilePaymentsActivateRouteImport } from './routes/api/mobile/payments/activate'
 import { Route as ApiMobileMangaPageTranslateRouteImport } from './routes/api/mobile/manga-page/translate'
 import { Route as ApiMobileJobsUploadPolicyRouteImport } from './routes/api/mobile/jobs/upload-policy'
 import { Route as ApiMobileInstallationsRegisterRouteImport } from './routes/api/mobile/installations/register'
@@ -323,6 +330,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppPaymentRoute = AppPaymentRouteImport.update({
+  id: '/app_/payment',
+  path: '/app/payment',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiUploadRoute = ApiUploadRouteImport.update({
   id: '/api/upload',
   path: '/api/upload',
@@ -333,6 +345,12 @@ const ApiContactRoute = ApiContactRouteImport.update({
   path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DotwellKnownAssetlinksDotjsonRoute =
+  DotwellKnownAssetlinksDotjsonRouteImport.update({
+    id: '/.well-known/assetlinks.json',
+    path: '/.well-known/assetlinks.json',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ManhwaSlugRouteRoute = ManhwaSlugRouteRouteImport.update({
   id: '/manhwa/$slug',
   path: '/manhwa/$slug',
@@ -461,6 +479,11 @@ const ApiPaymentsWebhookRoute = ApiPaymentsWebhookRouteImport.update({
   path: '/api/payments/webhook',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPaymentsStatusRoute = ApiPaymentsStatusRouteImport.update({
+  id: '/api/payments/status',
+  path: '/api/payments/status',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPaymentsCheckoutRoute = ApiPaymentsCheckoutRouteImport.update({
   id: '/api/payments/checkout',
   path: '/api/payments/checkout',
@@ -482,6 +505,11 @@ const ApiMobileTranslationRatingFeedbackRoute =
     path: '/api/mobile/translation-rating-feedback',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiMobileTokenPacksRoute = ApiMobileTokenPacksRouteImport.update({
+  id: '/api/mobile/token-packs',
+  path: '/api/mobile/token-packs',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiMobileJobsRoute = ApiMobileJobsRouteImport.update({
   id: '/api/mobile/jobs',
   path: '/api/mobile/jobs',
@@ -523,6 +551,11 @@ const ApiDownloadApkRoute = ApiDownloadApkRouteImport.update({
 const ApiCronSeoDistributionRoute = ApiCronSeoDistributionRouteImport.update({
   id: '/api/cron/seo-distribution',
   path: '/api/cron/seo-distribution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCronPurchaseEmailsRoute = ApiCronPurchaseEmailsRouteImport.update({
+  id: '/api/cron/purchase-emails',
+  path: '/api/cron/purchase-emails',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiCronPublishCodexBlogArticleRoute =
@@ -661,6 +694,18 @@ const ApiMobileSourceDiscoveryMethodFeedbackRoute =
   ApiMobileSourceDiscoveryMethodFeedbackRouteImport.update({
     id: '/api/mobile/source-discovery/method-feedback',
     path: '/api/mobile/source-discovery/method-feedback',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiMobilePaymentsCheckoutRoute =
+  ApiMobilePaymentsCheckoutRouteImport.update({
+    id: '/api/mobile/payments/checkout',
+    path: '/api/mobile/payments/checkout',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ApiMobilePaymentsActivateRoute =
+  ApiMobilePaymentsActivateRouteImport.update({
+    id: '/api/mobile/payments/activate',
+    path: '/api/mobile/payments/activate',
     getParentRoute: () => rootRouteImport,
   } as any)
 const ApiMobileMangaPageTranslateRoute =
@@ -823,8 +868,10 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
   '/manhwa/$slug': typeof ManhwaSlugRouteRouteWithChildren
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
+  '/app/payment': typeof AppPaymentRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
@@ -850,6 +897,7 @@ export interface FileRoutesByFullPath {
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/cron/generate-codex-blog-prompt': typeof ApiCronGenerateCodexBlogPromptRoute
   '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
+  '/api/cron/purchase-emails': typeof ApiCronPurchaseEmailsRoute
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
@@ -858,10 +906,12 @@ export interface FileRoutesByFullPath {
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/token-packs': typeof ApiMobileTokenPacksRoute
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
+  '/api/payments/status': typeof ApiPaymentsStatusRoute
   '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
@@ -899,6 +949,8 @@ export interface FileRoutesByFullPath {
   '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
   '/api/mobile/jobs/upload-policy': typeof ApiMobileJobsUploadPolicyRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
+  '/api/mobile/payments/activate': typeof ApiMobilePaymentsActivateRoute
+  '/api/mobile/payments/checkout': typeof ApiMobilePaymentsCheckoutRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
@@ -946,8 +998,10 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
+  '/app/payment': typeof AppPaymentRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
@@ -973,6 +1027,7 @@ export interface FileRoutesByTo {
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/cron/generate-codex-blog-prompt': typeof ApiCronGenerateCodexBlogPromptRoute
   '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
+  '/api/cron/purchase-emails': typeof ApiCronPurchaseEmailsRoute
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
@@ -981,10 +1036,12 @@ export interface FileRoutesByTo {
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/token-packs': typeof ApiMobileTokenPacksRoute
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
+  '/api/payments/status': typeof ApiPaymentsStatusRoute
   '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
@@ -1022,6 +1079,8 @@ export interface FileRoutesByTo {
   '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
   '/api/mobile/jobs/upload-policy': typeof ApiMobileJobsUploadPolicyRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
+  '/api/mobile/payments/activate': typeof ApiMobilePaymentsActivateRoute
+  '/api/mobile/payments/checkout': typeof ApiMobilePaymentsCheckoutRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
@@ -1074,8 +1133,10 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/translate-manhwa-ai': typeof TranslateManhwaAiRoute
   '/manhwa/$slug': typeof ManhwaSlugRouteRouteWithChildren
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/api/contact': typeof ApiContactRoute
   '/api/upload': typeof ApiUploadRoute
+  '/app_/payment': typeof AppPaymentRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/checkout/$tokenPackKey': typeof CheckoutTokenPackKeyRoute
   '/checkout/cancel': typeof CheckoutCancelRoute
@@ -1101,6 +1162,7 @@ export interface FileRoutesById {
   '/api/cron/generate-blog-article': typeof ApiCronGenerateBlogArticleRoute
   '/api/cron/generate-codex-blog-prompt': typeof ApiCronGenerateCodexBlogPromptRoute
   '/api/cron/publish-codex-blog-article': typeof ApiCronPublishCodexBlogArticleRoute
+  '/api/cron/purchase-emails': typeof ApiCronPurchaseEmailsRoute
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
@@ -1109,10 +1171,12 @@ export interface FileRoutesById {
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
   '/api/mobile/heartbeat': typeof ApiMobileHeartbeatRoute
   '/api/mobile/jobs': typeof ApiMobileJobsRouteWithChildren
+  '/api/mobile/token-packs': typeof ApiMobileTokenPacksRoute
   '/api/mobile/translation-rating-feedback': typeof ApiMobileTranslationRatingFeedbackRoute
   '/api/openapi/app': typeof ApiOpenapiAppRouteWithChildren
   '/api/openapi/auth': typeof ApiOpenapiAuthRouteWithChildren
   '/api/payments/checkout': typeof ApiPaymentsCheckoutRoute
+  '/api/payments/status': typeof ApiPaymentsStatusRoute
   '/api/payments/webhook': typeof ApiPaymentsWebhookRoute
   '/api/rest/$': typeof ApiRestSplatRoute
   '/api/rpc/$': typeof ApiRpcSplatRoute
@@ -1150,6 +1214,8 @@ export interface FileRoutesById {
   '/api/mobile/installations/register': typeof ApiMobileInstallationsRegisterRoute
   '/api/mobile/jobs/upload-policy': typeof ApiMobileJobsUploadPolicyRoute
   '/api/mobile/manga-page/translate': typeof ApiMobileMangaPageTranslateRoute
+  '/api/mobile/payments/activate': typeof ApiMobilePaymentsActivateRoute
+  '/api/mobile/payments/checkout': typeof ApiMobilePaymentsCheckoutRoute
   '/api/mobile/source-discovery/method-feedback': typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   '/api/mobile/source-discovery/plan': typeof ApiMobileSourceDiscoveryPlanRoute
   '/api/mobile/source-discovery/results': typeof ApiMobileSourceDiscoveryResultsRoute
@@ -1203,8 +1269,10 @@ export interface FileRouteTypes {
     | '/support'
     | '/translate-manhwa-ai'
     | '/manhwa/$slug'
+    | '/.well-known/assetlinks.json'
     | '/api/contact'
     | '/api/upload'
+    | '/app/payment'
     | '/blog/$slug'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
@@ -1230,6 +1298,7 @@ export interface FileRouteTypes {
     | '/api/cron/generate-blog-article'
     | '/api/cron/generate-codex-blog-prompt'
     | '/api/cron/publish-codex-blog-article'
+    | '/api/cron/purchase-emails'
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/download/tachiyomiat-latest.apk'
@@ -1238,10 +1307,12 @@ export interface FileRouteTypes {
     | '/api/mobile/funnel-events'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/token-packs'
     | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
+    | '/api/payments/status'
     | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
@@ -1279,6 +1350,8 @@ export interface FileRouteTypes {
     | '/api/mobile/installations/register'
     | '/api/mobile/jobs/upload-policy'
     | '/api/mobile/manga-page/translate'
+    | '/api/mobile/payments/activate'
+    | '/api/mobile/payments/checkout'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/results'
@@ -1326,8 +1399,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/support'
     | '/translate-manhwa-ai'
+    | '/.well-known/assetlinks.json'
     | '/api/contact'
     | '/api/upload'
+    | '/app/payment'
     | '/blog/$slug'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
@@ -1353,6 +1428,7 @@ export interface FileRouteTypes {
     | '/api/cron/generate-blog-article'
     | '/api/cron/generate-codex-blog-prompt'
     | '/api/cron/publish-codex-blog-article'
+    | '/api/cron/purchase-emails'
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/download/tachiyomiat-latest.apk'
@@ -1361,10 +1437,12 @@ export interface FileRouteTypes {
     | '/api/mobile/funnel-events'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/token-packs'
     | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
+    | '/api/payments/status'
     | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
@@ -1402,6 +1480,8 @@ export interface FileRouteTypes {
     | '/api/mobile/installations/register'
     | '/api/mobile/jobs/upload-policy'
     | '/api/mobile/manga-page/translate'
+    | '/api/mobile/payments/activate'
+    | '/api/mobile/payments/checkout'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/results'
@@ -1453,8 +1533,10 @@ export interface FileRouteTypes {
     | '/support'
     | '/translate-manhwa-ai'
     | '/manhwa/$slug'
+    | '/.well-known/assetlinks.json'
     | '/api/contact'
     | '/api/upload'
+    | '/app_/payment'
     | '/blog/$slug'
     | '/checkout/$tokenPackKey'
     | '/checkout/cancel'
@@ -1480,6 +1562,7 @@ export interface FileRouteTypes {
     | '/api/cron/generate-blog-article'
     | '/api/cron/generate-codex-blog-prompt'
     | '/api/cron/publish-codex-blog-article'
+    | '/api/cron/purchase-emails'
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/download/tachiyomiat-latest.apk'
@@ -1488,10 +1571,12 @@ export interface FileRouteTypes {
     | '/api/mobile/funnel-events'
     | '/api/mobile/heartbeat'
     | '/api/mobile/jobs'
+    | '/api/mobile/token-packs'
     | '/api/mobile/translation-rating-feedback'
     | '/api/openapi/app'
     | '/api/openapi/auth'
     | '/api/payments/checkout'
+    | '/api/payments/status'
     | '/api/payments/webhook'
     | '/api/rest/$'
     | '/api/rpc/$'
@@ -1529,6 +1614,8 @@ export interface FileRouteTypes {
     | '/api/mobile/installations/register'
     | '/api/mobile/jobs/upload-policy'
     | '/api/mobile/manga-page/translate'
+    | '/api/mobile/payments/activate'
+    | '/api/mobile/payments/checkout'
     | '/api/mobile/source-discovery/method-feedback'
     | '/api/mobile/source-discovery/plan'
     | '/api/mobile/source-discovery/results'
@@ -1581,8 +1668,10 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TranslateManhwaAiRoute: typeof TranslateManhwaAiRoute
   ManhwaSlugRouteRoute: typeof ManhwaSlugRouteRouteWithChildren
+  DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiUploadRoute: typeof ApiUploadRoute
+  AppPaymentRoute: typeof AppPaymentRoute
   BlogSlugRoute: typeof BlogSlugRoute
   CheckoutTokenPackKeyRoute: typeof CheckoutTokenPackKeyRoute
   CheckoutCancelRoute: typeof CheckoutCancelRoute
@@ -1605,6 +1694,7 @@ export interface RootRouteChildren {
   ApiCronGenerateBlogArticleRoute: typeof ApiCronGenerateBlogArticleRoute
   ApiCronGenerateCodexBlogPromptRoute: typeof ApiCronGenerateCodexBlogPromptRoute
   ApiCronPublishCodexBlogArticleRoute: typeof ApiCronPublishCodexBlogArticleRoute
+  ApiCronPurchaseEmailsRoute: typeof ApiCronPurchaseEmailsRoute
   ApiCronSeoDistributionRoute: typeof ApiCronSeoDistributionRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiDownloadTachiyomiatLatestDotapkRoute: typeof ApiDownloadTachiyomiatLatestDotapkRoute
@@ -1613,10 +1703,12 @@ export interface RootRouteChildren {
   ApiMobileFunnelEventsRoute: typeof ApiMobileFunnelEventsRoute
   ApiMobileHeartbeatRoute: typeof ApiMobileHeartbeatRoute
   ApiMobileJobsRoute: typeof ApiMobileJobsRouteWithChildren
+  ApiMobileTokenPacksRoute: typeof ApiMobileTokenPacksRoute
   ApiMobileTranslationRatingFeedbackRoute: typeof ApiMobileTranslationRatingFeedbackRoute
   ApiOpenapiAppRoute: typeof ApiOpenapiAppRouteWithChildren
   ApiOpenapiAuthRoute: typeof ApiOpenapiAuthRouteWithChildren
   ApiPaymentsCheckoutRoute: typeof ApiPaymentsCheckoutRoute
+  ApiPaymentsStatusRoute: typeof ApiPaymentsStatusRoute
   ApiPaymentsWebhookRoute: typeof ApiPaymentsWebhookRoute
   ApiRestSplatRoute: typeof ApiRestSplatRoute
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute
@@ -1632,6 +1724,8 @@ export interface RootRouteChildren {
   ApiMobileContentPolicyCheckRoute: typeof ApiMobileContentPolicyCheckRoute
   ApiMobileInstallationsRegisterRoute: typeof ApiMobileInstallationsRegisterRoute
   ApiMobileMangaPageTranslateRoute: typeof ApiMobileMangaPageTranslateRoute
+  ApiMobilePaymentsActivateRoute: typeof ApiMobilePaymentsActivateRoute
+  ApiMobilePaymentsCheckoutRoute: typeof ApiMobilePaymentsCheckoutRoute
   ApiMobileSourceDiscoveryMethodFeedbackRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRoute
   ApiMobileSourceDiscoveryPlanRoute: typeof ApiMobileSourceDiscoveryPlanRoute
   ApiMobileSourceDiscoveryResultsRoute: typeof ApiMobileSourceDiscoveryResultsRoute
@@ -1900,6 +1994,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app_/payment': {
+      id: '/app_/payment'
+      path: '/app/payment'
+      fullPath: '/app/payment'
+      preLoaderRoute: typeof AppPaymentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/upload': {
       id: '/api/upload'
       path: '/api/upload'
@@ -1912,6 +2013,13 @@ declare module '@tanstack/react-router' {
       path: '/api/contact'
       fullPath: '/api/contact'
       preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/assetlinks.json': {
+      id: '/.well-known/assetlinks.json'
+      path: '/.well-known/assetlinks.json'
+      fullPath: '/.well-known/assetlinks.json'
+      preLoaderRoute: typeof DotwellKnownAssetlinksDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manhwa/$slug': {
@@ -2089,6 +2197,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPaymentsWebhookRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/payments/status': {
+      id: '/api/payments/status'
+      path: '/api/payments/status'
+      fullPath: '/api/payments/status'
+      preLoaderRoute: typeof ApiPaymentsStatusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/payments/checkout': {
       id: '/api/payments/checkout'
       path: '/api/payments/checkout'
@@ -2115,6 +2230,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/translation-rating-feedback'
       fullPath: '/api/mobile/translation-rating-feedback'
       preLoaderRoute: typeof ApiMobileTranslationRatingFeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/token-packs': {
+      id: '/api/mobile/token-packs'
+      path: '/api/mobile/token-packs'
+      fullPath: '/api/mobile/token-packs'
+      preLoaderRoute: typeof ApiMobileTokenPacksRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mobile/jobs': {
@@ -2171,6 +2293,13 @@ declare module '@tanstack/react-router' {
       path: '/api/cron/seo-distribution'
       fullPath: '/api/cron/seo-distribution'
       preLoaderRoute: typeof ApiCronSeoDistributionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cron/purchase-emails': {
+      id: '/api/cron/purchase-emails'
+      path: '/api/cron/purchase-emails'
+      fullPath: '/api/cron/purchase-emails'
+      preLoaderRoute: typeof ApiCronPurchaseEmailsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/cron/publish-codex-blog-article': {
@@ -2346,6 +2475,20 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/source-discovery/method-feedback'
       fullPath: '/api/mobile/source-discovery/method-feedback'
       preLoaderRoute: typeof ApiMobileSourceDiscoveryMethodFeedbackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/payments/checkout': {
+      id: '/api/mobile/payments/checkout'
+      path: '/api/mobile/payments/checkout'
+      fullPath: '/api/mobile/payments/checkout'
+      preLoaderRoute: typeof ApiMobilePaymentsCheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/mobile/payments/activate': {
+      id: '/api/mobile/payments/activate'
+      path: '/api/mobile/payments/activate'
+      fullPath: '/api/mobile/payments/activate'
+      preLoaderRoute: typeof ApiMobilePaymentsActivateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/mobile/manga-page/translate': {
@@ -2743,8 +2886,10 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   TranslateManhwaAiRoute: TranslateManhwaAiRoute,
   ManhwaSlugRouteRoute: ManhwaSlugRouteRouteWithChildren,
+  DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
   ApiContactRoute: ApiContactRoute,
   ApiUploadRoute: ApiUploadRoute,
+  AppPaymentRoute: AppPaymentRoute,
   BlogSlugRoute: BlogSlugRoute,
   CheckoutTokenPackKeyRoute: CheckoutTokenPackKeyRoute,
   CheckoutCancelRoute: CheckoutCancelRoute,
@@ -2771,6 +2916,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCronGenerateBlogArticleRoute: ApiCronGenerateBlogArticleRoute,
   ApiCronGenerateCodexBlogPromptRoute: ApiCronGenerateCodexBlogPromptRoute,
   ApiCronPublishCodexBlogArticleRoute: ApiCronPublishCodexBlogArticleRoute,
+  ApiCronPurchaseEmailsRoute: ApiCronPurchaseEmailsRoute,
   ApiCronSeoDistributionRoute: ApiCronSeoDistributionRoute,
   ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiDownloadTachiyomiatLatestDotapkRoute:
@@ -2780,11 +2926,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileFunnelEventsRoute: ApiMobileFunnelEventsRoute,
   ApiMobileHeartbeatRoute: ApiMobileHeartbeatRoute,
   ApiMobileJobsRoute: ApiMobileJobsRouteWithChildren,
+  ApiMobileTokenPacksRoute: ApiMobileTokenPacksRoute,
   ApiMobileTranslationRatingFeedbackRoute:
     ApiMobileTranslationRatingFeedbackRoute,
   ApiOpenapiAppRoute: ApiOpenapiAppRouteWithChildren,
   ApiOpenapiAuthRoute: ApiOpenapiAuthRouteWithChildren,
   ApiPaymentsCheckoutRoute: ApiPaymentsCheckoutRoute,
+  ApiPaymentsStatusRoute: ApiPaymentsStatusRoute,
   ApiPaymentsWebhookRoute: ApiPaymentsWebhookRoute,
   ApiRestSplatRoute: ApiRestSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
@@ -2800,6 +2948,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiMobileContentPolicyCheckRoute: ApiMobileContentPolicyCheckRoute,
   ApiMobileInstallationsRegisterRoute: ApiMobileInstallationsRegisterRoute,
   ApiMobileMangaPageTranslateRoute: ApiMobileMangaPageTranslateRoute,
+  ApiMobilePaymentsActivateRoute: ApiMobilePaymentsActivateRoute,
+  ApiMobilePaymentsCheckoutRoute: ApiMobilePaymentsCheckoutRoute,
   ApiMobileSourceDiscoveryMethodFeedbackRoute:
     ApiMobileSourceDiscoveryMethodFeedbackRoute,
   ApiMobileSourceDiscoveryPlanRoute: ApiMobileSourceDiscoveryPlanRoute,

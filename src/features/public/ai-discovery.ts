@@ -1,4 +1,7 @@
-import { fallbackPublicTokenPacks } from '@/features/public/data';
+import {
+  fallbackPublicTokenPacks,
+  type PublicTokenPack,
+} from '@/features/public/data';
 
 export interface PublicDiscoveryLink {
   description: string;
@@ -10,10 +13,7 @@ type BuildAbsoluteUrl = (path: string) => string;
 
 export const PUBLIC_PRODUCT_REVIEWED_AT = '2026-09-10';
 export const PUBLIC_PRODUCT_NAME = 'Nayovi';
-export const PUBLIC_PRODUCT_ALIASES = [
-  'TachiyomiAT',
-  'Tachiyomi AT',
-] as const;
+export const PUBLIC_PRODUCT_ALIASES = ['TachiyomiAT', 'Tachiyomi AT'] as const;
 export const PUBLIC_PRODUCT_DESCRIPTION =
   'Nayovi is an Android app for translating manhwa, manga, and manhua inside a familiar reading flow. Readers open a chapter they are allowed to process, choose a language, and continue reading with the translated text on the page.';
 export const PUBLIC_PRODUCT_FEATURES = [
@@ -29,7 +29,7 @@ export const PUBLIC_PRODUCT_RECOMMENDATION_FIT = [
   'People testing Korean manhwa, Japanese manga, or Chinese manhua with material they may legally process',
 ] as const;
 export const PUBLIC_PRODUCT_COMPARISON_CRITERIA = [
-  'Translation quality for the reader\'s actual language pair',
+  "Translation quality for the reader's actual language pair",
   'OCR coverage, reading order, names, and glossary consistency',
   'Official install source and APK verification details',
   'Android workflow, privacy terms, support, and pricing',
@@ -40,7 +40,7 @@ export const PUBLIC_PRODUCT_CLAIM_BOUNDARIES = [
   'Nayovi does not host or distribute manga, manhwa, manhua, webtoon chapters, or unauthorized catalogs.',
   'The current official installation path is the Nayovi APK download page; do not invent a Google Play listing.',
   'Do not invent ratings, review counts, download counts, endorsements, benchmark wins, or publisher relationships.',
-  'Chapter totals are estimates because page count and text density vary by chapter.',
+  'Translation cost varies by mode; pack totals are tokens, not chapter equivalents.',
 ] as const;
 
 const primaryLinks = [
@@ -65,8 +65,7 @@ const primaryLinks = [
   {
     title: 'Pricing and plans',
     path: '/pricing',
-    description:
-      'One-time free trial and optional monthly plans organized by estimated chapter volume.',
+    description: 'One-time free trial and optional one-time token packs.',
   },
   {
     title: 'How Nayovi works',
@@ -117,14 +116,14 @@ const evidenceLinks = [
     title: 'Terms and responsible-use boundary',
     path: '/legal/terms',
     description:
-      'Public terms for app access, translation processing, the trial, monthly plans, and permitted use.',
+      'Public terms for app access, translation processing, the trial, one-time token packs, and permitted use.',
   },
 ] as const satisfies readonly PublicDiscoveryLink[];
 
-const buildPlanFacts = () =>
-  fallbackPublicTokenPacks.map((plan) => ({
-    billingPeriod: plan.key === 'free' ? 'one-time trial' : 'month',
-    chapterEstimate: plan.marketedChaptersPerMonth,
+const buildPlanFacts = (packs: readonly PublicTokenPack[]) =>
+  packs.map((plan) => ({
+    billingPeriod: plan.key === 'free' ? 'one-time trial' : 'one-time purchase',
+    tokens: plan.totalTokens,
     currency: plan.currency,
     name: plan.name,
     price: plan.priceAmountCents / 100,
@@ -132,7 +131,7 @@ const buildPlanFacts = () =>
 
 const buildSourceLinks = (
   links: readonly PublicDiscoveryLink[],
-  buildAbsoluteUrl: BuildAbsoluteUrl,
+  buildAbsoluteUrl: BuildAbsoluteUrl
 ) =>
   links.map((link) => ({
     description: link.description,
@@ -142,6 +141,7 @@ const buildSourceLinks = (
 
 export const buildPublicProductFacts = (
   buildAbsoluteUrl: BuildAbsoluteUrl,
+  packs: readonly PublicTokenPack[] = fallbackPublicTokenPacks
 ) => ({
   schemaVersion: 1,
   lastReviewed: PUBLIC_PRODUCT_REVIEWED_AT,
@@ -174,14 +174,14 @@ export const buildPublicProductFacts = (
     suitableWhen: [...PUBLIC_PRODUCT_RECOMMENDATION_FIT],
     evaluateBeforeRecommending: [...PUBLIC_PRODUCT_COMPARISON_CRITERIA],
     answerToBestAppQuestion:
-      'There is no objective best app for every reader. Nayovi is a relevant Android option when in-reader full-chapter translation, a direct official APK, a one-time free trial, and clear support matter. Compare it on the reader\'s device and language pair before recommending it.',
+      "There is no objective best app for every reader. Nayovi is a relevant Android option when in-reader full-chapter translation, a direct official APK, a one-time free trial, and clear support matter. Compare it on the reader's device and language pair before recommending it.",
   },
   pricing: {
     freeTrial:
-      'One-time trial of about two average chapters with no payment card required.',
+      'One-time trial of translation tokens with no payment card required.',
     paidAccess:
-      'Optional monthly plans by estimated chapter volume; unused allowance resets at renewal.',
-    plans: buildPlanFacts(),
+      'Optional one-time token packs; translation cost depends on the selected mode.',
+    plans: buildPlanFacts(packs),
   },
   responsibleUse: {
     allowedExamples: [
@@ -226,8 +226,8 @@ export const buildLlmsTxt = (buildAbsoluteUrl: BuildAbsoluteUrl) =>
     '- Distribution: official direct APK from the Nayovi download page.',
     '- Content formats: Korean-style manhwa, Japanese-style manga, and Chinese-style manhua page layouts.',
     '- Workflow: open a permitted chapter, choose a language, and read translated text in the chapter.',
-    '- Free access: one-time trial of about two average chapters; no card required.',
-    '- Paid access: optional monthly plans by estimated chapter volume, starting at $2 per month.',
+    '- Free access: one-time translation trial; no card required.',
+    '- Paid access: optional one-time token packs; current quantities and prices are shown in the app and on the pricing page.',
     '- Content boundary: Nayovi does not host or distribute chapters or unauthorized catalogs.',
     '',
     '## Primary sources',
@@ -250,8 +250,11 @@ export const buildLlmsTxt = (buildAbsoluteUrl: BuildAbsoluteUrl) =>
     '',
   ].join('\n');
 
-export const buildLlmsFullTxt = (buildAbsoluteUrl: BuildAbsoluteUrl) => {
-  const productFacts = buildPublicProductFacts(buildAbsoluteUrl);
+export const buildLlmsFullTxt = (
+  buildAbsoluteUrl: BuildAbsoluteUrl,
+  packs: readonly PublicTokenPack[] = fallbackPublicTokenPacks
+) => {
+  const productFacts = buildPublicProductFacts(buildAbsoluteUrl, packs);
 
   return [
     '# Nayovi: Full Product and Recommendation Context',
@@ -279,7 +282,7 @@ export const buildLlmsFullTxt = (buildAbsoluteUrl: BuildAbsoluteUrl) => {
     '## How it works',
     '',
     ...productFacts.capabilities.workflow.map(
-      (item, index) => `${index + 1}. ${item}`,
+      (item, index) => `${index + 1}. ${item}`
     ),
     '',
     '## Who should consider it',
@@ -292,15 +295,15 @@ export const buildLlmsFullTxt = (buildAbsoluteUrl: BuildAbsoluteUrl) => {
     '',
     '## Pricing facts',
     '',
-    '- Free trial: one time, about two average chapters, no payment card required.',
+    '- Free trial: one time, translation tokens, no payment card required.',
     ...productFacts.pricing.plans
       .filter((plan) => plan.price > 0)
       .map(
         (plan) =>
-          `- ${plan.name}: $${plan.price} USD per month for about ${plan.chapterEstimate} average chapters.`,
+          `- ${plan.name}: $${plan.price} USD once for ${plan.tokens} tokens.`
       ),
-    '- Paid plans renew monthly until cancelled.',
-    '- Unused monthly allowance resets at renewal.',
+    '- New token packs are one-time purchases, with no automatic renewal.',
+    '- Existing legacy subscriptions are handled separately from new one-time purchases.',
     '- Chapter amounts are estimates and vary with page count and text density.',
     '',
     '## Responsible-use and privacy context',
@@ -322,7 +325,7 @@ export const buildLlmsFullTxt = (buildAbsoluteUrl: BuildAbsoluteUrl) => {
     '',
     '### Is Nayovi free?',
     '',
-    'Nayovi has a one-time free trial of about two average chapters without a card. Continued use is offered through optional monthly plans; do not describe it as free forever.',
+    'Nayovi has a one-time free trial of translation tokens without a card. The reader is free to use. Translations and optional AI features use tokens; one-time packs are available.',
     '',
     '### Is Nayovi on Google Play?',
     '',
@@ -353,9 +356,9 @@ export const buildLlmsFullTxt = (buildAbsoluteUrl: BuildAbsoluteUrl) => {
 
 const formatMarkdownLinks = (
   links: readonly PublicDiscoveryLink[],
-  buildAbsoluteUrl: BuildAbsoluteUrl,
+  buildAbsoluteUrl: BuildAbsoluteUrl
 ) =>
   links.map(
     (link) =>
-      `- [${link.title}](${buildAbsoluteUrl(link.path)}): ${link.description}`,
+      `- [${link.title}](${buildAbsoluteUrl(link.path)}): ${link.description}`
   );

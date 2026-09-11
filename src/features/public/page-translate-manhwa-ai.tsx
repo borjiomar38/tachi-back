@@ -6,85 +6,85 @@ import {
   ShieldCheckIcon,
   SmartphoneIcon,
   SparklesIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { cn } from "@/lib/tailwind/utils";
+import { cn } from '@/lib/tailwind/utils';
 
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
-import heroBackground from "@/features/auth/layout-login-background.webp";
-import { androidApkDownload } from "@/features/public/download-assets";
-import { PublicSection, PublicShell } from "@/features/public/public-shell";
+import heroBackground from '@/features/auth/layout-login-background.webp';
+import { androidApkDownload } from '@/features/public/download-assets';
+import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 const workflowSteps = [
   {
-    title: "Install Nayovi on Android",
-    description: "Download the official APK and open the app on your phone.",
+    title: 'Install Nayovi on Android',
+    description: 'Download the official APK and open the app on your phone.',
     icon: DownloadIcon,
   },
   {
-    title: "Open a chapter",
+    title: 'Open a chapter',
     description:
-      "Choose a manhwa, manga, or manhua chapter from your reading sources.",
+      'Choose a manhwa, manga, or manhua chapter from your reading sources.',
     icon: BookOpenCheckIcon,
   },
   {
-    title: "Choose your language",
+    title: 'Choose your language',
     description:
-      "Nayovi detects the text and shows the translation directly on the page.",
+      'Nayovi detects the text and shows the translation directly on the page.',
     icon: LanguagesIcon,
   },
 ] as const;
 
 const readerBenefits = [
   {
-    title: "Made for manhwa",
+    title: 'Made for manhwa',
     description:
-      "Keep scrolling through long vertical chapters without copying every speech bubble into another tool.",
+      'Keep scrolling through long vertical chapters without copying every speech bubble into another tool.',
     icon: SmartphoneIcon,
   },
   {
-    title: "Translation in the chapter",
+    title: 'Translation in the chapter',
     description:
-      "See the translated dialogue where you are reading, with the original page still easy to compare.",
+      'See the translated dialogue where you are reading, with the original page still easy to compare.',
     icon: SparklesIcon,
   },
   {
-    title: "Simple Android setup",
+    title: 'Simple Android setup',
     description:
-      "Install the app, choose a language, and start reading. No complicated setup is required.",
+      'Install the app, choose a language, and start reading. No complicated setup is required.',
     icon: ShieldCheckIcon,
   },
 ] as const;
 
 export const translateManhwaAiFaqs = [
   {
-    title: "Can Nayovi translate Korean manhwa into English?",
+    title: 'Can Nayovi translate Korean manhwa into English?',
     description:
-      "Yes. Open the chapter, select English, and Nayovi translates the detected Korean text directly in the reading view.",
+      'Yes. Open the chapter, select English, and Nayovi translates the detected Korean text directly in the reading view.',
   },
   {
-    title: "Does Nayovi also work with manga and manhua?",
+    title: 'Does Nayovi also work with manga and manhua?',
     description:
-      "Yes. Nayovi is designed for manhwa, manga, and manhua pages, including vertical chapters and traditional page layouts.",
+      'Yes. Nayovi is designed for manhwa, manga, and manhua pages, including vertical chapters and traditional page layouts.',
   },
   {
-    title: "Is Nayovi available on Android?",
+    title: 'Is Nayovi available on Android?',
     description:
-      "Yes. Nayovi is available as an Android APK from the official download page.",
+      'Yes. Nayovi is available as an Android APK from the official download page.',
   },
   {
-    title: "Can I try it before paying?",
+    title: 'Can I try it before paying?',
     description:
-      "Yes. You can translate about two average chapters free without entering a payment card, then choose a monthly plan if you want to keep reading.",
+      'Yes. You can translate free translation tokens free without entering a payment card, then choose a one-time token pack if you want to keep reading.',
   },
 ] as const;
 
@@ -120,8 +120,8 @@ export const PageTranslateManhwaAi = () => {
               </h1>
               <p className="max-w-xl text-base leading-7 text-neutral-200 md:text-lg">
                 Open a manhwa, manga, or manhua chapter, choose your language,
-                and read the translated text directly on the page. Try about
-                two average chapters free—no card required.
+                and read the translated text directly on the page. Try free
+                translation tokens—no card required.
               </p>
             </div>
 
@@ -129,8 +129,8 @@ export const PageTranslateManhwaAi = () => {
               <a
                 href={androidApkDownload.href}
                 className={cn(
-                  buttonVariants({ variant: "default", size: "lg" }),
-                  "min-h-12 bg-brand-300 px-6 text-brand-950 hover:bg-brand-200",
+                  buttonVariants({ variant: 'default', size: 'lg' }),
+                  'min-h-12 bg-brand-300 px-6 text-brand-950 hover:bg-brand-200'
                 )}
               >
                 <span className="flex items-center gap-2">
@@ -141,12 +141,12 @@ export const PageTranslateManhwaAi = () => {
               <a
                 href="/pricing"
                 className={cn(
-                  buttonVariants({ variant: "secondary", size: "lg" }),
-                  "min-h-12 border-white/20 bg-white/10 px-6 text-neutral-50 hover:bg-white/15",
+                  buttonVariants({ variant: 'secondary', size: 'lg' }),
+                  'min-h-12 border-white/20 bg-white/10 px-6 text-neutral-50 hover:bg-white/15'
                 )}
               >
                 <span className="flex items-center gap-2">
-                  See monthly plans
+                  See token packs
                   <ArrowRightIcon className="size-4" />
                 </span>
               </a>
@@ -154,10 +154,10 @@ export const PageTranslateManhwaAi = () => {
 
             <div className="flex flex-wrap gap-2 text-sm text-neutral-200">
               {[
-                "Android APK",
-                "About 2 chapters free",
-                "No card required",
-                "Manhwa • Manga • Manhua",
+                'Android APK',
+                'Free translation trial',
+                'No card required',
+                'Manhwa • Manga • Manhua',
               ].map((label) => (
                 <span
                   key={label}
@@ -191,7 +191,9 @@ export const PageTranslateManhwaAi = () => {
         <div className="grid gap-4 md:grid-cols-2">
           <Card className="rounded-[1.5rem]">
             <CardHeader>
-              <CardTitle className="text-lg">Before: the original page</CardTitle>
+              <CardTitle className="text-lg">
+                Before: the original page
+              </CardTitle>
               <CardDescription>
                 Open the Korean, Japanese, or Chinese chapter in your normal
                 Android reading flow.
@@ -266,30 +268,32 @@ export const PageTranslateManhwaAi = () => {
       <PublicSection
         eyebrow="Try it first"
         title="Start free, then pay only if it fits your reading"
-        description="Translate about two average chapters without a card. If Nayovi becomes part of your weekly reading, monthly plans start at $2—the price of a coffee."
+        description="Translate with free trial tokens, without a card. If Nayovi becomes part of your weekly reading, one-time token packs are available."
       >
         <Card className="overflow-hidden rounded-[1.75rem] border-brand-300/30">
           <CardContent className="grid gap-6 p-6 md:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div className="space-y-2">
-              <p className="text-xl font-semibold">A simple path to keep reading</p>
+              <p className="text-xl font-semibold">
+                A simple path to keep reading
+              </p>
               <p className="max-w-2xl leading-7 text-muted-foreground">
                 Test a real chapter first. When you need more translations,
-                compare the monthly plans and choose the reading volume that
-                suits you.
+                compare the token packs and choose the reading volume that suits
+                you.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
                 href={androidApkDownload.href}
-                className={cn(buttonVariants({ size: "lg" }), "min-h-11")}
+                className={cn(buttonVariants({ size: 'lg' }), 'min-h-11')}
               >
                 Download free
               </a>
               <a
                 href="/pricing"
                 className={cn(
-                  buttonVariants({ variant: "secondary", size: "lg" }),
-                  "min-h-11",
+                  buttonVariants({ variant: 'secondary', size: 'lg' }),
+                  'min-h-11'
                 )}
               >
                 Compare plans
@@ -324,7 +328,7 @@ export const PageTranslateManhwaAi = () => {
         <div className="flex flex-wrap gap-3">
           <a
             href={androidApkDownload.href}
-            className={cn(buttonVariants({ size: "lg" }), "min-h-12")}
+            className={cn(buttonVariants({ size: 'lg' }), 'min-h-12')}
           >
             <span className="flex items-center gap-2">
               Download Nayovi APK
@@ -334,11 +338,11 @@ export const PageTranslateManhwaAi = () => {
           <a
             href="/pricing"
             className={cn(
-              buttonVariants({ variant: "secondary", size: "lg" }),
-              "min-h-12",
+              buttonVariants({ variant: 'secondary', size: 'lg' }),
+              'min-h-12'
             )}
           >
-            See monthly plans
+            See token packs
           </a>
         </div>
       </PublicSection>

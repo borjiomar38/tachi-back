@@ -34,12 +34,18 @@ const envServerBase = createEnv({
     CONTACT_IMAP_MAILBOX: z.string().trim().min(1).default('INBOX'),
 
     LEMONSQUEEZY_ENABLED: z.stringbool().default(false),
+    // One-time checkout stays in Test mode until live payments are explicitly enabled.
+    LEMONSQUEEZY_TEST_MODE: z.stringbool().default(true),
     LEMONSQUEEZY_API_KEY: z.string().optional(),
     LEMONSQUEEZY_WEBHOOK_SECRET: z.string().optional(),
     LEMONSQUEEZY_STORE_ID: z.string().optional(),
     LEMONSQUEEZY_VARIANT_TOKENS_STARTER: z.string().optional(),
     LEMONSQUEEZY_VARIANT_TOKENS_PRO: z.string().optional(),
     LEMONSQUEEZY_VARIANT_TOKENS_POWER: z.string().optional(),
+    LEMONSQUEEZY_ONE_TIME_VARIANT_STARTER: z.string().regex(/^\d+$/).optional(),
+    LEMONSQUEEZY_ONE_TIME_VARIANT_PRO: z.string().regex(/^\d+$/).optional(),
+    LEMONSQUEEZY_ONE_TIME_VARIANT_POWER: z.string().regex(/^\d+$/).optional(),
+    ANDROID_APP_LINK_SHA256_FINGERPRINTS: z.string().optional(),
 
     GOOGLE_CLOUD_VISION_API_KEY: z.string().optional(),
     GOOGLE_CLOUD_TRANSLATE_API_KEY: z.string().optional(),

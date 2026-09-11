@@ -9,32 +9,32 @@ import {
   PlayCircleIcon,
   ShieldCheckIcon,
   SmartphoneIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { cn } from "@/lib/tailwind/utils";
+import { cn } from '@/lib/tailwind/utils';
 
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
-import heroBackground from "@/features/auth/layout-login-background.webp";
-import heroCharacter from "@/features/auth/layout-login-character.webp";
+import heroBackground from '@/features/auth/layout-login-background.webp';
+import heroCharacter from '@/features/auth/layout-login-character.webp';
 import {
   activationSteps,
   publicHighlights,
   type PublicTokenPack,
   supportFaqs,
-} from "@/features/public/data";
-import { DemoVideo } from "@/features/public/demo-video";
-import { androidApkDownload } from "@/features/public/download-assets";
-import { PublicSection, PublicShell } from "@/features/public/public-shell";
-import { TokenPackCard } from "@/features/public/token-pack-card";
+} from '@/features/public/data';
+import { DemoVideo } from '@/features/public/demo-video';
+import { androidApkDownload } from '@/features/public/download-assets';
+import { PublicSection, PublicShell } from '@/features/public/public-shell';
+import { TokenPackCard } from '@/features/public/token-pack-card';
 
 const stepIcons = [DownloadIcon, BookOpenIcon, LanguagesIcon] as const;
 const benefitIcons = [
@@ -43,24 +43,24 @@ const benefitIcons = [
   SmartphoneIcon,
 ] as const;
 const trustSignals = [
-  { label: "Android APK", icon: SmartphoneIcon },
-  { label: "About 2 chapters free", icon: BookOpenIcon },
-  { label: "No card required", icon: ShieldCheckIcon },
-  { label: "Manhwa • Manga • Manhua", icon: LanguagesIcon },
+  { label: 'Android APK', icon: SmartphoneIcon },
+  { label: 'Free translation trial', icon: BookOpenIcon },
+  { label: 'No card required', icon: ShieldCheckIcon },
+  { label: 'Manhwa • Manga • Manhua', icon: LanguagesIcon },
 ] as const;
 
 export const PageLanding = (props: {
-  contactStatus?: "sent" | "error" | "invalid";
+  contactStatus?: 'sent' | 'error' | 'invalid';
   tokenPacks: PublicTokenPack[];
 }) => {
   const freeTokenPack = props.tokenPacks.find(
-    (tokenPack) => tokenPack.key === "free",
+    (tokenPack) => tokenPack.key === 'free'
   );
   const paidTokenPacks = props.tokenPacks.filter(
-    (tokenPack) => tokenPack.key !== "free",
+    (tokenPack) => tokenPack.key !== 'free'
   );
   const featuredTokenPack =
-    paidTokenPacks.find((tokenPack) => tokenPack.key === "pro") ??
+    paidTokenPacks.find((tokenPack) => tokenPack.key === 'pro-tokens') ??
     paidTokenPacks[1] ??
     paidTokenPacks[0];
   const displayedTokenPacks = freeTokenPack
@@ -91,7 +91,7 @@ export const PageLanding = (props: {
             loading="lazy"
             decoding="async"
             fetchPriority="low"
-            className="pointer-events-none absolute top-[8%] left-[64%] z-[-10] h-auto w-[160vw] max-w-none -translate-x-1/2 opacity-[0.06] contrast-75 saturate-[0.55] blur-[0.4px] sm:left-[58%] sm:w-[115vw] sm:opacity-[0.07] md:top-[2%] md:left-[52%] md:w-[78vw] md:opacity-[0.09] lg:top-[-5%] lg:left-[45%] lg:w-[min(48vw,46rem)] lg:opacity-[0.11]"
+            className="pointer-events-none absolute top-[8%] left-[64%] z-[-10] h-auto w-[160vw] max-w-none -translate-x-1/2 opacity-[0.06] blur-[0.4px] contrast-75 saturate-[0.55] sm:left-[58%] sm:w-[115vw] sm:opacity-[0.07] md:top-[2%] md:left-[52%] md:w-[78vw] md:opacity-[0.09] lg:top-[-5%] lg:left-[45%] lg:w-[min(48vw,46rem)] lg:opacity-[0.11]"
           />
           <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[58%] bg-linear-to-b from-neutral-950/88 via-neutral-950/55 to-transparent lg:hidden" />
           <div className="pointer-events-none absolute inset-y-0 left-0 z-0 hidden w-[58%] bg-linear-to-r from-neutral-950 via-neutral-950/65 to-transparent lg:block" />
@@ -112,8 +112,8 @@ export const PageLanding = (props: {
                 </h1>
                 <p className="max-w-xl text-base leading-7 text-neutral-200 md:text-lg">
                   Open a manhwa, manga, or manhua chapter, choose your language,
-                  and keep reading in Nayovi. Try about two average chapters
-                  free—no card required.
+                  and keep reading in Nayovi. Try free translation tokens—no
+                  card required.
                 </p>
               </div>
 
@@ -121,8 +121,8 @@ export const PageLanding = (props: {
                 <a
                   href={androidApkDownload.href}
                   className={cn(
-                    buttonVariants({ variant: "default", size: "lg" }),
-                    "min-h-12 bg-brand-300 px-6 text-brand-950 hover:bg-brand-200",
+                    buttonVariants({ variant: 'default', size: 'lg' }),
+                    'min-h-12 bg-brand-300 px-6 text-brand-950 hover:bg-brand-200'
                   )}
                 >
                   <span className="flex items-center gap-2">
@@ -133,8 +133,8 @@ export const PageLanding = (props: {
                 <a
                   href="/#demo"
                   className={cn(
-                    buttonVariants({ variant: "secondary", size: "lg" }),
-                    "min-h-12 gap-2 border-white/20 bg-white/10 px-6 text-neutral-50 hover:bg-white/15",
+                    buttonVariants({ variant: 'secondary', size: 'lg' }),
+                    'min-h-12 gap-2 border-white/20 bg-white/10 px-6 text-neutral-50 hover:bg-white/15'
                   )}
                 >
                   <PlayCircleIcon className="size-4" />
@@ -326,9 +326,9 @@ export const PageLanding = (props: {
 
       <PublicSection
         id="pricing"
-        eyebrow="Plans"
-        title="Start free. Upgrade when you need more."
-        description="Try Nayovi first, then choose a monthly plan that matches how much you read."
+        eyebrow="Token packs"
+        title="Nayovi is free. Buy tokens when you need them."
+        description="Translations and optional AI features use tokens. Choose a one-time pack, without a subscription."
         className="py-8 text-center md:py-10"
       >
         <div className="grid gap-4 text-left sm:grid-cols-2 xl:grid-cols-4">
@@ -338,22 +338,24 @@ export const PageLanding = (props: {
               tokenPack={tokenPack}
               compact
               featured={tokenPack.id === featuredTokenPack?.id}
-              id={tokenPack.key === "starter" ? "starter-plan" : undefined}
-              showCoffeePrice={tokenPack.key === "starter"}
+              id={
+                tokenPack.key === 'starter-tokens' ? 'starter-plan' : undefined
+              }
+              showCoffeePrice={tokenPack.key === 'starter-tokens'}
             />
           ))}
         </div>
         <div className="mt-4 flex flex-col gap-3 rounded-[1.35rem] border border-border/70 bg-card/70 px-5 py-4 text-left text-sm leading-6 text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>
-            Chapter amounts are estimates and can vary with chapter length. Paid
-            plans renew monthly until cancelled, and unused allowance resets at
+            Translation cost varies by mode. Tokens are used automatically when
+            you translate. Token packs are one-time purchases with no automatic
             renewal.
           </p>
           <a
             href="/pricing"
             className="shrink-0 font-medium text-foreground hover:text-primary"
           >
-            Compare plans →
+            Compare token packs →
           </a>
         </div>
       </PublicSection>
@@ -368,18 +370,20 @@ export const PageLanding = (props: {
               <MessageCircleIcon className="size-5" />
             </span>
             <div>
-              <p className="text-lg font-semibold">Need help before you start?</p>
+              <p className="text-lg font-semibold">
+                Need help before you start?
+              </p>
               <p className="mt-1 text-sm leading-6 text-neutral-300">
                 Get help with installation, payment, activation, or account
                 access in the Nayovi support center.
               </p>
               {props.contactStatus ? (
                 <p className="mt-2 text-xs font-medium text-brand-100">
-                  {props.contactStatus === "sent"
-                    ? "Your message was sent. We will reply by email."
-                    : props.contactStatus === "invalid"
-                      ? "Complete every field with a valid email address."
-                      : "The message could not be sent. Please try again."}
+                  {props.contactStatus === 'sent'
+                    ? 'Your message was sent. We will reply by email.'
+                    : props.contactStatus === 'invalid'
+                      ? 'Complete every field with a valid email address.'
+                      : 'The message could not be sent. Please try again.'}
                 </p>
               ) : null}
             </div>
@@ -387,8 +391,8 @@ export const PageLanding = (props: {
           <a
             href="/support"
             className={cn(
-              buttonVariants({ variant: "secondary", size: "lg" }),
-              "shrink-0",
+              buttonVariants({ variant: 'secondary', size: 'lg' }),
+              'shrink-0'
             )}
           >
             Open support center

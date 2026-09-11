@@ -12,7 +12,7 @@ export const Route = createFileRoute('/download')({
   head: ({ loaderData }) =>
     buildPublicPageHead(
       'TachiyomiAT APK Download - Manhwa & Manga Translator',
-      'Download the official Nayovi manhwa and manga translator APK for Android. Install it, open a chapter, and try about two average chapters free.',
+      'Download the official Nayovi manhwa and manga translator APK for Android. Install it, open a chapter, and Try free translation tokens.',
       '/download',
       {
         keywords: [

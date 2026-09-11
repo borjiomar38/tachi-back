@@ -1,5 +1,7 @@
 import { InferRouterInputs, InferRouterOutputs } from '@orpc/server';
 
+import { tokenPurchaseRouter } from '@/server/routers/token-purchase';
+
 import accountRouter from './routers/account';
 import chapterRouter from './routers/chapter';
 import configRouter from './routers/config';
@@ -20,6 +22,7 @@ export type Router = typeof router;
 export type Inputs = InferRouterInputs<typeof router>;
 export type Outputs = InferRouterOutputs<typeof router>;
 export const router = {
+  tokenPurchase: tokenPurchaseRouter,
   account: accountRouter,
   user: userRouter,
   config: configRouter,

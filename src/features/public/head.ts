@@ -1,49 +1,47 @@
 import {
   type BlogCategoryConfig,
   getBlogCategoryPath,
-} from "@/features/blog/category";
+} from '@/features/blog/category';
 import {
   blogArticleCategoryLabels,
   BlogArticleDetail,
-} from "@/features/blog/schema";
+} from '@/features/blog/schema';
 import {
   buildBlogSeoKeywords,
   buildPublicSeoKeywords,
   highIntentBlogSeoKeywords,
-} from "@/features/blog/seo";
+} from '@/features/blog/seo';
 import {
   PUBLIC_PRODUCT_ALIASES,
   PUBLIC_PRODUCT_DESCRIPTION,
   PUBLIC_PRODUCT_FEATURES,
   PUBLIC_PRODUCT_NAME,
-} from "@/features/public/ai-discovery";
+} from '@/features/public/ai-discovery';
 import {
   fallbackPublicTokenPacks,
   formatCurrency,
-} from "@/features/public/data";
+} from '@/features/public/data';
 
 const publicSiteName = PUBLIC_PRODUCT_NAME;
-const publicBaseUrlFallback = "https://tachiyomiat.com";
-const publicBrandUrl = "https://nayovi.com";
-const publicSeoUrl = "https://translate-manhwa-ai.com";
-const socialImagePath = "/og/nayovi-social-preview.jpg";
-const publicBrandAliases = [
-  ...PUBLIC_PRODUCT_ALIASES,
-];
+const publicBaseUrlFallback = 'https://tachiyomiat.com';
+const publicBrandUrl = 'https://nayovi.com';
+const publicSeoUrl = 'https://translate-manhwa-ai.com';
+const socialImagePath = '/og/nayovi-social-preview.jpg';
+const publicBrandAliases = [...PUBLIC_PRODUCT_ALIASES];
 const publicSiteDescription = PUBLIC_PRODUCT_DESCRIPTION;
 const publicIndexingPolicy =
-  "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+  'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
 
-const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, "");
+const normalizeBaseUrl = (url: string) => url.replace(/\/+$/, '');
 const normalizePath = (path: string) =>
-  path.startsWith("/") ? path : `/${path}`;
+  path.startsWith('/') ? path : `/${path}`;
 
 const isLocalBaseUrl = (url: string) => {
   try {
     const hostname = new URL(url).hostname;
 
-    return ["localhost", "127.0.0.1", "0.0.0.0", "[::1]", "::1"].includes(
-      hostname,
+    return ['localhost', '127.0.0.1', '0.0.0.0', '[::1]', '::1'].includes(
+      hostname
     );
   } catch {
     return false;
@@ -53,7 +51,7 @@ const isLocalBaseUrl = (url: string) => {
 const resolveConfiguredBaseUrl = () => {
   const env = import.meta.env;
   const previewUrl =
-    env.VITE_VERCEL_ENV === "preview" ? env.VITE_VERCEL_BRANCH_URL : undefined;
+    env.VITE_VERCEL_ENV === 'preview' ? env.VITE_VERCEL_BRANCH_URL : undefined;
 
   if (previewUrl) {
     return `https://${previewUrl}`;
@@ -77,24 +75,24 @@ export const buildPublicAbsoluteUrl = buildAbsoluteUrl;
 
 const buildPublicAppOffers = () =>
   fallbackPublicTokenPacks.map((tokenPack) => ({
-    "@type": "Offer",
+    '@type': 'Offer',
     name: tokenPack.name,
     price: (tokenPack.priceAmountCents / 100).toFixed(2),
     priceCurrency: tokenPack.currency,
-    availability: "https://schema.org/InStock",
-    category: tokenPack.priceAmountCents === 0 ? "FreeTrial" : "Subscription",
+    availability: 'https://schema.org/InStock',
+    category: tokenPack.priceAmountCents === 0 ? 'FreeTrial' : 'TokenPack',
     description:
       tokenPack.description ??
-      `${formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)} monthly Nayovi plan for manga, manhwa, and manhua translation on Android.`,
+      `${formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)} one-time Nayovi token pack for manga, manhwa, and manhua translation on Android.`,
     url:
       tokenPack.priceAmountCents === 0
-        ? buildAbsoluteUrl("/")
-        : buildAbsoluteUrl("/pricing"),
+        ? buildAbsoluteUrl('/')
+        : buildAbsoluteUrl('/pricing'),
   }));
 
 export const buildPublicFaqStructuredData = (
   path: string,
-  faqs: readonly { description: string; title: string }[],
+  faqs: readonly { description: string; title: string }[]
 ) => {
   if (faqs.length === 0) {
     return [];
@@ -102,13 +100,13 @@ export const buildPublicFaqStructuredData = (
 
   return [
     {
-      "@type": "FAQPage",
-      "@id": `${buildAbsoluteUrl(path)}#faq`,
+      '@type': 'FAQPage',
+      '@id': `${buildAbsoluteUrl(path)}#faq`,
       mainEntity: faqs.map((faq) => ({
-        "@type": "Question",
+        '@type': 'Question',
         name: faq.title,
         acceptedAnswer: {
-          "@type": "Answer",
+          '@type': 'Answer',
           text: faq.description,
         },
       })),
@@ -129,97 +127,97 @@ const buildStructuredData = (
   description: string,
   url: string,
   imageUrl: string,
-  extraGraph: readonly Record<string, unknown>[] = [],
+  extraGraph: readonly Record<string, unknown>[] = []
 ) => {
-  const baseUrl = buildAbsoluteUrl("/");
+  const baseUrl = buildAbsoluteUrl('/');
   const organizationId = `${baseUrl}#organization`;
   const websiteId = `${baseUrl}#website`;
   return {
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": "Organization",
-        "@id": organizationId,
+        '@type': 'Organization',
+        '@id': organizationId,
         name: publicSiteName,
         alternateName: publicBrandAliases,
         url: baseUrl,
         sameAs: [publicBrandUrl, publicSeoUrl],
-        logo: buildAbsoluteUrl("/nayovi-mark-light.png"),
+        logo: buildAbsoluteUrl('/nayovi-mark-light.png'),
         contactPoint: [
           {
-            "@type": "ContactPoint",
-            contactType: "customer support",
-            email: "contact@nayovi.com",
-            url: buildAbsoluteUrl("/support"),
-            availableLanguage: ["en", "fr"],
+            '@type': 'ContactPoint',
+            contactType: 'customer support',
+            email: 'contact@nayovi.com',
+            url: buildAbsoluteUrl('/support'),
+            availableLanguage: ['en', 'fr'],
           },
           {
-            "@type": "ContactPoint",
-            contactType: "partnerships and review access",
-            email: "contact@nayovi.com",
+            '@type': 'ContactPoint',
+            contactType: 'partnerships and review access',
+            email: 'contact@nayovi.com',
             url: buildAbsoluteUrl(
-              "/guides/permission-safe-manga-translation-pilot",
+              '/guides/permission-safe-manga-translation-pilot'
             ),
-            availableLanguage: ["en", "fr"],
+            availableLanguage: ['en', 'fr'],
           },
         ],
       },
       {
-        "@type": "WebSite",
-        "@id": websiteId,
-        name: "Nayovi Manhwa and Manga Translator",
+        '@type': 'WebSite',
+        '@id': websiteId,
+        name: 'Nayovi Manhwa and Manga Translator',
         alternateName: publicBrandAliases,
         url: baseUrl,
         sameAs: [publicBrandUrl, publicSeoUrl],
         description: publicSiteDescription,
-        inLanguage: "en",
+        inLanguage: 'en',
         publisher: {
-          "@id": organizationId,
+          '@id': organizationId,
         },
       },
       {
-        "@type": "WebPage",
-        "@id": `${url}#webpage`,
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
         name: title,
         url,
         description,
         image: imageUrl,
         about: {
-          "@id": `${baseUrl}#android-app`,
+          '@id': `${baseUrl}#android-app`,
         },
         isPartOf: {
-          "@id": websiteId,
+          '@id': websiteId,
         },
-        inLanguage: "en",
+        inLanguage: 'en',
       },
       {
-        "@type": "MobileApplication",
-        "@id": `${baseUrl}#android-app`,
+        '@type': 'MobileApplication',
+        '@id': `${baseUrl}#android-app`,
         name: publicSiteName,
         alternateName: publicBrandAliases,
-        applicationCategory: "MultimediaApplication",
-        applicationSubCategory: "Manhwa, manga, and manhua translation",
-        operatingSystem: "Android",
-        url: buildAbsoluteUrl("/download"),
+        applicationCategory: 'MultimediaApplication',
+        applicationSubCategory: 'Manhwa, manga, and manhua translation',
+        operatingSystem: 'Android',
+        url: buildAbsoluteUrl('/download'),
         description: publicSiteDescription,
-        downloadUrl: buildAbsoluteUrl("/api/download/apk"),
-        installUrl: buildAbsoluteUrl("/download"),
+        downloadUrl: buildAbsoluteUrl('/api/download/apk'),
+        installUrl: buildAbsoluteUrl('/download'),
         featureList: PUBLIC_PRODUCT_FEATURES,
         isAccessibleForFree: true,
         screenshot: [
-          buildAbsoluteUrl("/marketing/nayovi-manhwa-translation-phone.webp"),
-          buildAbsoluteUrl("/og/nayovi-manhwa-translator-preview.jpg"),
+          buildAbsoluteUrl('/marketing/nayovi-manhwa-translation-phone.webp'),
+          buildAbsoluteUrl('/og/nayovi-manhwa-translator-preview.jpg'),
         ],
         softwareHelp: {
-          "@type": "CreativeWork",
-          url: buildAbsoluteUrl("/support"),
+          '@type': 'CreativeWork',
+          url: buildAbsoluteUrl('/support'),
         },
         provider: {
-          "@id": organizationId,
+          '@id': organizationId,
         },
         potentialAction: {
-          "@type": "DownloadAction",
-          target: buildAbsoluteUrl("/download"),
+          '@type': 'DownloadAction',
+          target: buildAbsoluteUrl('/download'),
         },
         offers: buildPublicAppOffers(),
       },
@@ -230,12 +228,12 @@ const buildStructuredData = (
 
 const buildPublicTitle = (
   pageTitle: string,
-  titleSuffix = "Nayovi Manga Translator",
+  titleSuffix = 'Nayovi Manga Translator'
 ) => `${pageTitle} | ${titleSuffix}`;
 
 export const buildPublicNotFoundHead = (
   pageTitle: string,
-  description: string,
+  description: string
 ) => ({
   links: [],
   meta: [
@@ -243,12 +241,12 @@ export const buildPublicNotFoundHead = (
       title: buildPublicTitle(pageTitle),
     },
     {
-      name: "description",
+      name: 'description',
       content: description,
     },
     {
-      name: "robots",
-      content: "noindex, nofollow",
+      name: 'robots',
+      content: 'noindex, nofollow',
     },
   ],
 });
@@ -268,14 +266,14 @@ export const buildPublicPageHead = (
     titleSuffix?: string;
     robots?: string;
     type?: string | null;
-  },
+  }
 ) => {
   const title = buildPublicTitle(pageTitle, options?.titleSuffix);
   const url = buildAbsoluteUrl(path);
   const imageUrl = toAbsoluteAssetUrl(options?.imagePath ?? socialImagePath);
   const imageAlt =
     options?.imageAlt ??
-    "Nayovi free manga, manhwa, and manhua AI translator preview.";
+    'Nayovi free manga, manhwa, and manhua AI translator preview.';
   const keywords = options?.keywords
     ? buildPublicSeoKeywords(options.keywords, {
         type: options.type,
@@ -286,7 +284,7 @@ export const buildPublicPageHead = (
     description,
     url,
     imageUrl,
-    options?.structuredDataGraph,
+    options?.structuredDataGraph
   );
 
   return {
@@ -295,100 +293,100 @@ export const buildPublicPageHead = (
         title,
       },
       {
-        name: "description",
+        name: 'description',
         content: description,
       },
       {
-        name: "robots",
+        name: 'robots',
         content: options?.robots ?? publicIndexingPolicy,
       },
       ...(keywords.length > 0
         ? [
             {
-              name: "keywords",
-              content: keywords.join(", "),
+              name: 'keywords',
+              content: keywords.join(', '),
             },
           ]
         : []),
       {
-        name: "application-name",
+        name: 'application-name',
         content: publicSiteName,
       },
       {
-        property: "og:site_name",
+        property: 'og:site_name',
         content: publicSiteName,
       },
       {
-        property: "og:type",
-        content: "website",
+        property: 'og:type',
+        content: 'website',
       },
       {
-        property: "og:locale",
-        content: "en_US",
+        property: 'og:locale',
+        content: 'en_US',
       },
       {
-        property: "og:title",
+        property: 'og:title',
         content: title,
       },
       {
-        property: "og:description",
+        property: 'og:description',
         content: description,
       },
       {
-        property: "og:url",
+        property: 'og:url',
         content: url,
       },
       {
-        property: "og:image",
+        property: 'og:image',
         content: imageUrl,
       },
       {
-        property: "og:image:secure_url",
+        property: 'og:image:secure_url',
         content: imageUrl,
       },
       {
-        property: "og:image:type",
-        content: options?.imageType ?? "image/jpeg",
+        property: 'og:image:type',
+        content: options?.imageType ?? 'image/jpeg',
       },
       {
-        property: "og:image:width",
+        property: 'og:image:width',
         content: String(options?.imageWidth ?? 1200),
       },
       {
-        property: "og:image:height",
+        property: 'og:image:height',
         content: String(options?.imageHeight ?? 630),
       },
       {
-        property: "og:image:alt",
+        property: 'og:image:alt',
         content: imageAlt,
       },
       {
-        name: "twitter:card",
-        content: "summary_large_image",
+        name: 'twitter:card',
+        content: 'summary_large_image',
       },
       {
-        name: "twitter:title",
+        name: 'twitter:title',
         content: title,
       },
       {
-        name: "twitter:description",
+        name: 'twitter:description',
         content: description,
       },
       {
-        name: "twitter:image",
+        name: 'twitter:image',
         content: imageUrl,
       },
       {
-        name: "twitter:image:alt",
+        name: 'twitter:image:alt',
         content: imageAlt,
       },
       {
-        "script:ld+json": structuredData,
+        'script:ld+json': structuredData,
       },
     ],
     links: [
       {
-        rel: "canonical",
+        rel: 'canonical',
         href: url,
       },
     ],
@@ -396,33 +394,26 @@ export const buildPublicPageHead = (
 };
 
 export const buildPublicBlogIndexHead = (
-  page = 1,
-): ReturnType<
-  typeof buildPublicPageHead
-> => {
+  page = 1
+): ReturnType<typeof buildPublicPageHead> => {
   const description =
-    "Read practical Nayovi guides for translating manhwa, manga, and manhua on Android, installing the APK, and choosing a simple reading workflow.";
+    'Read practical Nayovi guides for translating manhwa, manga, and manhua on Android, installing the APK, and choosing a simple reading workflow.';
   const isFirstPage = page <= 1;
   const pageTitle = isFirstPage
-    ? "Manhwa, Manga & Manhua Translation Guides"
+    ? 'Manhwa, Manga & Manhua Translation Guides'
     : `Manhwa & Manga Translation Guides - Page ${page}`;
-  const canonicalPath = isFirstPage ? "/blog" : `/blog?page=${page}`;
+  const canonicalPath = isFirstPage ? '/blog' : `/blog?page=${page}`;
 
-  return buildPublicPageHead(
-    pageTitle,
-    description,
-    canonicalPath,
-    {
-      keywords: highIntentBlogSeoKeywords,
-      titleSuffix: "Nayovi",
-    },
-  );
+  return buildPublicPageHead(pageTitle, description, canonicalPath, {
+    keywords: highIntentBlogSeoKeywords,
+    titleSuffix: 'Nayovi',
+  });
 };
 
 export const buildPublicBlogCategoryHead = (
   category: BlogCategoryConfig,
   page = 1,
-  totalItems = 0,
+  totalItems = 0
 ): ReturnType<typeof buildPublicPageHead> => {
   const isFirstPage = page <= 1;
   const categoryPath = getBlogCategoryPath(category.category);
@@ -436,30 +427,27 @@ export const buildPublicBlogCategoryHead = (
 
   return buildPublicPageHead(pageTitle, category.description, canonicalPath, {
     keywords: category.keywords,
-    robots:
-      totalItems > 0
-        ? publicIndexingPolicy
-        : "noindex, follow",
+    robots: totalItems > 0 ? publicIndexingPolicy : 'noindex, follow',
     structuredDataGraph: [
       {
-        "@type": "CollectionPage",
-        "@id": `${categoryUrl}#collection`,
+        '@type': 'CollectionPage',
+        '@id': `${categoryUrl}#collection`,
         name: category.title,
         description: category.description,
         url: categoryUrl,
       },
       {
-        "@type": "BreadcrumbList",
-        "@id": `${categoryUrl}#breadcrumb`,
+        '@type': 'BreadcrumbList',
+        '@id': `${categoryUrl}#breadcrumb`,
         itemListElement: [
           {
-            "@type": "ListItem",
+            '@type': 'ListItem',
             position: 1,
-            name: "Blog",
-            item: buildAbsoluteUrl("/blog"),
+            name: 'Blog',
+            item: buildAbsoluteUrl('/blog'),
           },
           {
-            "@type": "ListItem",
+            '@type': 'ListItem',
             position: 2,
             name: category.label,
             item: categoryUrl,
@@ -467,12 +455,12 @@ export const buildPublicBlogCategoryHead = (
         ],
       },
     ],
-    titleSuffix: "Nayovi",
+    titleSuffix: 'Nayovi',
   });
 };
 
 export const buildPublicBlogArticleHead = (
-  article: BlogArticleDetail,
+  article: BlogArticleDetail
 ): ReturnType<typeof buildPublicPageHead> => {
   const seoTitle = buildConciseBlogArticleTitle(article);
   const articleSection = article.category
@@ -485,15 +473,15 @@ export const buildPublicBlogArticleHead = (
     {
       imageAlt: article.imageAlt,
       imagePath: article.heroImageUrl ?? undefined,
-      imageType: article.heroImageUrl ? "image/png" : undefined,
+      imageType: article.heroImageUrl ? 'image/png' : undefined,
       keywords: article.keywords,
       structuredDataGraph: buildArticleStructuredData(article),
-      titleSuffix: "Nayovi",
+      titleSuffix: 'Nayovi',
       type: article.manhwaType,
-    },
+    }
   );
   const keywords =
-    article.category === "app_updates"
+    article.category === 'app_updates'
       ? article.keywords
       : buildBlogSeoKeywords(article.keywords, {
           type: article.manhwaType,
@@ -503,26 +491,26 @@ export const buildPublicBlogArticleHead = (
     ...baseHead,
     meta: [
       ...baseHead.meta.filter(
-        (entry) => !("property" in entry) || entry.property !== "og:type",
+        (entry) => !('property' in entry) || entry.property !== 'og:type'
       ),
       {
-        property: "og:type",
-        content: "article",
+        property: 'og:type',
+        content: 'article',
       },
       {
-        property: "article:published_time",
+        property: 'article:published_time',
         content: article.publishedAt,
       },
       {
-        property: "article:modified_time",
+        property: 'article:modified_time',
         content: article.updatedAt,
       },
       {
-        property: "article:section",
+        property: 'article:section',
         content: articleSection,
       },
       ...keywords.slice(0, 8).map((keyword) => ({
-        property: "article:tag",
+        property: 'article:tag',
         content: keyword,
       })),
     ],
@@ -530,26 +518,26 @@ export const buildPublicBlogArticleHead = (
 };
 
 const buildConciseBlogArticleTitle = (article: BlogArticleDetail) => {
-  const publishedDate = new Intl.DateTimeFormat("en-US", {
-    day: "numeric",
-    month: "short",
-    timeZone: "UTC",
+  const publishedDate = new Intl.DateTimeFormat('en-US', {
+    day: 'numeric',
+    month: 'short',
+    timeZone: 'UTC',
   }).format(new Date(article.publishedAt));
 
   if (article.category) {
     return truncateAtWord(article.title.trim(), 51);
   }
 
-  if (article.manhwaTitle.trim().toLowerCase() === "nayovi") {
+  if (article.manhwaTitle.trim().toLowerCase() === 'nayovi') {
     return `Android Manhwa Translation Guide · ${publishedDate}`;
   }
 
   const articleType = formatBlogArticleType(article.manhwaType);
   const titleTail = ` ${articleType} Translation · ${publishedDate}`;
-  const titleSuffixLength = " | Nayovi".length;
+  const titleSuffixLength = ' | Nayovi'.length;
   const subjectMaxLength = Math.max(
     8,
-    60 - titleSuffixLength - titleTail.length,
+    60 - titleSuffixLength - titleTail.length
   );
   const subject = truncateAtWord(article.manhwaTitle.trim(), subjectMaxLength);
 
@@ -559,11 +547,11 @@ const buildConciseBlogArticleTitle = (article: BlogArticleDetail) => {
 const formatBlogArticleType = (value: string) => {
   const normalizedValue = value.trim().toLowerCase();
 
-  if (["manga", "manhua", "manhwa"].includes(normalizedValue)) {
+  if (['manga', 'manhua', 'manhwa'].includes(normalizedValue)) {
     return `${normalizedValue.charAt(0).toUpperCase()}${normalizedValue.slice(1)}`;
   }
 
-  return "Comic";
+  return 'Comic';
 };
 
 const truncateAtWord = (value: string, maxLength: number) => {
@@ -572,7 +560,7 @@ const truncateAtWord = (value: string, maxLength: number) => {
   }
 
   const truncated = value.slice(0, Math.max(1, maxLength - 1));
-  const lastSpaceIndex = truncated.lastIndexOf(" ");
+  const lastSpaceIndex = truncated.lastIndexOf(' ');
   const wordSafeValue =
     lastSpaceIndex >= Math.floor(maxLength / 2)
       ? truncated.slice(0, lastSpaceIndex)
@@ -586,45 +574,45 @@ const buildArticleStructuredData = (article: BlogArticleDetail) => {
   const imageUrl = article.heroImageUrl
     ? toAbsoluteAssetUrl(article.heroImageUrl)
     : buildAbsoluteUrl(socialImagePath);
-  const baseUrl = buildAbsoluteUrl("/");
+  const baseUrl = buildAbsoluteUrl('/');
   const articleSection = article.category
     ? blogArticleCategoryLabels[article.category]
     : article.manhwaType;
   const graph: Record<string, unknown>[] = [
     {
-      "@type": "BlogPosting",
-      "@id": `${articleUrl}#article`,
+      '@type': 'BlogPosting',
+      '@id': `${articleUrl}#article`,
       headline: article.title,
       description: article.metaDescription,
       image: imageUrl,
       datePublished: article.publishedAt,
       dateModified: article.updatedAt,
       articleSection,
-      keywords: (article.category === "app_updates"
+      keywords: (article.category === 'app_updates'
         ? article.keywords.slice(0, 12)
         : buildBlogSeoKeywords(article.keywords, {
             limit: 12,
             type: article.manhwaType,
           })
-      ).join(", "),
+      ).join(', '),
       mainEntityOfPage: {
-        "@id": `${articleUrl}#webpage`,
+        '@id': `${articleUrl}#webpage`,
       },
       publisher: {
-        "@id": `${baseUrl}#organization`,
+        '@id': `${baseUrl}#organization`,
       },
     },
   ];
 
   if (article.body.faqs.length > 0) {
     graph.push({
-      "@type": "FAQPage",
-      "@id": `${articleUrl}#faq`,
+      '@type': 'FAQPage',
+      '@id': `${articleUrl}#faq`,
       mainEntity: article.body.faqs.map((faq) => ({
-        "@type": "Question",
+        '@type': 'Question',
         name: faq.question,
         acceptedAnswer: {
-          "@type": "Answer",
+          '@type': 'Answer',
           text: faq.answer,
         },
       })),

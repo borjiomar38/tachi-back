@@ -8,6 +8,7 @@ import { db } from '@/server/db';
 import { Prisma } from '@/server/db/generated/client';
 import { logger } from '@/server/logger';
 import { initLemonSqueezy } from '@/server/payments/lemonsqueezy';
+import { readTokenWallet } from '@/server/payments/token-wallet';
 
 export const DEFAULT_MOBILE_UPGRADE_TOKEN_PACK_KEY = 'pro';
 
@@ -271,13 +272,17 @@ export async function upgradeMobileLicenseSubscription(
         licenseId: auth.license.id,
         resetAt: order.billingPeriodStart ?? new Date(),
       });
+    const wallet = await readTokenWallet(tx, auth.license.id);
     const consumedCurrentPlanTokens = Math.min(
       currentTotalTokens,
-      Math.max(0, currentTotalTokens - currentBalance)
+      Math.max(
+        0,
+        currentTotalTokens - (currentBalance - wallet.purchasedTokens)
+      )
     );
     const expiredTokens = Math.max(
       0,
-      currentBalance - protectedCommittedTokens
+      currentBalance - protectedCommittedTokens - wallet.purchasedTokens
     );
     const creditedTokens = Math.max(
       0,

@@ -3,6 +3,8 @@ import { createFileRoute } from '@tanstack/react-router';
 import { envServer } from '@/env/server';
 import { logger } from '@/server/logger';
 import { verifyLemonSqueezyWebhookSignature } from '@/server/payments/lemonsqueezy';
+import { isTokenPurchaseEvent } from '@/server/payments/purchase-policy';
+import { processTokenPurchaseEvent } from '@/server/payments/token-purchase-fulfillment';
 import { processWebhookEvent } from '@/server/payments/webhook';
 
 export const Route = createFileRoute('/api/payments/webhook')({
@@ -51,7 +53,9 @@ export const Route = createFileRoute('/api/payments/webhook')({
         }
 
         try {
-          const result = await processWebhookEvent(event);
+          const result = isTokenPurchaseEvent(event)
+            ? await processTokenPurchaseEvent(event)
+            : await processWebhookEvent(event);
 
           return Response.json({
             ok: true,

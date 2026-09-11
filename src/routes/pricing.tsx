@@ -14,14 +14,14 @@ export const Route = createFileRoute('/pricing')({
   loader: () => getPublicTokenPacks(),
   head: () =>
     buildPublicPageHead(
-      'Manhwa & Manga Translator Plans for Android',
-      'Try Nayovi free, then compare simple monthly plans for translating manhwa, manga, and manhua chapters on Android.',
+      'Translation Token Packs for Android',
+      'Nayovi is free to use. Buy one-time token packs for translations and optional AI features, without a subscription.',
       '/pricing',
       {
         keywords: [
           ...publicSeoKeywords,
           'manga translator Android pricing',
-          'manga translator app subscription',
+          'manga translator token packs',
           'manhwa translator Android plan',
           'manhua translator Android plan',
           'TachiyomiAT manga translator plan',

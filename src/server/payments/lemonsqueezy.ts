@@ -20,6 +20,7 @@ export function verifyLemonSqueezyWebhookSignature(input: {
   payload: string;
   signature: string;
 }): boolean {
+  if (!/^[a-f0-9]{64}$/i.test(input.signature)) return false;
   if (!envServer.LEMONSQUEEZY_WEBHOOK_SECRET) {
     throw new Error('Lemon Squeezy webhook secret is not configured.');
   }

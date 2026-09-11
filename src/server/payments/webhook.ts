@@ -9,6 +9,10 @@ import { UNLIMITED_DEVICE_LIMIT } from '@/server/licenses/device-limit';
 import { generateRedeemCode } from '@/server/licenses/utils';
 import { logger } from '@/server/logger';
 import { buildMobileSubscriptionUpgradeCreditKey } from '@/server/mobile-auth/subscription';
+import {
+  readTokenWallet,
+  type WalletReader,
+} from '@/server/payments/token-wallet';
 
 const orderSelect = {
   billingPeriodEnd: true,
@@ -232,6 +236,7 @@ type PaymentTx = {
     }) => Promise<unknown>;
   };
   tokenLedger: {
+    findMany: WalletReader['tokenLedger']['findMany'];
     aggregate: (args: {
       where: {
         licenseId: string;
@@ -275,12 +280,12 @@ type PaymentTx = {
         type: 'expiration_debit' | 'purchase_credit';
       };
       update: {
-        description: string;
-        deltaTokens: number;
-        metadata: Prisma.InputJsonValue;
-        orderId: string;
-        redeemCodeId: string;
-        status: 'posted';
+        description?: string;
+        deltaTokens?: number;
+        metadata?: Prisma.InputJsonValue;
+        orderId?: string;
+        redeemCodeId?: string;
+        status?: 'posted';
       };
       select: {
         id: true;
@@ -1015,9 +1020,10 @@ async function resetAndCreditSubscriptionTokens(input: {
         licenseId: input.licenseId,
         resetAt: input.resetAt,
       });
+    const wallet = await readTokenWallet(input.tx, input.licenseId);
     const expiredTokens = Math.max(
       0,
-      currentBalance - protectedCommittedTokens
+      currentBalance - protectedCommittedTokens - wallet.purchasedTokens
     );
 
     if (expiredTokens > 0) {
@@ -1241,7 +1247,19 @@ async function handleSubscriptionLifecycleEvent(input: {
     select: orderSelect,
   });
 
-  const nextLicenseStatus = mapLsStatusToLicenseStatus(eventName, lsStatus);
+  const subscriptionLicenseStatus = mapLsStatusToLicenseStatus(
+    eventName,
+    lsStatus
+  );
+  const wallet = latestOrder?.licenseId
+    ? await readTokenWallet(input.tx, latestOrder.licenseId)
+    : null;
+  const nextLicenseStatus =
+    wallet?.hasOneTimePurchase &&
+    (subscriptionLicenseStatus === 'expired' ||
+      subscriptionLicenseStatus === 'suspended')
+      ? 'active'
+      : subscriptionLicenseStatus;
   const lifecycleTimestamp = new Date();
   const lifecycleTokenPack = await resolveTokenPack(
     input.tx,
@@ -1252,6 +1270,57 @@ async function handleSubscriptionLifecycleEvent(input: {
   ).catch(() => null);
 
   if (latestOrder?.licenseId) {
+    if (subscriptionLicenseStatus === 'expired' && wallet?.hasOneTimePurchase) {
+      // The same subscription can resume and end again in a later period.
+      const expiryPeriod =
+        (
+          parseDateAttribute(attrs, ['ends_at', 'renews_at']) ??
+          latestOrder.billingPeriodEnd
+        )?.toISOString() ?? latestOrder.id;
+      const expiryKey = `ls:sub:${lsSubscriptionId}:ended-allowance:${expiryPeriod}`;
+      const existing = await input.tx.tokenLedger.findUnique({
+        where: { idempotencyKey: expiryKey },
+        select: { id: true },
+      });
+      const code = await input.tx.redeemCode.findFirst({
+        where: {
+          licenseId: latestOrder.licenseId,
+          status: { in: ['available', 'redeemed'] },
+        },
+        orderBy: { createdAt: 'asc' },
+        select: redeemCodeSelect,
+      });
+      if (!existing && code && wallet.recurringTokens > 0) {
+        const committed = await getActiveCommittedJobTokensForPaymentTx(
+          input.tx,
+          {
+            licenseId: latestOrder.licenseId,
+            resetAt: lifecycleTimestamp,
+          }
+        );
+        const expiredTokens = Math.max(0, wallet.recurringTokens - committed);
+        if (expiredTokens > 0)
+          await input.tx.tokenLedger.upsert({
+            where: { idempotencyKey: expiryKey },
+            create: {
+              idempotencyKey: expiryKey,
+              deltaTokens: -expiredTokens,
+              licenseId: latestOrder.licenseId,
+              orderId: latestOrder.id,
+              redeemCodeId: code.id,
+              status: 'posted',
+              type: 'expiration_debit',
+              description: 'Legacy subscription allowance ended',
+              metadata: {
+                lsSubscriptionId,
+                protectedPurchasedTokens: wallet.purchasedTokens,
+              },
+            },
+            update: {},
+            select: { id: true },
+          });
+      }
+    }
     await input.tx.order.update({
       where: { id: latestOrder.id },
       data: {

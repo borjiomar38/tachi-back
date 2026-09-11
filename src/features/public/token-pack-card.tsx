@@ -1,180 +1,104 @@
-import { cn } from "@/lib/tailwind/utils";
+import { cva } from 'class-variance-authority';
+import { ChevronRightIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { cn } from '@/lib/tailwind/utils';
 
-import {
-  formatCurrency,
-  formatTokenCount,
-  type PublicTokenPack,
-} from "@/features/public/data";
+import { formatCurrency, type PublicTokenPack } from '@/features/public/data';
 
+export const tokenGoldButton =
+  'inline-flex min-h-12 items-center justify-center gap-3 rounded-full border border-[#ffed93] bg-linear-to-b from-[#ffe778] to-[#ffc44c] px-5 py-3 font-semibold text-[#211506] shadow-[0_3px_18px_#f8c84b20] transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffe173] disabled:cursor-not-allowed disabled:opacity-45';
+const cardVariants = cva(
+  'flex h-full flex-col rounded-2xl border px-6 py-6 text-white',
+  {
+    variants: {
+      featured: {
+        true: 'border-[#ffe166] bg-linear-to-br from-[#3b1c63] to-[#140e21] shadow-[0_0_20px_#f7d35115]',
+        false: 'border-[#423053] bg-[#120f1c]/90',
+      },
+    },
+  }
+);
 interface TokenPackCardProps {
-  compact?: boolean;
   tokenPack: PublicTokenPack;
   featured?: boolean;
-  id?: string;
+  bestValue?: boolean;
+  compact?: boolean;
   showCoffeePrice?: boolean;
+  id?: string;
 }
-
-export const TokenPackCard = (props: TokenPackCardProps) => {
-  const {
-    compact = false,
-    tokenPack,
-    featured = false,
-    showCoffeePrice = false,
-  } = props;
-  const isFreePlan = tokenPack.key === "free";
-  const textMutedClassName = featured
-    ? "text-neutral-300"
-    : "text-muted-foreground";
-  const primaryHref = isFreePlan
-    ? "/download"
-    : tokenPack.checkoutEnabled
-      ? `/checkout/${tokenPack.key}`
-      : "/support";
-  const primaryLabel = isFreePlan
-    ? "Try for free"
-    : tokenPack.checkoutEnabled
-      ? `Choose ${tokenPack.name.split(" ")[0]}`
-      : "Contact support";
-  const formattedPrice = formatCurrency(
-    tokenPack.priceAmountCents,
-    tokenPack.currency,
-  );
-  const displayedPrice = showCoffeePrice
-    ? formattedPrice.replace(/\.00$/, "")
-    : formattedPrice;
-
+export const TokenPackCard = ({
+  tokenPack,
+  featured = false,
+  bestValue = false,
+  id,
+}: TokenPackCardProps) => {
+  const { t } = useTranslation(['tokens', 'common']);
+  const isFree = tokenPack.key === 'free';
+  const summaries = {
+    'starter-tokens': t('tokens:packDescriptions.starter'),
+    'pro-tokens': t('tokens:packDescriptions.pro'),
+    'power-tokens': t('tokens:packDescriptions.power'),
+  };
+  const description =
+    tokenPack.description ??
+    summaries[tokenPack.key as keyof typeof summaries] ??
+    t('tokens:subtitle');
   return (
-    <Card
-      id={props.id}
-      className={cn(
-        "h-full scroll-mt-28 rounded-[1.5rem] border-border/80 bg-background/90 shadow-sm backdrop-blur",
-        featured &&
-          "public-brand-panel text-neutral-50 ring-1 ring-brand-400/30",
-      )}
-    >
-      <CardHeader className={cn("gap-3", compact && "p-4 pb-2")}>
-        <div className="flex items-start justify-between gap-3">
-          <div className="space-y-1">
-            <CardTitle className={compact ? "text-lg" : "text-xl"}>
-              {tokenPack.name}
-            </CardTitle>
-            <CardDescription className={textMutedClassName}>
-              {tokenPack.marketingSummary}
-            </CardDescription>
-          </div>
-          {isFreePlan ? (
-            <Badge variant="secondary" size="sm">
-              Free trial
-            </Badge>
-          ) : featured ? (
-            <Badge variant="brand" size="sm">
-              Most popular
-            </Badge>
-          ) : (
-            <Badge variant="secondary" size="sm">
-              Monthly plan
-            </Badge>
-          )}
-        </div>
-      </CardHeader>
-      <CardContent
-        className={cn(
-          "flex h-full flex-col gap-5",
-          compact && "gap-3 p-4 pt-2",
+    <article id={id} className={cardVariants({ featured })}>
+      <div className="flex min-h-8 flex-wrap items-center gap-3">
+        <h2 className="text-xl font-semibold">{tokenPack.name}</h2>
+        {bestValue && (
+          <span className="rounded-full border border-[#dfad32] bg-[#8b5a1020] px-3 py-1 text-xs font-medium text-[#ffdc65]">
+            {t('tokens:bestValue')}
+          </span>
         )}
-      >
-        <div className="space-y-1">
-          <div className="flex flex-wrap items-baseline gap-x-1.5 gap-y-1">
-            <p
-              className={cn(
-                "font-semibold tracking-tight",
-                compact ? "text-2xl" : "text-3xl",
-              )}
-            >
-              {isFreePlan
-                ? "Free"
-                : displayedPrice}
-            </p>
-            {!isFreePlan && showCoffeePrice ? (
-              <span className={cn("text-sm font-medium", textMutedClassName)}>
-                /month
-              </span>
-            ) : null}
-          </div>
-          {!isFreePlan && showCoffeePrice ? (
-            <p className={cn("text-sm font-medium", textMutedClassName)}>
-              The price of a coffee
-            </p>
-          ) : null}
-          <p className={cn("text-sm", textMutedClassName)}>
-            {isFreePlan ? (
-              <>About {tokenPack.estimatedChapters} chapters included</>
-            ) : (
-              <>
-                About {formatTokenCount(tokenPack.marketedChaptersPerMonth)}{" "}
-                chapters / month
-              </>
-            )}
-          </p>
-        </div>
-
-        <div className={cn("grid gap-2 text-sm", compact && "gap-1 text-xs")}>
-          <div
-            className={cn(
-              "flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3 py-2",
-              compact && "rounded-lg px-2 py-1.5",
-            )}
-          >
-            <span className={textMutedClassName}>Best for</span>
-            <span className="font-medium">{tokenPack.marketingSummary}</span>
-          </div>
-          <div
-            className={cn(
-              "flex items-center justify-between gap-3 rounded-xl border border-border/70 px-3 py-2",
-              compact && "rounded-lg px-2 py-1.5",
-            )}
-          >
-            <span className={textMutedClassName}>
-              {isFreePlan ? "Access" : "Billing"}
-            </span>
-            <span className="font-medium">
-              {isFreePlan ? "One-time trial" : "Renews monthly"}
-            </span>
-          </div>
-        </div>
-
-        <div className={cn("mt-auto flex flex-col gap-2", compact && "pt-1")}>
-          <a
-            href={primaryHref}
-            className={cn(
-              buttonVariants({
-                variant: featured ? "secondary" : "default",
-              }),
-              "w-full",
-            )}
-          >
-            {primaryLabel}
+      </div>
+      <div className="mt-4 flex items-center gap-3 border-b border-[#463451] pb-5 text-[#ffdc64]">
+        <img
+          src="/images/tokens/nayovi-token.png"
+          alt=""
+          className="size-12 shrink-0 object-contain"
+        />
+        <p className="text-3xl font-bold tracking-tight">
+          {t('tokens:tokens', { count: tokenPack.totalTokens })}
+        </p>
+      </div>
+      <p className="mt-5 text-4xl font-bold tracking-tight">
+        {formatCurrency(tokenPack.priceAmountCents, tokenPack.currency)}
+      </p>
+      <p className="mt-1 text-sm text-[#bcb0da]">
+        {isFree ? t('tokens:trial') : t('tokens:oneTime')}
+      </p>
+      <p className="mt-4 mb-5 text-sm leading-6 text-[#bcb0da]">
+        {isFree ? t('tokens:tryFirst') : description}
+      </p>
+      <div className="mt-auto">
+        {isFree && (
+          <a href="/download" className={cn(tokenGoldButton, 'w-full')}>
+            {t('tokens:trial')}
           </a>
-          {!compact ? (
-            <a
-              href="/how-it-works"
-              className={cn(buttonVariants({ variant: "ghost" }), "w-full")}
-            >
-              How it works
+        )}
+        {!isFree && tokenPack.checkoutEnabled && (
+          <a
+            href={`/checkout/${tokenPack.key}`}
+            className={cn(tokenGoldButton, 'w-full')}
+          >
+            {t('tokens:buy', { count: tokenPack.totalTokens })}
+            <ChevronRightIcon aria-hidden className="size-5" />
+          </a>
+        )}
+        {!isFree && !tokenPack.checkoutEnabled && (
+          <div className="space-y-2 text-center">
+            <button disabled className={cn(tokenGoldButton, 'w-full')}>
+              {t('tokens:unavailable')}
+            </button>
+            <a href="/support" className="text-xs text-[#c9bee1] underline">
+              {t('tokens:support')}
             </a>
-          ) : null}
-        </div>
-      </CardContent>
-    </Card>
+          </div>
+        )}
+      </div>
+    </article>
   );
 };

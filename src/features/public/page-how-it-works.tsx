@@ -3,23 +3,23 @@ import {
   DownloadIcon,
   LanguagesIcon,
   MailCheckIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { cn } from "@/lib/tailwind/utils";
+import { cn } from '@/lib/tailwind/utils';
 
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
-import { activationSteps } from "@/features/public/data";
-import { DemoVideo } from "@/features/public/demo-video";
-import { androidApkDownload } from "@/features/public/download-assets";
-import { PublicSection, PublicShell } from "@/features/public/public-shell";
+import { activationSteps } from '@/features/public/data';
+import { DemoVideo } from '@/features/public/demo-video';
+import { androidApkDownload } from '@/features/public/download-assets';
+import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 const stepIcons = [DownloadIcon, BookOpenIcon, LanguagesIcon] as const;
 
@@ -64,14 +64,14 @@ export const PageHowItWorks = () => {
             <div className="flex flex-col justify-center p-6 md:p-8">
               <h3 className="text-2xl font-semibold">Try the actual product</h3>
               <p className="mt-3 text-sm leading-7 text-neutral-300">
-                Start with about two average chapters free. If Nayovi becomes
-                part of your reading, choose a monthly plan by chapter volume.
+                Start with free translation tokens. If Nayovi becomes part of
+                your reading, choose a one-time token pack.
               </p>
               <a
                 href={androidApkDownload.href}
                 className={cn(
-                  buttonVariants({ variant: "secondary", size: "lg" }),
-                  "mt-5 w-fit",
+                  buttonVariants({ variant: 'secondary', size: 'lg' }),
+                  'mt-5 w-fit'
                 )}
               >
                 Download Nayovi APK
@@ -106,13 +106,13 @@ export const PageHowItWorks = () => {
           <CardContent className="flex flex-wrap gap-3">
             <a
               href="/pricing"
-              className={buttonVariants({ variant: "default", size: "lg" })}
+              className={buttonVariants({ variant: 'default', size: 'lg' })}
             >
               Compare plans
             </a>
             <a
               href="/support"
-              className={buttonVariants({ variant: "secondary", size: "lg" })}
+              className={buttonVariants({ variant: 'secondary', size: 'lg' })}
             >
               Get help
             </a>

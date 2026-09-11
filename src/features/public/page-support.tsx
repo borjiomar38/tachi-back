@@ -3,27 +3,27 @@ import {
   MailIcon,
   MessageCircleIcon,
   ShieldCheckIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { cn } from "@/lib/tailwind/utils";
+import { cn } from '@/lib/tailwind/utils';
 
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
+import { Badge } from '@/components/ui/badge';
+import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
 import {
   PUBLIC_OWNER_WHATSAPP_DISPLAY,
   PUBLIC_OWNER_WHATSAPP_HREF,
   PUBLIC_SUPPORT_EMAIL,
   supportFaqs,
-} from "@/features/public/data";
-import { PublicSection, PublicShell } from "@/features/public/public-shell";
+} from '@/features/public/data';
+import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 export const PageSupport = () => {
   return (
@@ -64,8 +64,8 @@ export const PageSupport = () => {
                 target="_blank"
                 rel="noreferrer"
                 className={cn(
-                  buttonVariants({ variant: "secondary", size: "lg" }),
-                  "w-full",
+                  buttonVariants({ variant: 'secondary', size: 'lg' }),
+                  'w-full'
                 )}
               >
                 <span className="flex items-center gap-2">
@@ -119,7 +119,7 @@ export const PageSupport = () => {
       <PublicSection
         eyebrow="FAQ"
         title="Quick answers"
-        description="Common questions about the free trial, monthly plans, and Android setup."
+        description="Common questions about the free trial, one-time token packs, and Android setup."
       >
         <div className="grid gap-4 lg:grid-cols-2">
           {supportFaqs.map((item) => (
@@ -135,7 +135,7 @@ export const PageSupport = () => {
         <div className="mt-8 flex flex-wrap gap-3">
           <a
             href="/legal/privacy"
-            className={cn(buttonVariants({ variant: "default", size: "lg" }))}
+            className={cn(buttonVariants({ variant: 'default', size: 'lg' }))}
           >
             <span className="flex items-center gap-2">
               Privacy policy
@@ -144,7 +144,7 @@ export const PageSupport = () => {
           </a>
           <a
             href="/legal/terms"
-            className={buttonVariants({ variant: "secondary", size: "lg" })}
+            className={buttonVariants({ variant: 'secondary', size: 'lg' })}
           >
             Terms of service
           </a>

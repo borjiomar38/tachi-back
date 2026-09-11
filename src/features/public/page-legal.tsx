@@ -37,8 +37,8 @@ const LegalPage = (props: {
           <CardHeader className="gap-2">
             <CardTitle className="text-lg">Effective date</CardTitle>
             <CardDescription>
-              This page is effective as of {legalEffectiveDate}. Contact
-              support if you need a copy of a previous policy.
+              This page is effective as of {legalEffectiveDate}. Contact support
+              if you need a copy of a previous policy.
             </CardDescription>
           </CardHeader>
         </Card>
@@ -81,9 +81,9 @@ export const PageLegalPrivacy = () => {
                 text, translation prompts and outputs, source-discovery search
                 terms, candidate results, chapter metadata, device identifiers,
                 free-trial activation email, hashed device signals used for
-                activation and abuse prevention, app version, locale,
-                IP-derived request metadata, token ledger events, redeem-code
-                activity, and support messages.
+                activation and abuse prevention, app version, locale, IP-derived
+                request metadata, token ledger events, redeem-code activity, and
+                support messages.
               </p>
             </>
           ),
@@ -95,8 +95,8 @@ export const PageLegalPrivacy = () => {
               <p>
                 Paid plans are processed through Lemon Squeezy. Lemon Squeezy
                 handles checkout, payment collection, taxes, payment compliance,
-                refunds, and chargebacks as merchant of record. Nayovi
-                does not store full card numbers.
+                refunds, and chargebacks as merchant of record. Nayovi does not
+                store full card numbers.
               </p>
               <p>
                 We store the payment and subscription records needed to match a
@@ -139,10 +139,10 @@ export const PageLegalPrivacy = () => {
               <p>
                 If you accept, Google Analytics can process the page URL,
                 referrer, general browser and device information, and website
-                interactions such as page views, scrolling, and outbound
-                clicks. We do not intentionally send uploaded pages,
-                translated text, email addresses, activation codes, or payment
-                details to Google Analytics.
+                interactions such as page views, scrolling, and outbound clicks.
+                We do not intentionally send uploaded pages, translated text,
+                email addresses, activation codes, or payment details to Google
+                Analytics.
               </p>
               <Button
                 type="button"
@@ -223,8 +223,8 @@ export const PageLegalPrivacy = () => {
                 guaranteed to be perfectly secure.
               </p>
               <p>
-                Nayovi is not intended for children under 13. Do not use
-                the service if you are not old enough to agree to these terms in
+                Nayovi is not intended for children under 13. Do not use the
+                service if you are not old enough to agree to these terms in
                 your country.
               </p>
             </>
@@ -248,14 +248,13 @@ export const PageLegalTerms = () => {
             <>
               <p>
                 Nayovi sells token-based hosted processing for features such as
-                OCR, translation, manga page
-                translation, source discovery, and related support tooling. We
-                do not sell manga, manhwa, manhua, chapters, scans, or access to
-                third-party content.
+                OCR, translation, manga page translation, source discovery, and
+                related support tooling. We do not sell manga, manhwa, manhua,
+                chapters, scans, or access to third-party content.
               </p>
               <p>
-                Source discovery and extension results are best-effort tools.
-                We do not guarantee that a third-party source is correct,
+                Source discovery and extension results are best-effort tools. We
+                do not guarantee that a third-party source is correct,
                 available, complete, safe, legal in your region, or up to date.
               </p>
             </>
@@ -266,10 +265,11 @@ export const PageLegalTerms = () => {
           children: (
             <>
               <p>
-                Plans are sold through Lemon Squeezy checkout. Monthly token
-                crediting, redeem-code delivery, and device activation are
-                finalized only after the backend receives and validates the paid
-                invoice webhook.
+                New token packs are one-time purchases through Lemon Squeezy,
+                with no automatic renewal. Tokens are credited only after the
+                server validates payment confirmation. A backup activation code
+                is sent by email. Existing legacy subscriptions retain their
+                original billing terms and can be managed separately.
               </p>
               <p>
                 Tokens are usage credits for hosted processing. Token cost can
@@ -305,11 +305,11 @@ export const PageLegalTerms = () => {
           children: (
             <>
               <p>
-                You must not use Nayovi or Nayovi hosted features
-                to upload, OCR, translate, store, distribute, or process
-                copyrighted manga, manhwa, manhua, chapters, scans, images,
-                text, or other protected content unless you own the rights or
-                have explicit permission from the rights holder.
+                You must not use Nayovi or Nayovi hosted features to upload,
+                OCR, translate, store, distribute, or process copyrighted manga,
+                manhwa, manhua, chapters, scans, images, text, or other
+                protected content unless you own the rights or have explicit
+                permission from the rights holder.
               </p>
               <p>
                 Copyright infringement, piracy, scraping abuse, credential
@@ -332,10 +332,9 @@ export const PageLegalTerms = () => {
           children: (
             <>
               <p>
-                Some Nayovi versions can be blocked by a forced-update
-                policy when a newer build is required for security,
-                compatibility, payment, licensing, or hosted processing
-                correctness.
+                Some Nayovi versions can be blocked by a forced-update policy
+                when a newer build is required for security, compatibility,
+                payment, licensing, or hosted processing correctness.
               </p>
               <p>
                 The service may be unavailable because of maintenance, provider

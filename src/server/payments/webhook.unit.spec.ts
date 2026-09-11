@@ -70,6 +70,7 @@ describe('payment webhook fulfillment', () => {
         upsert: vi.fn(),
       },
       tokenLedger: {
+        findMany: vi.fn().mockResolvedValue([]),
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
             deltaTokens: 120,
@@ -220,6 +221,7 @@ describe('payment webhook fulfillment', () => {
         upsert: vi.fn(),
       },
       tokenLedger: {
+        findMany: vi.fn().mockResolvedValue([]),
         aggregate: vi.fn(),
         findUnique: vi.fn().mockImplementation(({ where }) => {
           if (where.idempotencyKey === mobileUpgradeCreditKey) {

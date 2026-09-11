@@ -52,6 +52,11 @@ enum PaymentProvider {
   manual
 }
 
+enum TokenPackBillingType {
+  subscription
+  one_time
+}
+
 enum OrderStatus {
   pending
   paid
@@ -307,6 +312,8 @@ model License {
   freeTrialClaim        FreeTrialClaim?
   freeTrialVerification FreeTrialVerification?
   ratingFeedback        TranslationRatingFeedback[]
+  targetedPurchases      TokenPurchase[] @relation("PurchaseTargetLicense")
+  claimedPurchases       TokenPurchase[] @relation("PurchaseClaimedLicense")
 
   @@index([status, createdAt])
   @@index([ownerEmail])
@@ -514,6 +521,7 @@ model RedeemCode {
   freeTrialClaim        FreeTrialClaim?
   freeTrialVerification FreeTrialVerification?
   activations           RedeemActivation[]
+  tokenPurchase         TokenPurchase?
 
   @@unique([id, licenseId])
   @@index([licenseId, status])
@@ -669,11 +677,13 @@ model TokenPack {
   currency         String   @default("usd")
   lsVariantId      String?  @unique
   active           Boolean  @default(true)
+  billingType      TokenPackBillingType @default(subscription)
   sortOrder        Int      @default(0)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
   orders Order[]
+  purchases TokenPurchase[]
 
   @@index([active, sortOrder])
   @@map("token_packs")
@@ -706,6 +716,7 @@ model Order {
   redeemCodes   RedeemCode[]
   ledgerEntries TokenLedger[]
   webhookEvents WebhookEvent[]
+  tokenPurchase TokenPurchase?
 
   @@index([status, createdAt])
   @@index([payerEmail])
@@ -713,6 +724,51 @@ model Order {
   @@index([licenseId])
   @@index([lsSubscriptionId])
   @@map("orders")
+}
+
+// Immutable sold terms and a durable email outbox for one-time purchases.
+// The return ticket is stored only as a hash; neither redirects nor app clients
+// can declare a purchase paid. Webhook fulfillment and claiming lock this row.
+model TokenPurchase {
+  id                    String      @id @default(cuid())
+  tokenPackId           String
+  packKey               String
+  packName              String
+  totalTokens           Int
+  priceAmountCents      Int
+  currency              String
+  lsVariantId           String
+  testMode              Boolean
+  payerEmail            String?
+  targetLicenseId       String?
+  claimedLicenseId      String?
+  installationId        String?
+  claimedInstallationId String?
+  ticketHash            String      @unique
+  ticketExpiresAt       DateTime
+  ticketConsumedAt      DateTime?
+  checkoutId            String?     @unique
+  orderId               String?     @unique
+  redeemCodeId          String?     @unique
+  status                OrderStatus @default(pending)
+  claimedAt             DateTime?
+  emailSentAt           DateTime?
+  emailAttempts         Int         @default(0)
+  emailNextAttemptAt    DateTime?
+  emailLeaseUntil       DateTime?
+  lastEmailError        String?
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+
+  tokenPack      TokenPack  @relation(fields: [tokenPackId], references: [id])
+  targetLicense  License?   @relation("PurchaseTargetLicense", fields: [targetLicenseId], references: [id])
+  claimedLicense License?   @relation("PurchaseClaimedLicense", fields: [claimedLicenseId], references: [id])
+  order          Order?     @relation(fields: [orderId], references: [id])
+  redeemCode     RedeemCode? @relation(fields: [redeemCodeId], references: [id])
+
+  @@index([status, emailSentAt, emailNextAttemptAt])
+  @@index([targetLicenseId, createdAt])
+  @@map("token_purchases")
 }
 
 model WebhookEvent {

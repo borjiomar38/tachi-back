@@ -9,194 +9,155 @@ export interface PublicTokenPack {
   currency: string;
   totalTokens: number;
   checkoutEnabled: boolean;
-  estimatedPages: number;
-  estimatedChapters: number;
   marketingSummary: string;
-  marketedChaptersPerMonth: number;
 }
-
 export interface ContentBlock {
   title: string;
   description: string;
 }
-
-export const PUBLIC_SUPPORT_EMAIL = "contact@nayovi.com";
-export const PUBLIC_OWNER_WHATSAPP_DISPLAY = "+216 23 655 086";
+export const PUBLIC_SUPPORT_EMAIL = 'contact@nayovi.com';
+export const PUBLIC_OWNER_WHATSAPP_DISPLAY = '+216 23 655 086';
 export const PUBLIC_OWNER_WHATSAPP_HREF =
-  "https://wa.me/21623655086?text=Hello%20Nayovi%2C%20I%20need%20help%20with%20the%20app.";
-
+  'https://wa.me/21623655086?text=Hello%20Nayovi%2C%20I%20need%20help%20with%20the%20app.';
 export const publicFreeTokenPack: PublicTokenPack = {
-  id: "public-free",
-  key: "free",
-  name: "Free trial",
+  id: 'public-free',
+  key: 'free',
+  name: 'Free trial',
   description:
-    "One-time free trial for testing Nayovi—about two average chapters, depending on chapter length.",
+    'One-time free trial for Nayovi translations, without a payment card.',
   tokenAmount: 25,
   bonusTokenAmount: 0,
   priceAmountCents: 0,
-  currency: "USD",
+  currency: 'USD',
   totalTokens: 25,
   checkoutEnabled: false,
-  estimatedPages: 40,
-  estimatedChapters: 2,
-  marketingSummary: "About 2 chapters included",
-  marketedChaptersPerMonth: 2,
+  marketingSummary: 'Try Nayovi for free',
 };
-
 export function buildPublicFreeTokenPack(tokenAmount: number): PublicTokenPack {
-  const safeTokenAmount = Math.max(1, Math.floor(tokenAmount));
-  const estimatedChapters = Math.max(1, Math.floor(safeTokenAmount / 10));
-
-  return {
-    ...publicFreeTokenPack,
-    estimatedChapters,
-    estimatedPages: estimatedChapters * 20,
-    marketedChaptersPerMonth: estimatedChapters,
-    tokenAmount: safeTokenAmount,
-    totalTokens: safeTokenAmount,
-  };
+  const amount = Math.max(1, Math.floor(tokenAmount));
+  return { ...publicFreeTokenPack, tokenAmount: amount, totalTokens: amount };
 }
-
+// Offline editorial fallback only. Checkout remains disabled; live purchase
+// surfaces use the shared server catalog, never these illustrative prices.
 export const fallbackPublicTokenPacks: PublicTokenPack[] = [
   publicFreeTokenPack,
-  {
-    id: "fallback-starter",
-    key: "starter",
-    name: "Starter 50",
-    description:
-      "Good for trying hosted manga, manhwa, and manhua AI translation.",
-    tokenAmount: 500,
+  ...[
+    {
+      key: 'starter-tokens',
+      name: 'Starter',
+      tokenAmount: 250,
+      priceAmountCents: 200,
+    },
+    {
+      key: 'pro-tokens',
+      name: 'Pro',
+      tokenAmount: 1250,
+      priceAmountCents: 1000,
+    },
+    {
+      key: 'power-tokens',
+      name: 'Power',
+      tokenAmount: 2750,
+      priceAmountCents: 2000,
+    },
+  ].map((pack) => ({
+    ...pack,
+    id: `fallback-${pack.key}`,
     bonusTokenAmount: 0,
-    priceAmountCents: 200,
-    currency: "USD",
-    totalTokens: 500,
+    currency: 'USD',
+    totalTokens: pack.tokenAmount,
     checkoutEnabled: false,
-    estimatedPages: 1_000,
-    estimatedChapters: 50,
-    marketingSummary: "Good to start",
-    marketedChaptersPerMonth: 50,
-  },
-  {
-    id: "fallback-pro",
-    key: "pro",
-    name: "Pro 250",
-    description: "Best for regular manga, manhwa, and manhua AI translation.",
-    tokenAmount: 2500,
-    bonusTokenAmount: 0,
-    priceAmountCents: 1000,
-    currency: "USD",
-    totalTokens: 2500,
-    checkoutEnabled: false,
-    estimatedPages: 5_000,
-    estimatedChapters: 250,
-    marketingSummary: "Best for regular readers",
-    marketedChaptersPerMonth: 250,
-  },
-  {
-    id: "fallback-power",
-    key: "power",
-    name: "Power 550",
-    description:
-      "For heavy readers who translate manhwa, manga, and manhua often.",
-    tokenAmount: 5500,
-    bonusTokenAmount: 0,
-    priceAmountCents: 2000,
-    currency: "USD",
-    totalTokens: 5500,
-    checkoutEnabled: false,
-    estimatedPages: 11_000,
-    estimatedChapters: 550,
-    marketingSummary: "For heavy readers",
-    marketedChaptersPerMonth: 550,
-  },
+    description: 'One-time tokens for translations and optional AI features.',
+    marketingSummary: 'One-time purchase. No subscription.',
+  })),
 ];
 
 export const publicHighlights: ContentBlock[] = [
   {
-    title: "Keep reading without switching apps",
+    title: 'Keep reading without switching apps',
     description:
-      "Translate the chapter inside Nayovi, then continue reading in the same Android app.",
+      'Translate the chapter inside Nayovi, then continue reading in the same Android app.',
   },
   {
-    title: "Works with manhwa, manga, and manhua",
+    title: 'Works with manhwa, manga, and manhua',
     description:
-      "Use one simple reading flow for Japanese manga, Korean manhwa, and Chinese manhua.",
+      'Use one simple reading flow for Japanese manga, Korean manhwa, and Chinese manhua.',
   },
   {
-    title: "Built for Android readers",
+    title: 'Built for Android readers',
     description:
-      "Download the Nayovi APK, open a chapter, and choose the language you want to read.",
+      'Download the Nayovi APK, open a chapter, and choose the language you want to read.',
   },
 ];
 
 export const activationSteps: ContentBlock[] = [
   {
-    title: "1. Install Nayovi",
+    title: '1. Install Nayovi',
     description:
-      "Download the official APK and install it on your Android phone.",
+      'Download the official APK and install it on your Android phone.',
   },
   {
-    title: "2. Open a chapter",
+    title: '2. Open a chapter',
     description:
-      "Choose the manhwa, manga, or manhua chapter you want to read.",
+      'Choose the manhwa, manga, or manhua chapter you want to read.',
   },
   {
-    title: "3. Choose your language",
+    title: '3. Choose your language',
     description:
-      "Start the translation and keep reading the chapter directly in Nayovi.",
+      'Start the translation and keep reading the chapter directly in Nayovi.',
   },
 ];
 
 export const supportFaqs: ContentBlock[] = [
   {
-    title: "What is Nayovi?",
+    title: 'What is Nayovi?',
     description:
-      "Nayovi is a manhwa, manga, and manhua translator for Android. It is a relevant option for readers who want full-chapter translation inside a familiar reading flow instead of copying speech bubbles into a separate tool. There is no universal best app, so test your device and language pair first.",
+      'Nayovi is a manhwa, manga, and manhua translator for Android. It is a relevant option for readers who want full-chapter translation inside a familiar reading flow instead of copying speech bubbles into a separate tool. There is no universal best app, so test your device and language pair first.',
   },
   {
-    title: "Can I try Nayovi for free?",
+    title: 'Can I try Nayovi for free?',
     description:
-      "Yes. The one-time free trial includes about two average chapters. The exact amount can vary with chapter length, and no card is required.",
+      'Yes. Nayovi is free to use. You can also try hosted translations with a one-time token trial, without a payment card.',
   },
   {
-    title: "What can I read with it?",
+    title: 'What can I read with it?',
     description:
-      "Nayovi can translate manga, manhwa, and manhua chapters that you are allowed to process, including content you own, public-domain pages, and approved samples.",
+      'Nayovi can translate manga, manhwa, and manhua chapters that you are allowed to process, including content you own, public-domain pages, and approved samples.',
   },
   {
-    title: "Is setup difficult?",
+    title: 'Is setup difficult?',
     description:
-      "No. Install the Android APK, open a chapter, and choose your language. Nayovi handles the translation flow for you.",
+      'No. Install the Android APK, open a chapter, and choose your language. Nayovi handles the translation flow for you.',
   },
   {
-    title: "Which monthly plan should I choose?",
+    title: 'Which token pack should I choose?',
     description:
-      "Starter is for occasional reading, Pro is for regular readers, and Power is for heavier use. Start free and upgrade only if you keep using Nayovi.",
+      'Choose by the number of tokens you need. Translation costs depend on the selected mode. Tokens are used automatically when you translate. Packs are one-time purchases.',
   },
   {
-    title: "What happens after I pay?",
+    title: 'What happens after I pay?',
     description:
-      "Your receipt and activation instructions are sent to the email used at checkout. Follow those instructions once in Nayovi to start using the plan.",
+      'Return to Nayovi after payment confirmation to activate your tokens. A backup activation code is also sent to your checkout email. Both paths recover the same purchase.',
   },
   {
-    title: "How do I cancel a monthly plan?",
+    title: 'Do token packs renew automatically?',
     description:
-      "Use the billing link in your checkout receipt. Monthly plans renew until they are cancelled.",
+      'No. New token packs are one-time purchases, with no subscription. Existing legacy subscribers can still manage their subscription using their billing link.',
   },
   {
-    title: "Does unused monthly allowance roll over?",
+    title: 'Is payment required to use Nayovi?',
     description:
-      "No. Your chapter allowance resets when the monthly plan renews, so choose the plan closest to how much you normally read.",
+      'No. Nayovi is free to use. Translations and optional AI features use tokens.',
   },
 ];
 
-export const legalEffectiveDate = "August 23, 2026";
+export const legalEffectiveDate = 'August 23, 2026';
 
 export const formatTokenCount = (value: number) =>
-  new Intl.NumberFormat("en-US").format(value);
+  new Intl.NumberFormat('en-US').format(value);
 
 export const formatCurrency = (priceAmountCents: number, currency: string) =>
-  new Intl.NumberFormat("en-US", {
-    style: "currency",
+  new Intl.NumberFormat('en-US', {
+    style: 'currency',
     currency: currency.toUpperCase(),
   }).format(priceAmountCents / 100);

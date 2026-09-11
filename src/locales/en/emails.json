@@ -1,4 +1,13 @@
 {
+  "tokenPurchase": {
+    "subject": "Your Nayovi tokens — {{pack}}",
+    "preview": "Your tokens and backup activation code",
+    "title": "Your token purchase is confirmed",
+    "pack": "{{pack}}: {{tokens}} tokens. One-time purchase, no subscription.",
+    "return": "Return to Nayovi to activate your purchase. If it has already activated, your tokens are ready.",
+    "redeem": "If the return to the app did not work, choose ‘Enter redeem code’ and use this backup code:",
+    "recovery": "This code recovers the same purchase. It does not add tokens twice. Nayovi is free to use; translations and optional AI features use tokens."
+  },
   "loginCode": {
     "subject": "Your verification code",
     "preview": "Verify your identity",

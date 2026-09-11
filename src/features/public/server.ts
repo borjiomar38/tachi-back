@@ -1,7 +1,6 @@
 import { createServerFn } from '@tanstack/react-start';
 import { z } from 'zod';
 
-import { envServer } from '@/env/server';
 import {
   buildPublicFreeTokenPack,
   type PublicTokenPack,
@@ -10,87 +9,33 @@ import {
   type AndroidApkDownload,
   getAndroidApkDownloadMetadata,
 } from '@/features/public/download-assets';
-import { db } from '@/server/db';
-import { getFreeTrialRuntimeConfig } from '@/server/licenses/free-trial-settings';
 import { getPublicMobileAbiAppUpdatePolicy } from '@/server/mobile-abi-update-policy';
 import { getPublicMobileAppUpdatePolicy } from '@/server/mobile-update-policy';
+import { getTokenCatalog } from '@/server/payments/token-catalog';
 
-const publicTokenPackSelect = {
-  id: true,
-  key: true,
-  name: true,
-  description: true,
-  tokenAmount: true,
-  bonusTokenAmount: true,
-  priceAmountCents: true,
-  currency: true,
-  lsVariantId: true,
-} as const;
-
-const zPublicTokenPackByKeyInput = z.object({
-  tokenPackKey: z.string().trim().min(1).max(64),
-});
-
-type PublicTokenPackRow = {
-  bonusTokenAmount: number;
-  currency: string;
-  description: string | null;
-  id: string;
-  key: string;
-  name: string;
-  priceAmountCents: number;
-  lsVariantId: string | null;
-  tokenAmount: number;
+const loadPublicTokenPacks = async (): Promise<PublicTokenPack[]> => {
+  const catalog = await getTokenCatalog();
+  return [
+    ...(catalog.freeTrial.enabled
+      ? [buildPublicFreeTokenPack(catalog.freeTrial.tokenAmount)]
+      : []),
+    ...catalog.packs.map((pack) => ({
+      ...pack,
+      marketingSummary: pack.description ?? '',
+    })),
+  ];
 };
-
-interface TokenPackMarketingPresentation {
-  marketedChaptersPerMonth: number;
-  marketingSummary: string;
-}
-
-const CHAPTER_TOKEN_COST = 10;
-
-const tokenPackMarketingSummaries: Record<string, string> = {
-  power: 'For heavy readers',
-  pro: 'Best for regular readers',
-  starter: 'Good to start',
-};
-
 export const getPublicTokenPacks = createServerFn({ method: 'GET' }).handler(
-  async (): Promise<PublicTokenPack[]> => {
-    const [tokenPacks, freeTrialConfig] = await Promise.all([
-      db.tokenPack.findMany({
-        where: {
-          active: true,
-        },
-        orderBy: [{ sortOrder: 'asc' }, { createdAt: 'asc' }],
-        select: publicTokenPackSelect,
-      }),
-      getFreeTrialRuntimeConfig(),
-    ]);
-
-    return [
-      ...(freeTrialConfig.current.enabled
-        ? [buildPublicFreeTokenPack(freeTrialConfig.current.tokenAmount)]
-        : []),
-      ...tokenPacks.map(mapPublicTokenPack),
-    ];
-  }
+  loadPublicTokenPacks
 );
-
 export const getPublicTokenPackByKey = createServerFn({ method: 'GET' })
-  .inputValidator(zPublicTokenPackByKeyInput)
-  .handler(async ({ data }): Promise<PublicTokenPack | null> => {
-    const tokenPack = await db.tokenPack.findFirst({
-      where: {
-        key: data.tokenPackKey,
-        active: true,
-      },
-      select: publicTokenPackSelect,
-    });
-
-    return tokenPack ? mapPublicTokenPack(tokenPack) : null;
-  });
+  .inputValidator(z.object({ tokenPackKey: z.string().trim().min(1).max(64) }))
+  .handler(
+    async ({ data }): Promise<PublicTokenPack | null> =>
+      (await loadPublicTokenPacks()).find(
+        (pack) => pack.key === data.tokenPackKey && pack.key !== 'free'
+      ) ?? null
+  );
 
 export const getPublicAndroidApkDownload = createServerFn({
   method: 'GET',
@@ -118,37 +63,3 @@ export const getPublicAndroidApkDownload = createServerFn({
       legacyPolicy.currentVersionName ?? legacyPolicy.latestVersionName,
   });
 });
-
-function mapPublicTokenPack(tokenPack: PublicTokenPackRow): PublicTokenPack {
-  const totalTokens = tokenPack.tokenAmount + tokenPack.bonusTokenAmount;
-  const estimatedChapters = Math.max(
-    1,
-    Math.floor(totalTokens / envServer.JOB_TOKENS_PER_CHAPTER)
-  );
-  const estimatedPages = estimatedChapters * 20;
-  const marketing = getMarketingPresentation(tokenPack);
-
-  return {
-    ...tokenPack,
-    estimatedChapters,
-    estimatedPages,
-    totalTokens,
-    checkoutEnabled: envServer.LEMONSQUEEZY_ENABLED && !!tokenPack.lsVariantId,
-    marketedChaptersPerMonth: marketing.marketedChaptersPerMonth,
-    marketingSummary: marketing.marketingSummary,
-  };
-}
-
-function getMarketingPresentation(
-  tokenPack: PublicTokenPackRow
-): TokenPackMarketingPresentation {
-  return {
-    marketedChaptersPerMonth: Math.max(
-      1,
-      Math.floor(tokenPack.tokenAmount / CHAPTER_TOKEN_COST)
-    ),
-    marketingSummary:
-      tokenPackMarketingSummaries[tokenPack.key] ??
-      'Monthly manga and manhwa translation',
-  };
-}

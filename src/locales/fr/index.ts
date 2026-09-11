@@ -11,6 +11,7 @@ import dashboard from './dashboard.json' with { type: 'json' };
 import emails from './emails.json' with { type: 'json' };
 import layout from './layout.json' with { type: 'json' };
 import settings from './settings.json' with { type: 'json' };
+import tokens from './tokens.json' with { type: 'json' };
 import user from './user.json' with { type: 'json' };
 
 export default {
@@ -26,4 +27,5 @@ export default {
   layout,
   settings,
   user,
+  tokens,
 } as const;

@@ -10,9 +10,10 @@ import {
 import { logger } from '@/server/logger';
 import {
   CheckoutError,
-  createLemonSqueezyCheckout,
   zCreateCheckoutInput,
 } from '@/server/payments/checkout';
+import { PurchaseError } from '@/server/payments/purchase-policy';
+import { createTokenPurchaseCheckout } from '@/server/payments/token-purchase-checkout';
 
 export const Route = createFileRoute('/api/payments/checkout')({
   server: {
@@ -82,14 +83,15 @@ export const Route = createFileRoute('/api/payments/checkout')({
         }
 
         try {
-          const checkout = await createLemonSqueezyCheckout(parsedInput.data, {
-            log: routeLog,
-          });
+          const checkout = await createTokenPurchaseCheckout(parsedInput.data);
           return redirectWithRequestId(checkout.url, {
             requestId: context.requestId,
           });
         } catch (error) {
-          if (error instanceof CheckoutError) {
+          if (
+            error instanceof CheckoutError ||
+            error instanceof PurchaseError
+          ) {
             routeLog.warn({
               clientIp: context.clientIp,
               errorCode: error.code,

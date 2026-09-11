@@ -5,25 +5,25 @@ import {
   KeyRoundIcon,
   LifeBuoyIcon,
   MailCheckIcon,
-} from "lucide-react";
+} from 'lucide-react';
 
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from '@/components/ui/card';
 
-import { PublicSection, PublicShell } from "@/features/public/public-shell";
+import { PublicSection, PublicShell } from '@/features/public/public-shell';
 
 export const PageCheckoutSuccess = (props: {
   search: {
     tokenPack?: string;
   };
 }) => {
-  const selectedPlan = props.search.tokenPack ?? "your selected plan";
+  const selectedPlan = props.search.tokenPack ?? 'your selected pack';
 
   return (
     <PublicShell>
@@ -31,8 +31,8 @@ export const PageCheckoutSuccess = (props: {
         eyebrow="Checkout"
         title="Payment is being confirmed"
         titleAs="h1"
-        description="Your plan and activation code are issued after payment confirmation."
-        className="pb-20 pt-10"
+        description="Your tokens and activation code are issued after payment confirmation."
+        className="pt-10 pb-20"
       >
         <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
           <Card className="public-ink-panel rounded-[1.5rem]">
@@ -45,7 +45,7 @@ export const PageCheckoutSuccess = (props: {
                   Checkout received
                 </CardTitle>
                 <CardDescription className="text-base leading-7 text-neutral-300">
-                  Plan{" "}
+                  Pack{' '}
                   <strong className="text-neutral-50">{selectedPlan}</strong> is
                   being confirmed. This usually finishes shortly after the
                   payment is accepted.
@@ -56,21 +56,21 @@ export const PageCheckoutSuccess = (props: {
               {[
                 {
                   icon: Clock3Icon,
-                  title: "Payment confirmation",
+                  title: 'Payment confirmation',
                   description:
-                    "Nayovi waits for the confirmed payment before activating the plan.",
+                    'Nayovi waits for the confirmed payment before activating the purchase.',
                 },
                 {
                   icon: KeyRoundIcon,
-                  title: "Activation code delivery",
+                  title: 'Activation code delivery',
                   description:
-                    "The activation code is emailed after payment is confirmed.",
+                    'The activation code is emailed after payment is confirmed.',
                 },
                 {
                   icon: MailCheckIcon,
-                  title: "Receipt as fallback",
+                  title: 'Receipt as fallback',
                   description:
-                    "Keep the Lemon Squeezy receipt email in case support needs to reconcile the purchase.",
+                    'Keep the Lemon Squeezy receipt email in case support needs to reconcile the purchase.',
                 },
               ].map((item) => {
                 const Icon = item.icon;
@@ -102,14 +102,14 @@ export const PageCheckoutSuccess = (props: {
               <CardTitle>What to keep for support</CardTitle>
               <CardDescription>
                 If payment confirmation or activation-code delivery is delayed,
-                keep your Lemon Squeezy receipt email and the selected plan
+                keep your Lemon Squeezy receipt email and the selected pack
                 name.
               </CardDescription>
             </CardHeader>
             <CardContent className="grid gap-4">
               <div className="rounded-xl border border-border/70 bg-muted/40 px-4 py-3">
-                <p className="text-sm font-medium">Selected plan</p>
-                <p className="mt-1 break-all font-mono text-xs text-muted-foreground">
+                <p className="text-sm font-medium">Selected pack</p>
+                <p className="mt-1 font-mono text-xs break-all text-muted-foreground">
                   {selectedPlan}
                 </p>
               </div>
@@ -120,7 +120,7 @@ export const PageCheckoutSuccess = (props: {
               <div className="flex flex-wrap gap-3">
                 <a
                   href="/support"
-                  className={buttonVariants({ variant: "default", size: "lg" })}
+                  className={buttonVariants({ variant: 'default', size: 'lg' })}
                 >
                   <span className="flex items-center gap-2">
                     Support
@@ -130,8 +130,8 @@ export const PageCheckoutSuccess = (props: {
                 <a
                   href="/how-it-works"
                   className={buttonVariants({
-                    variant: "secondary",
-                    size: "lg",
+                    variant: 'secondary',
+                    size: 'lg',
                   })}
                 >
                   <span className="flex items-center gap-2">

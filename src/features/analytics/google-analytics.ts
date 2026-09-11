@@ -53,7 +53,11 @@ export const updateGoogleAnalyticsConsent = (consent: AnalyticsConsent) => {
 };
 
 export const loadGoogleAnalytics = (measurementId: string): Promise<void> => {
-  if (typeof window === 'undefined') return Promise.resolve();
+  if (
+    typeof window === 'undefined' ||
+    window.location.pathname === '/app/payment'
+  )
+    return Promise.resolve();
 
   if (initializedMeasurementId === measurementId && loadingGoogleAnalytics) {
     return loadingGoogleAnalytics;
@@ -63,7 +67,9 @@ export const loadGoogleAnalytics = (measurementId: string): Promise<void> => {
   const gtag = getGoogleTag();
   queueGrantedConsent(gtag);
   gtag('js', new Date());
-  gtag('config', measurementId);
+  gtag('config', measurementId, {
+    page_location: window.location.origin + window.location.pathname,
+  });
 
   loadingGoogleAnalytics = new Promise((resolve, reject) => {
     const existingScript = document.getElementById(GOOGLE_TAG_SCRIPT_ID);

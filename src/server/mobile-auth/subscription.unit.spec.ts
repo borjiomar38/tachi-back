@@ -49,6 +49,7 @@ describe('mobile subscription upgrade', () => {
         findFirst: vi.fn().mockResolvedValue({ id: 'redeem-1' }),
       },
       tokenLedger: {
+        findMany: vi.fn().mockResolvedValue([]),
         aggregate: vi.fn().mockResolvedValue({
           _sum: {
             deltaTokens: 0,

@@ -25,6 +25,10 @@ export const envClient = createEnv({
   clientPrefix: 'VITE_',
   client: {
     VITE_BASE_URL: z.url(),
+    VITE_ANDROID_APP_ID: z
+      .string()
+      .regex(/^[a-z][a-z0-9_]*(?:\.[a-z][a-z0-9_]*)+$/)
+      .default('app.tachiback.tachiyomi.at'),
     VITE_IS_DEMO: z
       .enum(['true', 'false'])
       .optional()

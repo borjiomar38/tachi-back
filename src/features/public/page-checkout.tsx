@@ -1,248 +1,121 @@
+import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
+
+import { formatCurrency, type PublicTokenPack } from '@/features/public/data';
+import { PublicShell } from '@/features/public/public-shell';
+import { tokenGoldButton } from '@/features/public/token-pack-card';
 import {
-  ArrowLeftIcon,
-  CreditCardIcon,
-  KeyRoundIcon,
-  MailIcon,
-  ShieldCheckIcon,
-} from "lucide-react";
+  FreeAppNotice,
+  TokenUsageNotice,
+} from '@/features/public/token-usage-notice';
 
-import { cn } from "@/lib/tailwind/utils";
-
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-
-import { formatCurrency, type PublicTokenPack } from "@/features/public/data";
-import { PublicSection, PublicShell } from "@/features/public/public-shell";
-
-const checkoutErrorMessages: Record<string, string> = {
-  checkout_unavailable:
-    "Lemon Squeezy did not return a checkout URL. Please try again.",
-  checkout_test_mode:
-    "Live checkout is not available yet because the Lemon Squeezy product is still in test mode.",
-  invalid_request: "Enter a valid email address before continuing to checkout.",
-  ls_disabled: "Checkout is disabled in this environment.",
-  token_pack_not_found: "The selected monthly plan is not available anymore.",
-  token_pack_unavailable:
-    "This monthly plan is visible publicly, but its Lemon Squeezy variant is not configured yet.",
-};
-
-export const PageCheckout = (props: {
-  search: {
-    email?: string;
-    error?: string;
-  };
+interface PageCheckoutProps {
+  search: { email?: string; error?: string };
   tokenPack: PublicTokenPack | null;
   tokenPackKey: string;
-}) => {
-  const errorMessage = props.search.error
-    ? (checkoutErrorMessages[props.search.error] ??
-      "The checkout request could not be prepared. Please try again.")
-    : null;
-
-  if (!props.tokenPack) {
-    return (
-      <PublicShell>
-        <PublicSection
-          eyebrow="Checkout"
-          title="Monthly plan not found"
-          description="This plan is not active on the public pricing surface anymore."
-          className="pb-20 pt-10"
-        >
-          <Card className="max-w-2xl rounded-[1.5rem]">
-            <CardHeader className="gap-3">
-              <CardTitle>Unavailable selection</CardTitle>
-              <CardDescription>
-                The plan key <code>{props.tokenPackKey}</code> does not match an
-                active public monthly plan.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-wrap gap-3">
-              <a
-                href="/pricing"
-                className={buttonVariants({ variant: "default", size: "lg" })}
-              >
-                Back to pricing
-              </a>
-              <a
-                href="/support"
-                className={buttonVariants({ variant: "secondary", size: "lg" })}
-              >
-                Contact support
-              </a>
-            </CardContent>
-          </Card>
-        </PublicSection>
-      </PublicShell>
-    );
-  }
-
+}
+export const PageCheckout = ({ tokenPack, search }: PageCheckoutProps) => {
+  const { t } = useTranslation(['tokens', 'common']);
+  const { register } = useForm<{ payerEmail: string }>({
+    defaultValues: { payerEmail: search.email ?? '' },
+  });
   return (
-    <PublicShell>
-      <PublicSection
-        eyebrow="Checkout"
-        title={`Subscribe to ${props.tokenPack.name}`}
-        titleAs="h1"
-        description="Your monthly chapter allowance and activation code are issued after payment is confirmed."
-        className="pb-20 pt-10"
-      >
-        <div className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
-          <Card className="public-brand-panel rounded-[1.5rem] text-neutral-50">
-            <CardHeader className="gap-3">
-              <div className="flex items-center justify-between gap-3">
-                <div className="space-y-1">
-                  <CardTitle className="text-2xl">
-                    {props.tokenPack.name}
-                  </CardTitle>
-                  <CardDescription className="text-neutral-300">
-                    Full-chapter AI translation in Nayovi.
-                  </CardDescription>
-                </div>
-                <Badge variant="brand" size="sm">
-                  Lemon Squeezy
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent className="grid gap-4">
-              <div className="rounded-2xl border border-white/10 px-4 py-4">
-                <p className="text-sm text-neutral-300">Monthly subscription</p>
-                <p className="mt-1 text-3xl font-semibold">
-                  {formatCurrency(
-                    props.tokenPack.priceAmountCents,
-                    props.tokenPack.currency,
-                  )}
-                </p>
-                <p className="mt-2 text-sm text-neutral-300">
-                  About {props.tokenPack.marketedChaptersPerMonth} chapters per
-                  month
-                </p>
-              </div>
-
-              <div className="grid gap-3 text-sm">
-                <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-3">
-                  <span className="text-neutral-300">Included chapters</span>
-                  <span>
-                    About {props.tokenPack.marketedChaptersPerMonth} per month
-                  </span>
-                </div>
-                <div className="flex items-center justify-between gap-3 rounded-xl border border-white/10 px-4 py-3">
-                  <span className="text-neutral-300">Billing</span>
-                  <span>Renews monthly · allowance resets</span>
-                </div>
-              </div>
-
-              <Alert className="border-white/10 bg-white/5 text-neutral-50">
-                <CreditCardIcon />
-                <AlertTitle>Secure checkout</AlertTitle>
-                <AlertDescription className="text-neutral-300">
-                  This step creates the checkout session. Your plan becomes
-                  active after payment confirmation.
-                </AlertDescription>
-              </Alert>
-            </CardContent>
-          </Card>
-
-          <div className="grid gap-4">
-            {errorMessage ? (
-              <Alert variant="destructive">
-                <ShieldCheckIcon />
-                <AlertTitle>Checkout could not start</AlertTitle>
-                <AlertDescription>{errorMessage}</AlertDescription>
-              </Alert>
-            ) : null}
-
-            {!props.tokenPack.checkoutEnabled ? (
-              <Alert>
-                <KeyRoundIcon />
-                <AlertTitle>Checkout not configured</AlertTitle>
-                <AlertDescription>
-                  {props.tokenPack.name} cannot be purchased right now. Contact
-                  support and we will help you.
-                </AlertDescription>
-              </Alert>
-            ) : null}
-
-            <Card className="rounded-[1.5rem]">
-              <CardHeader className="gap-2">
-                <CardTitle>Continue to checkout</CardTitle>
-                <CardDescription>
-                  Use the email where you want to receive receipts and
-                  activation instructions.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="grid gap-4">
-                <form
-                  method="POST"
-                  action="/api/payments/checkout"
-                  className="grid gap-4"
-                >
-                  <input
-                    type="hidden"
-                    name="tokenPackKey"
-                    value={props.tokenPack.key}
-                  />
-
-                  <div className="grid gap-2">
-                    <label htmlFor="payerEmail" className="text-sm font-medium">
-                      Email address
-                    </label>
-                    <Input
-                      id="payerEmail"
-                      name="payerEmail"
-                      type="email"
-                      size="lg"
-                      required
-                      autoComplete="email"
-                      defaultValue={props.search.email ?? ""}
-                      startAddon={<MailIcon className="size-4" />}
-                    />
-                    <p className="text-sm text-muted-foreground">
-                      After payment, we email the code used to activate Nayovi.
-                    </p>
-                  </div>
-
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full"
-                    disabled={!props.tokenPack.checkoutEnabled}
-                  >
-                    Continue to checkout
-                  </Button>
-                </form>
-
-                <div className="flex flex-wrap gap-3">
-                  <a
-                    href="/pricing"
-                    className={cn(
-                      buttonVariants({ variant: "ghost", size: "default" }),
-                    )}
-                  >
-                    <span className="flex items-center gap-2">
-                      <ArrowLeftIcon className="size-4" />
-                      Back to pricing
-                    </span>
-                  </a>
-                  <a
-                    href="/how-it-works"
-                    className={buttonVariants({ variant: "secondary" })}
-                  >
-                    How activation works
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
+    <PublicShell compactFooter>
+      <section className="mx-auto max-w-xl px-4 py-10">
+        <a href="/pricing" className="text-sm text-[#c9b6f4] underline">
+          {t('tokens:back')}
+        </a>
+        <div className="mt-6 rounded-3xl border border-[#ead074] bg-linear-to-br from-[#31223e] to-[#110d1c] p-6 text-white">
+          <h1 className="text-2xl font-semibold">
+            {tokenPack
+              ? t('tokens:checkoutTitle', { name: tokenPack.name })
+              : t('tokens:unavailable')}
+          </h1>
+          <div className="mt-4">
+            <FreeAppNotice />
           </div>
+          {tokenPack && (
+            <>
+              <div className="my-6 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[#493465] bg-[#281c3d] p-4">
+                <div className="flex items-center gap-2">
+                  <img
+                    src="/images/tokens/nayovi-token.png"
+                    alt=""
+                    className="size-10"
+                  />
+                  <strong className="text-xl text-[#ffdc64]">
+                    {t('tokens:tokens', { count: tokenPack.totalTokens })}
+                  </strong>
+                </div>
+                <div>
+                  <p className="text-xl font-semibold">
+                    {formatCurrency(
+                      tokenPack.priceAmountCents,
+                      tokenPack.currency
+                    )}
+                  </p>
+                  <p className="text-xs text-[#bcb0da]">
+                    {t('tokens:oneTime')}
+                  </p>
+                </div>
+              </div>
+              <TokenUsageNotice />
+              {search.error && (
+                <p role="alert" className="text-rose-200 mt-4 text-sm">
+                  {t('tokens:checkoutError')}
+                </p>
+              )}
+              {!tokenPack.checkoutEnabled && (
+                <p role="status" className="mt-4 text-sm text-[#bcb0da]">
+                  {t('tokens:checkoutUnavailable')}
+                </p>
+              )}
+              <form
+                action="/api/payments/checkout"
+                method="POST"
+                className="mt-6 grid gap-3"
+              >
+                <input
+                  type="hidden"
+                  name="tokenPackKey"
+                  value={tokenPack.key}
+                />
+                <label htmlFor="payer-email" className="text-sm font-medium">
+                  {t('tokens:email')}
+                </label>
+                <input
+                  id="payer-email"
+                  {...register('payerEmail', { required: true })}
+                  type="email"
+                  required
+                  autoComplete="email"
+                  maxLength={320}
+                  className="min-h-12 rounded-xl border border-[#675477] bg-[#1c152a] px-4 text-white focus-visible:outline-2 focus-visible:outline-[#ffe173]"
+                />
+                <p className="text-xs leading-5 text-[#bcb0da]">
+                  {t('tokens:emailHelp')}
+                </p>
+                <button
+                  className={tokenGoldButton}
+                  type="submit"
+                  disabled={!tokenPack.checkoutEnabled}
+                >
+                  {t('tokens:continue')}
+                </button>
+                <p className="text-center text-xs text-[#bcb0da]">
+                  {t('tokens:totalAtCheckout')}
+                </p>
+              </form>
+            </>
+          )}
+          <a
+            href="/support"
+            className="mt-5 block text-center text-sm text-[#c9b6f4] underline"
+          >
+            {t('tokens:support')}
+          </a>
         </div>
-      </PublicSection>
+      </section>
     </PublicShell>
   );
 };

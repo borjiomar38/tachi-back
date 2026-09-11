@@ -53,7 +53,7 @@ export const Route = createFileRoute('/translate-manhwa-ai')({
   head: () =>
     buildPublicPageHead(
       'AI Manhwa Translator for Android',
-      'Translate manhwa, manga, and manhua directly on the page with Nayovi for Android. Try about two chapters free, with no card required.',
+      'Translate manhwa, manga, and manhua directly on the page with Nayovi for Android. Try free translation tokens, with no card required.',
       '/translate-manhwa-ai',
       {
         imageAlt:
