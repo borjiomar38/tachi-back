@@ -1,6 +1,7 @@
 import { envServer } from '@/env/server';
 import { db } from '@/server/db';
 import { getFreeTrialRuntimeConfig } from '@/server/licenses/free-trial-settings';
+import { getTokenConsumption } from '@/server/payments/token-consumption';
 
 export const getTokenCatalog = async () => {
   const [packs, trial] = await Promise.all([
@@ -33,17 +34,6 @@ export const getTokenCatalog = async () => {
       enabled: trial.current.enabled,
       tokenAmount: trial.current.tokenAmount,
     },
-    consumption: {
-      variesByMode: true,
-      // The currently available hosted mode. Future modes belong in this same
-      // server-owned catalog and must also be enforced by job billing.
-      chapterModes: [
-        {
-          key: 'standard',
-          name: 'Standard',
-          tokenCost: envServer.JOB_TOKENS_PER_CHAPTER,
-        },
-      ],
-    },
+    consumption: getTokenConsumption(),
   };
 };

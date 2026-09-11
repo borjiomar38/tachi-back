@@ -8,9 +8,16 @@ import {
   PurchaseError,
   zPurchaseTicket,
 } from '@/server/payments/purchase-policy';
+import { getTokenConsumption } from '@/server/payments/token-consumption';
 import { getTokenPurchaseStatus } from '@/server/payments/token-purchase-claim';
 
 export const tokenPurchaseRouter = {
+  consumption: publicProcedure()
+    .route({ method: 'GET', path: '/token-purchase/consumption' })
+    .handler(({ context }) => {
+      context.resHeaders?.set('Cache-Control', 'no-store');
+      return getTokenConsumption();
+    }),
   status: publicProcedure()
     .route({ method: 'POST', path: '/token-purchase/status' })
     .input(z.object({ ticket: zPurchaseTicket() }))

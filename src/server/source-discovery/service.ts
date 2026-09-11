@@ -24,6 +24,7 @@ import {
   parseJsonResponse,
   retryProviderCall,
 } from '@/server/provider-gateway/utils';
+import { getAdvancedSearchTokenCost } from '@/server/source-discovery/token-cost-policy';
 
 import { GENERATED_SOURCE_THEME_HINTS } from './theme-hints.generated';
 
@@ -37,7 +38,6 @@ const MAX_ALIASES = 12;
 const MAX_SEARCH_QUERIES = 24;
 const MAX_SOURCE_DISCOVERY_CANDIDATES = 2_500;
 const MAX_VERIFY_CANDIDATES_PER_REQUEST = 120;
-const SOURCE_DISCOVERY_PLAN_TOKEN_COST = 5;
 const ASIAN_SOURCE_LANGUAGES = new Set([
   'all',
   'zh',
@@ -869,7 +869,7 @@ export function calculateSourceDiscoveryTitleCorrectionTokenCost(
 ) {
   zSourceDiscoveryTitleCorrectionInput.parse(rawInput);
 
-  return SOURCE_DISCOVERY_PLAN_TOKEN_COST;
+  return getAdvancedSearchTokenCost();
 }
 
 export function calculateSourceDiscoveryVerifyTokenCost(rawInput: unknown) {
