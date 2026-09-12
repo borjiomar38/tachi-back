@@ -10,6 +10,7 @@ import {
   ShieldCheckIcon,
   SmartphoneIcon,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/tailwind/utils';
 
@@ -53,6 +54,7 @@ export const PageLanding = (props: {
   contactStatus?: 'sent' | 'error' | 'invalid';
   tokenPacks: PublicTokenPack[];
 }) => {
+  const { t } = useTranslation(['tokens']);
   const freeTokenPack = props.tokenPacks.find(
     (tokenPack) => tokenPack.key === 'free'
   );
@@ -326,9 +328,9 @@ export const PageLanding = (props: {
 
       <PublicSection
         id="pricing"
-        eyebrow="Token packs"
-        title="Nayovi is free. Buy tokens when you need them."
-        description="Translations and optional AI features use tokens. Choose a one-time pack, without a subscription."
+        eyebrow={t('tokens:label')}
+        title={t('tokens:landingTitle')}
+        description={t('tokens:landingDescription')}
         className="py-8 text-center md:py-10"
       >
         <div className="grid gap-4 text-left sm:grid-cols-2 xl:grid-cols-4">
@@ -347,15 +349,13 @@ export const PageLanding = (props: {
         </div>
         <div className="mt-4 flex flex-col gap-3 rounded-[1.35rem] border border-border/70 bg-card/70 px-5 py-4 text-left text-sm leading-6 text-muted-foreground md:flex-row md:items-center md:justify-between">
           <p>
-            Translation cost varies by mode. Tokens are used automatically when
-            you translate. Token packs are one-time purchases with no automatic
-            renewal.
+            {t('tokens:purchaseNote')}
           </p>
           <a
             href="/pricing"
             className="shrink-0 font-medium text-foreground hover:text-primary"
           >
-            Compare token packs →
+            {t('tokens:comparePacks')}
           </a>
         </div>
       </PublicSection>
