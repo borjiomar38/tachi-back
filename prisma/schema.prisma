@@ -634,6 +634,23 @@ model AppConfig {
   @@map("app_configs")
 }
 
+// Release copy is immutable after registration; policy rollbacks never delete history.
+model MobileAppRelease {
+  id          String   @id @default(cuid())
+  platform    String
+  channel     String
+  versionCode Int
+  versionName String
+  releaseInfo Json
+  createdAt   DateTime @default(now())
+  publishedAt DateTime?
+
+  @@unique([platform, channel, versionCode])
+  @@unique([platform, channel, versionName])
+  @@index([platform, channel, publishedAt, versionCode])
+  @@map("mobile_app_releases")
+}
+
 model BlogArticle {
   id                      String            @id @default(cuid())
   slug                    String            @unique

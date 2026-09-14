@@ -25,6 +25,7 @@ import {
   withMobileAbiAppUpdateRequestContext,
   zMobileAbiAppUpdatePolicy,
 } from '@/server/mobile-abi-update-policy';
+import { mockDb } from '@/server/routers/test-utils';
 
 const buildPolicy = () => ({
   apkByAbi: {
@@ -74,6 +75,94 @@ const buildPolicy = () => ({
 });
 
 describe('mobile ABI app update policy', () => {
+  const releaseInfo = {
+    schemaVersion: 1 as const,
+    versionCode: 48,
+    versionName: '0.17.38',
+    defaultLocale: 'en',
+    locales: {
+      en: {
+        title: 'Release title',
+        summary: 'Version 0.17.38 is available.',
+        highlights: [],
+      },
+    },
+  };
+
+  it('archives validated copy before promoting, then confirms publication', async () => {
+    mockDb.mobileAppRelease.findUnique.mockResolvedValue({
+      id: 'release-48',
+      versionName: '0.17.38',
+      releaseInfo,
+    });
+    await putMobileAbiAppUpdatePolicy({ ...buildPolicy(), releaseInfo });
+    expect(
+      mockDb.mobileAppRelease.createMany.mock.invocationCallOrder[0]
+    ).toBeLessThan(mockPutObject.mock.invocationCallOrder[0]!);
+    expect(mockPutObject.mock.invocationCallOrder[0]).toBeLessThan(
+      mockDb.mobileAppRelease.updateMany.mock.invocationCallOrder[0]!
+    );
+    expect(
+      JSON.parse(mockPutObject.mock.calls[0]![1].body).releaseInfo
+    ).toEqual(releaseInfo);
+  });
+
+  it('does not promote if history registration fails', async () => {
+    mockDb.mobileAppRelease.createMany.mockRejectedValueOnce(
+      new Error('Database unavailable')
+    );
+    await expect(
+      putMobileAbiAppUpdatePolicy({ ...buildPolicy(), releaseInfo })
+    ).rejects.toThrow('Database unavailable');
+    expect(mockPutObject).not.toHaveBeenCalled();
+  });
+
+  it('does not mark a failed policy promotion as published', async () => {
+    mockDb.mobileAppRelease.findUnique.mockResolvedValue({
+      id: 'release-48',
+      versionName: '0.17.38',
+      releaseInfo,
+    });
+    mockPutObject.mockRejectedValueOnce(new Error('Storage unavailable'));
+    await expect(
+      putMobileAbiAppUpdatePolicy({ ...buildPolicy(), releaseInfo })
+    ).rejects.toThrow('Storage unavailable');
+    expect(mockDb.mobileAppRelease.updateMany).not.toHaveBeenCalled();
+  });
+
+  it('rejects mismatched version copy and duplicated stale messages', () => {
+    const missingInfo = zMobileAbiAppUpdatePolicy.safeParse({
+      ...buildPolicy(),
+      latestVersionCode: 54,
+    });
+    expect(missingInfo.success).toBe(false);
+    if (!missingInfo.success)
+      expect(
+        missingInfo.error.issues.some(
+          (issue) => issue.path[0] === 'releaseInfo'
+        )
+      ).toBe(true);
+    expect(
+      zMobileAbiAppUpdatePolicy.safeParse({
+        ...buildPolicy(),
+        releaseInfo: { ...releaseInfo, versionCode: 49 },
+      }).success
+    ).toBe(false);
+    expect(
+      zMobileAbiAppUpdatePolicy.safeParse({
+        ...buildPolicy(),
+        message: 'Stale message',
+        releaseInfo,
+      }).success
+    ).toBe(false);
+    expect(
+      zMobileAbiAppUpdatePolicy.safeParse({
+        ...buildPolicy(),
+        releaseInfo: { ...releaseInfo, defaultLocale: 'fr' },
+      }).success
+    ).toBe(false);
+  });
+
   beforeEach(() => {
     mockGetObject.mockReset();
     mockPutObject.mockReset();

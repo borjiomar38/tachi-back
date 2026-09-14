@@ -1,0 +1,14 @@
+{
+  "title": "Notes de publication",
+  "description": "Nouveautés archivées par version, indépendamment des installations.",
+  "build": "Build {{code}}",
+  "published": "Publiée",
+  "pending": "Publication en attente",
+  "language": "Langue des notes de publication",
+  "refresh": "Actualiser",
+  "loading": "Chargement des notes…",
+  "error": "Impossible de charger les notes. Réessayez avec Actualiser.",
+  "empty": "Aucune note de publication archivée pour le moment.",
+  "more": "Charger les versions précédentes",
+  "legacyNotice": "Les anciennes versions sans notes archivées ne sont pas reconstituées automatiquement."
+}

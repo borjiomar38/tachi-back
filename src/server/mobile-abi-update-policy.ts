@@ -1,7 +1,12 @@
 import { getObject, putObject } from '@better-upload/server/helpers';
 import { z } from 'zod';
 
+import { zMobileReleaseInformation } from '@/server/mobile-release-information';
 import { objectStorageBuckets, uploadClient } from '@/server/s3';
+import {
+  markMobileReleasePublished,
+  registerMobileRelease,
+} from '@/server/services/mobile-release-history';
 
 export const MOBILE_ABI_APP_UPDATE_POLICY_OBJECT_KEY =
   'android/latest/app-update-policy-abi.json';
@@ -16,6 +21,8 @@ export const mobileUpdateAbis = [
 export type MobileUpdateAbi = (typeof mobileUpdateAbis)[number];
 
 const MAX_ROUTED_APK_SIZE_BYTES = 75_000_000;
+// v0.17.43 / code 53 and older remain valid rollback payloads.
+const FIRST_VERSION_REQUIRING_RELEASE_INFORMATION = 54;
 const zSha256 = z.string().regex(/^[a-f0-9]{64}$/);
 const zHttpsUrl = z
   .url()
@@ -58,11 +65,36 @@ export const zMobileAbiAppUpdatePolicy = z
     minimumSupportedVersionCode: z.coerce.number().int().min(0).default(0),
     platform: z.string().trim().min(1).default('android'),
     releaseUrl: zHttpsUrl,
+    releaseInfo: zMobileReleaseInformation().optional(),
     requiresUpdate: z.boolean().default(false),
     updateUrl: zHttpsUrl,
   })
   .strict()
   .superRefine((policy, context) => {
+    if (
+      policy.latestVersionCode >= FIRST_VERSION_REQUIRING_RELEASE_INFORMATION &&
+      !policy.releaseInfo
+    ) {
+      context.addIssue({
+        code: 'custom',
+        path: ['releaseInfo'],
+        message: 'New releases require version-bound release information',
+      });
+    }
+    if (
+      policy.releaseInfo &&
+      (policy.releaseInfo.versionCode !== policy.latestVersionCode ||
+        policy.releaseInfo.versionName !== policy.latestVersionName ||
+        policy.message !==
+          policy.releaseInfo.locales[policy.releaseInfo.defaultLocale]?.summary)
+    ) {
+      context.addIssue({
+        code: 'custom',
+        path: ['releaseInfo'],
+        message:
+          'Release information and message must match the promoted version',
+      });
+    }
     if (
       policy.forceUpdate &&
       (policy.minimumSupportedVersionCode <= 0 ||
@@ -138,6 +170,7 @@ export async function putMobileAbiAppUpdatePolicy(
   rawPolicy: unknown
 ): Promise<MobileAbiAppUpdatePolicy> {
   const policy = zMobileAbiAppUpdatePolicy.parse(rawPolicy);
+  const releaseId = await registerMobileRelease(policy);
 
   await putObject(uploadClient, {
     body: JSON.stringify(policy, null, 2),
@@ -146,6 +179,7 @@ export async function putMobileAbiAppUpdatePolicy(
     contentType: 'application/json',
     key: MOBILE_ABI_APP_UPDATE_POLICY_OBJECT_KEY,
   });
+  await markMobileReleasePublished(releaseId);
 
   return policy;
 }

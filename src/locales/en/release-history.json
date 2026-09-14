@@ -1,0 +1,14 @@
+{
+  "title": "Release notes",
+  "description": "Changes archived by version, independently of installs.",
+  "build": "Build {{code}}",
+  "published": "Published",
+  "pending": "Publication pending",
+  "language": "Release notes language",
+  "refresh": "Refresh",
+  "loading": "Loading release notes…",
+  "error": "Could not load release notes. Try Refresh.",
+  "empty": "No release notes have been archived yet.",
+  "more": "Load older versions",
+  "legacyNotice": "Older versions without archived notes are not reconstructed automatically."
+}

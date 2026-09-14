@@ -41,6 +41,7 @@ import {
 
 import { GuardPermissions } from '@/features/auth/guard-permissions';
 import { permissionDevice } from '@/features/auth/permissions';
+import { ReleaseHistory } from '@/features/version-history/manager/release-history';
 import {
   PageLayout,
   PageLayoutContent,
@@ -208,6 +209,7 @@ export const PageVersionHistory = () => {
               <VersionHistoryContent summary={summary} />
             ))
             .exhaustive()}
+          <ReleaseHistory />
         </PageLayoutContent>
       </PageLayout>
     </GuardPermissions>

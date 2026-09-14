@@ -12,6 +12,7 @@ import {
   putMobileAbiAppUpdatePolicy,
 } from '@/server/mobile-abi-update-policy';
 import { assertPolicySyncAuthorized } from '@/server/mobile-update-policy';
+import { MobileReleaseInformationConflict } from '@/server/services/mobile-release-history';
 
 export const Route = createFileRoute('/api/mobile/app-update-policy/abi')({
   server: {
@@ -81,6 +82,13 @@ export const Route = createFileRoute('/api/mobile/app-update-policy/abi')({
             requestId: context.requestId,
           });
         } catch (error) {
+          if (error instanceof MobileReleaseInformationConflict) {
+            return buildApiErrorResponse({
+              code: 'release_information_conflict',
+              requestId: context.requestId,
+              status: 409,
+            });
+          }
           if (error instanceof z.ZodError) {
             return buildInvalidRequestResponse(
               context.requestId,
