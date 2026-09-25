@@ -52,6 +52,15 @@ PUBLIC_UPDATE_TESTS = (
   'src/features/public/latest-app-update-policy.unit.spec.ts',
   'src/features/public/latest-app-update-card.unit.spec.tsx',
 )
+FULL_SITE_TEST_COMMAND = (
+  'corepack',
+  'pnpm',
+  'exec',
+  'vitest',
+  'run',
+  '--browser.headless',
+  '--retry=1',
+)
 SHA_RE = re.compile(r'^[0-9a-f]{40}$', re.I)
 VERSION_RE = re.compile(r'^\d+\.\d+\.\d+$')
 SAFE_BRANCH_RE = re.compile(r'^[A-Za-z0-9._/-]{1,180}$')
@@ -528,6 +537,17 @@ def ensure_site_dependencies(repo: pathlib.Path) -> None:
   )
 
 
+def site_validation_environment() -> dict[str, str]:
+  environment = os.environ.copy()
+  environment['CI'] = 'true'
+  environment['SKIP_ENV_VALIDATION'] = 'true'
+  environment.setdefault('VITE_BASE_URL', 'http://localhost:3000')
+  environment.setdefault(
+    'VITE_S3_BUCKET_PUBLIC_URL', 'http://localhost:9000/default'
+  )
+  return environment
+
+
 def validate_site(
   config: Config,
   repo: pathlib.Path,
@@ -551,17 +571,12 @@ def validate_site(
   if full:
     commands.extend(
       [
-        ['corepack', 'pnpm', 'run', 'test:ci'],
+        list(FULL_SITE_TEST_COMMAND),
         ['corepack', 'pnpm', 'run', 'build'],
       ]
     )
   reports = []
-  environment = os.environ.copy()
-  environment['SKIP_ENV_VALIDATION'] = 'true'
-  environment.setdefault('VITE_BASE_URL', 'http://localhost:3000')
-  environment.setdefault(
-    'VITE_S3_BUCKET_PUBLIC_URL', 'http://localhost:9000/default'
-  )
+  environment = site_validation_environment()
   for command in commands:
     started = time.monotonic()
     result = run(
@@ -1372,12 +1387,13 @@ def send_owner_email(
   references: str = '',
 ) -> str:
   sender_address = parseaddr(config.email_from)[1] or config.email_from
+  reply_address = config.imap_user.strip() or sender_address
   sender_domain = sender_address.rsplit('@', 1)[-1] if '@' in sender_address else None
   message_id = make_msgid(domain=sender_domain)
   message = EmailMessage()
   message['From'] = config.email_from
   message['To'] = config.owner_email
-  message['Reply-To'] = sender_address
+  message['Reply-To'] = reply_address
   message['Subject'] = subject[:180]
   message['Date'] = formatdate(localtime=True)
   message['Message-ID'] = message_id

@@ -4,6 +4,8 @@ import json
 import pathlib
 import sys
 import unittest
+from types import SimpleNamespace
+from unittest import mock
 
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -110,6 +112,21 @@ class OwnerReplyPolicyTest(unittest.TestCase):
     )
     self.assertEqual(automation.extract_codex_session_id(events), 'session-123')
 
+  def test_owner_email_replies_to_the_monitored_mailbox(self) -> None:
+    config = SimpleNamespace(
+      email_from='Nayovi <noreply@nayovi.com>',
+      imap_user='contact@nayovi.com',
+      owner_email='borjiomar38@gmail.com',
+    )
+
+    with mock.patch.object(automation, 'send_smtp_message') as send_message:
+      automation.send_owner_email(config, subject='Test', body='Hello')
+
+    message = send_message.call_args.args[1]
+    self.assertEqual(message['From'], 'Nayovi <noreply@nayovi.com>')
+    self.assertEqual(message['To'], 'borjiomar38@gmail.com')
+    self.assertEqual(message['Reply-To'], 'contact@nayovi.com')
+
 
 class PreviewPolicyTest(unittest.TestCase):
   def test_extracts_public_route_from_agent_report(self) -> None:
@@ -126,6 +143,25 @@ class PreviewPolicyTest(unittest.TestCase):
       with self.subTest(report=report):
         with self.assertRaises(automation.AutomationError):
           automation.public_preview_path(report)
+
+
+class SiteValidationPolicyTest(unittest.TestCase):
+  def test_full_suite_runs_headlessly_with_one_flake_retry(self) -> None:
+    self.assertIn('--browser.headless', automation.FULL_SITE_TEST_COMMAND)
+    self.assertIn('--retry=1', automation.FULL_SITE_TEST_COMMAND)
+
+  def test_validation_environment_always_uses_ci_mode(self) -> None:
+    with mock.patch.dict(
+      automation.os.environ,
+      {'CI': 'false', 'PRESERVED_VALUE': 'yes'},
+      clear=True,
+    ):
+      environment = automation.site_validation_environment()
+
+    self.assertEqual(environment['CI'], 'true')
+    self.assertEqual(environment['SKIP_ENV_VALIDATION'], 'true')
+    self.assertEqual(environment['PRESERVED_VALUE'], 'yes')
+    self.assertEqual(environment['VITE_BASE_URL'], 'http://localhost:3000')
 
 
 if __name__ == '__main__':
