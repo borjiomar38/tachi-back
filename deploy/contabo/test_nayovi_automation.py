@@ -4,6 +4,7 @@ import json
 import pathlib
 import sys
 import unittest
+from types import SimpleNamespace
 from unittest import mock
 
 
@@ -110,6 +111,21 @@ class OwnerReplyPolicyTest(unittest.TestCase):
       ]
     )
     self.assertEqual(automation.extract_codex_session_id(events), 'session-123')
+
+  def test_owner_email_replies_to_the_monitored_mailbox(self) -> None:
+    config = SimpleNamespace(
+      email_from='Nayovi <noreply@nayovi.com>',
+      imap_user='contact@nayovi.com',
+      owner_email='borjiomar38@gmail.com',
+    )
+
+    with mock.patch.object(automation, 'send_smtp_message') as send_message:
+      automation.send_owner_email(config, subject='Test', body='Hello')
+
+    message = send_message.call_args.args[1]
+    self.assertEqual(message['From'], 'Nayovi <noreply@nayovi.com>')
+    self.assertEqual(message['To'], 'borjiomar38@gmail.com')
+    self.assertEqual(message['Reply-To'], 'contact@nayovi.com')
 
 
 class PreviewPolicyTest(unittest.TestCase):

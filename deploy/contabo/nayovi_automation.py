@@ -1387,12 +1387,13 @@ def send_owner_email(
   references: str = '',
 ) -> str:
   sender_address = parseaddr(config.email_from)[1] or config.email_from
+  reply_address = config.imap_user.strip() or sender_address
   sender_domain = sender_address.rsplit('@', 1)[-1] if '@' in sender_address else None
   message_id = make_msgid(domain=sender_domain)
   message = EmailMessage()
   message['From'] = config.email_from
   message['To'] = config.owner_email
-  message['Reply-To'] = sender_address
+  message['Reply-To'] = reply_address
   message['Subject'] = subject[:180]
   message['Date'] = formatdate(localtime=True)
   message['Message-ID'] = message_id
