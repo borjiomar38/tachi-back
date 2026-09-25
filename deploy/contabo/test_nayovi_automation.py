@@ -146,6 +146,25 @@ class PreviewPolicyTest(unittest.TestCase):
 
 
 class SiteValidationPolicyTest(unittest.TestCase):
+  def test_analytics_agent_can_change_public_measurement_code(self) -> None:
+    automation.validate_analytics_paths(
+      [
+        'src/features/analytics/analytics-consent.tsx',
+        'src/features/analytics/google-analytics.ts',
+        'src/features/analytics/apk-download-tracking.unit.spec.ts',
+      ]
+    )
+
+  def test_analytics_agent_cannot_change_internal_or_unknown_code(self) -> None:
+    for path in (
+      'deploy/contabo/nayovi_automation.py',
+      'src/server/auth/session.ts',
+      'src/components/admin-dashboard.tsx',
+    ):
+      with self.subTest(path=path):
+        with self.assertRaises(automation.AutomationError):
+          automation.validate_analytics_paths([path])
+
   def test_full_suite_runs_headlessly_with_one_flake_retry(self) -> None:
     self.assertIn('--browser.headless', automation.FULL_SITE_TEST_COMMAND)
     self.assertIn('--retry=1', automation.FULL_SITE_TEST_COMMAND)
