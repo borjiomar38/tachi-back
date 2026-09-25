@@ -93,6 +93,7 @@ USER_FACING_MOBILE_PATH_PATTERNS = (
   re.compile(r'(?:^|/)i18n/src/commonMain/', re.I),
 )
 ANALYTICS_ALLOWED_PATH_PATTERNS = (
+  re.compile(r'^src/features/analytics/'),
   re.compile(r'^src/features/public/'),
   re.compile(r'^src/features/blog/'),
   re.compile(r'^src/routes/(?:guides/|blog/|download\.tsx$|index\.tsx$)'),
