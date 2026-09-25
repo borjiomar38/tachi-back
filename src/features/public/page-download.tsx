@@ -21,6 +21,8 @@ import {
   type AndroidApkDownload,
   androidApkDownload as defaultAndroidApkDownload,
 } from '@/features/public/download-assets';
+import { latestPublicAppUpdate } from '@/features/public/latest-app-update';
+import { LatestAppUpdateCard } from '@/features/public/latest-app-update-card';
 import { PublicShell } from '@/features/public/public-shell';
 
 interface PageDownloadProps {
@@ -175,6 +177,8 @@ export const PageDownload = ({
             );
           })}
         </div>
+
+        <LatestAppUpdateCard update={latestPublicAppUpdate} />
 
         <Card className="public-brand-panel-muted mt-3 rounded-2xl py-0">
           <CardContent className="flex flex-col gap-4 p-4 sm:flex-row sm:items-center sm:justify-between md:px-5">
