@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 import pathlib
 import sys
+import tempfile
 import unittest
 from types import SimpleNamespace
 from unittest import mock
@@ -146,6 +147,27 @@ class PreviewPolicyTest(unittest.TestCase):
 
 
 class SiteValidationPolicyTest(unittest.TestCase):
+  def test_changed_paths_include_untracked_files_and_deletions(self) -> None:
+    with tempfile.TemporaryDirectory() as temporary_directory:
+      repo = pathlib.Path(temporary_directory)
+      automation.run(['git', 'init'], cwd=repo)
+      automation.run(['git', 'config', 'user.email', 'test@nayovi.com'], cwd=repo)
+      automation.run(['git', 'config', 'user.name', 'Nayovi Test'], cwd=repo)
+      removed = repo / 'removed.ts'
+      removed.write_text('export const removed = true;\n', encoding='utf-8')
+      automation.run(['git', 'add', 'removed.ts'], cwd=repo)
+      automation.run(['git', 'commit', '-m', 'initial'], cwd=repo)
+
+      removed.unlink()
+      (repo / 'new-file.ts').write_text(
+        'export const added = true;\n', encoding='utf-8'
+      )
+
+      self.assertEqual(
+        automation.changed_paths(repo, 'HEAD'),
+        ['new-file.ts', 'removed.ts'],
+      )
+
   def test_analytics_agent_can_change_public_measurement_code(self) -> None:
     automation.validate_analytics_paths(
       [
@@ -181,6 +203,74 @@ class SiteValidationPolicyTest(unittest.TestCase):
     self.assertEqual(environment['SKIP_ENV_VALIDATION'], 'true')
     self.assertEqual(environment['PRESERVED_VALUE'], 'yes')
     self.assertEqual(environment['VITE_BASE_URL'], 'http://localhost:3000')
+
+
+class AnalyticsAutonomyPolicyTest(unittest.TestCase):
+  def test_validation_failure_is_given_back_to_the_same_codex_session(self) -> None:
+    with tempfile.TemporaryDirectory() as temporary_directory:
+      state_dir = pathlib.Path(temporary_directory)
+      config = SimpleNamespace(state_dir=state_dir)
+      state = {
+        'proposalId': 'analytics-20260925T221738Z',
+        'status': 'creating',
+        'codexSessionId': 'session-123',
+      }
+      changed = ['src/features/public/page-download.tsx']
+      repaired_report = 'Validation repaired.\nPREVIEW_PATH: /download\n'
+
+      with (
+        mock.patch.object(automation, 'changed_paths', return_value=changed),
+        mock.patch.object(
+          automation,
+          'validate_site',
+          side_effect=[automation.AutomationError('build failed'), ['passed']],
+        ) as validate_site,
+        mock.patch.object(
+          automation,
+          'run_codex',
+          return_value=('session-123', repaired_report),
+        ) as run_codex,
+      ):
+        automation.validate_site_with_codex_repair(
+          config,
+          state,
+          pathlib.Path(temporary_directory) / 'workspace',
+          phase='initial',
+        )
+
+      self.assertEqual(validate_site.call_count, 2)
+      run_codex.assert_called_once()
+      self.assertEqual(state['validation'], ['passed'])
+      self.assertEqual(state['previewPath'], '/download')
+      self.assertEqual(len(state['validationRepairs']), 1)
+
+  def test_initial_failure_is_logged_without_sending_owner_email(self) -> None:
+    with tempfile.TemporaryDirectory() as temporary_directory:
+      root = pathlib.Path(temporary_directory)
+      config = SimpleNamespace(
+        state_dir=root / 'state',
+        log_dir=root / 'log',
+        mobile_source_repo=root / 'mobile' / 'repo',
+        proposal_workspaces=root / 'proposals',
+        codex_model='gpt-5.6-sol',
+        codex_effort='xhigh',
+      )
+
+      with (
+        mock.patch.object(
+          automation,
+          'analytics_snapshot',
+          side_effect=automation.AutomationError('GA4 unavailable'),
+        ),
+        mock.patch.object(automation, 'send_owner_email') as send_owner_email,
+      ):
+        with self.assertRaises(automation.AutomationError):
+          automation.start_analytics_proposal(config)
+
+      send_owner_email.assert_not_called()
+      states = automation.list_proposal_states(config)
+      self.assertEqual(len(states), 1)
+      self.assertEqual(states[0]['status'], 'failed')
 
 
 if __name__ == '__main__':
