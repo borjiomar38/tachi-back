@@ -127,4 +127,12 @@ docker compose \
   -f "${proxy_compose_file}" \
   ps
 
+if [[ "${env_slug}" == production && -f /etc/nayovi-automation.env ]]; then
+  echo 'Refreshing Nayovi automation services'
+  sudo env TACHI_APP_DIR="${app_dir}" \
+    bash "${app_dir}/deploy/contabo/install-nayovi-automation.sh" \
+    --refresh \
+    --enable
+fi
+
 echo "Deployment completed for ${env_slug}"
