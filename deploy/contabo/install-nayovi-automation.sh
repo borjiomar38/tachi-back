@@ -26,6 +26,56 @@ ensure_env_default() {
   fi
 }
 
+configure_proxy_firewall() {
+  local listen_host listen_port proxy_bridge proxy_network proxy_network_id proxy_subnet
+  listen_host="$(sed -n 's/^NAYOVI_AUTOMATION_LISTEN_HOST=//p' "${ENV_FILE}" | tail -1)"
+  listen_port="$(sed -n 's/^NAYOVI_AUTOMATION_LISTEN_PORT=//p' "${ENV_FILE}" | tail -1)"
+  proxy_network="${TACHI_PROXY_NETWORK:-tachi-proxy}"
+
+  if [[ "${listen_host}" != 0.0.0.0 ]]; then
+    return
+  fi
+  [[ "${listen_port}" =~ ^[0-9]{1,5}$ ]] || {
+    echo "Invalid NAYOVI_AUTOMATION_LISTEN_PORT: ${listen_port}" >&2
+    exit 1
+  }
+  command -v docker >/dev/null || {
+    echo 'Docker is required to resolve the Caddy proxy network.' >&2
+    exit 1
+  }
+  command -v ufw >/dev/null || {
+    echo 'UFW is required before binding the automation API to 0.0.0.0.' >&2
+    exit 1
+  }
+  ufw status | grep -q '^Status: active' || {
+    echo 'UFW must be active before binding the automation API to 0.0.0.0.' >&2
+    exit 1
+  }
+  docker network inspect "${proxy_network}" >/dev/null 2>&1 || {
+    echo "Docker network is missing: ${proxy_network}" >&2
+    exit 1
+  }
+
+  proxy_subnet="$(
+    docker network inspect "${proxy_network}" \
+      --format '{{(index .IPAM.Config 0).Subnet}}'
+  )"
+  proxy_bridge="$(
+    docker network inspect "${proxy_network}" \
+      --format '{{index .Options "com.docker.network.bridge.name"}}'
+  )"
+  if [[ -z "${proxy_bridge}" || "${proxy_bridge}" == '<no value>' ]]; then
+    proxy_network_id="$(
+      docker network inspect "${proxy_network}" --format '{{.Id}}'
+    )"
+    proxy_bridge="br-${proxy_network_id:0:12}"
+  fi
+
+  ufw allow in on "${proxy_bridge}" from "${proxy_subnet}" to any \
+    port "${listen_port}" proto tcp \
+    comment 'Nayovi automation from tachi-caddy'
+}
+
 install -m 0755 "${APP_DIR}/deploy/contabo/nayovi_automation.py" /usr/local/bin/nayovi-automation
 apt-get update
 apt-get install -y ca-certificates curl ffmpeg file git jq poppler-utils python3 ripgrep
@@ -40,7 +90,7 @@ if [[ ! -f "${ENV_FILE}" ]]; then
 fi
 
 ensure_env_default NAYOVI_AUTOMATION_WEBHOOK_SECRET ''
-ensure_env_default NAYOVI_AUTOMATION_LISTEN_HOST 127.0.0.1
+ensure_env_default NAYOVI_AUTOMATION_LISTEN_HOST 0.0.0.0
 ensure_env_default NAYOVI_AUTOMATION_LISTEN_PORT 8790
 ensure_env_default NAYOVI_AUTOMATION_STATE_DIR /var/lib/nayovi-automation
 ensure_env_default NAYOVI_AUTOMATION_LOG_DIR /var/log/nayovi-automation
@@ -61,8 +111,15 @@ ensure_env_default NAYOVI_PREVIEW_BASE_URL https://staging.62.171.171.212.sslip.
 ensure_env_default NAYOVI_STAGING_ENV_FILE /opt/tachi-back-staging/.env.staging
 ensure_env_default NAYOVI_STAGING_SOURCE_DIR /opt/tachi-back-staging
 ensure_env_default NAYOVI_PREVIEW_WAIT_SECONDS 900
+# Upgrade the original loopback-only default, which Dockerized Caddy cannot reach.
+if grep -qx 'NAYOVI_AUTOMATION_LISTEN_HOST=127.0.0.1' "${ENV_FILE}"; then
+  sed -i \
+    's/^NAYOVI_AUTOMATION_LISTEN_HOST=127\.0\.0\.1$/NAYOVI_AUTOMATION_LISTEN_HOST=0.0.0.0/' \
+    "${ENV_FILE}"
+fi
 chown root:"${DEPLOY_USER}" "${ENV_FILE}"
 chmod 0640 "${ENV_FILE}"
+configure_proxy_firewall
 
 cat >/etc/systemd/system/nayovi-automation-api.service <<EOF
 [Unit]
