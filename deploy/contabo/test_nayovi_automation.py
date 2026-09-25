@@ -4,6 +4,7 @@ import json
 import pathlib
 import sys
 import unittest
+from unittest import mock
 
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
@@ -126,6 +127,25 @@ class PreviewPolicyTest(unittest.TestCase):
       with self.subTest(report=report):
         with self.assertRaises(automation.AutomationError):
           automation.public_preview_path(report)
+
+
+class SiteValidationPolicyTest(unittest.TestCase):
+  def test_full_suite_runs_headlessly_with_one_flake_retry(self) -> None:
+    self.assertIn('--browser.headless', automation.FULL_SITE_TEST_COMMAND)
+    self.assertIn('--retry=1', automation.FULL_SITE_TEST_COMMAND)
+
+  def test_validation_environment_always_uses_ci_mode(self) -> None:
+    with mock.patch.dict(
+      automation.os.environ,
+      {'CI': 'false', 'PRESERVED_VALUE': 'yes'},
+      clear=True,
+    ):
+      environment = automation.site_validation_environment()
+
+    self.assertEqual(environment['CI'], 'true')
+    self.assertEqual(environment['SKIP_ENV_VALIDATION'], 'true')
+    self.assertEqual(environment['PRESERVED_VALUE'], 'yes')
+    self.assertEqual(environment['VITE_BASE_URL'], 'http://localhost:3000')
 
 
 if __name__ == '__main__':
