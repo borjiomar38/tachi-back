@@ -5,10 +5,12 @@ APP_DIR="${TACHI_APP_DIR:-/opt/tachi-back}"
 DEPLOY_USER="${TACHI_DEPLOY_USER:-borjiomar38}"
 ENV_FILE="${NAYOVI_AUTOMATION_ENV_FILE:-/etc/nayovi-automation.env}"
 ENABLE_SERVICES=false
+REFRESH_ONLY=false
 
 for argument in "$@"; do
   case "${argument}" in
     --enable) ENABLE_SERVICES=true ;;
+    --refresh) REFRESH_ONLY=true ;;
     *) echo "Unknown argument: ${argument}" >&2; exit 2 ;;
   esac
 done
@@ -77,8 +79,10 @@ configure_proxy_firewall() {
 }
 
 install -m 0755 "${APP_DIR}/deploy/contabo/nayovi_automation.py" /usr/local/bin/nayovi-automation
-apt-get update
-apt-get install -y ca-certificates curl ffmpeg file git jq poppler-utils python3 ripgrep
+if [[ "${REFRESH_ONLY}" != true ]]; then
+  apt-get update
+  apt-get install -y ca-certificates curl ffmpeg file git jq poppler-utils python3 ripgrep
+fi
 
 install -d -m 0755 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /opt/nayovi-automation
 install -d -m 0755 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" /opt/nayovi-automation/proposals
@@ -209,9 +213,14 @@ if [[ "${ENABLE_SERVICES}" == true ]]; then
     echo "Set a 32+ character NAYOVI_AUTOMATION_WEBHOOK_SECRET in ${ENV_FILE} before --enable." >&2
     exit 1
   fi
-  systemctl enable --now nayovi-automation-api.service
-  systemctl enable --now nayovi-automation-mail.service
-  systemctl enable --now nayovi-analytics-agent.timer
+  systemctl enable \
+    nayovi-automation-api.service \
+    nayovi-automation-mail.service \
+    nayovi-analytics-agent.timer
+  systemctl restart \
+    nayovi-automation-api.service \
+    nayovi-automation-mail.service
+  systemctl start nayovi-analytics-agent.timer
 else
   echo 'Installed. Enable after configuring the webhook secret:'
   echo '  sudo systemctl enable --now nayovi-automation-api.service nayovi-automation-mail.service nayovi-analytics-agent.timer'
