@@ -61,6 +61,7 @@ FULL_SITE_TEST_COMMAND = (
   '--browser.headless',
   '--retry=1',
 )
+AUTONOMOUS_VALIDATION_REPAIR_LIMIT = 3
 SHA_RE = re.compile(r'^[0-9a-f]{40}$', re.I)
 VERSION_RE = re.compile(r'^\d+\.\d+\.\d+$')
 SAFE_BRANCH_RE = re.compile(r'^[A-Za-z0-9._/-]{1,180}$')
@@ -514,10 +515,22 @@ def prepare_branch(repo: pathlib.Path, branch: str, base_branch: str) -> None:
 
 
 def changed_paths(repo: pathlib.Path, base: str = 'origin/master') -> list[str]:
-  output = run(
-    ['git', 'diff', '--name-only', '--diff-filter=ACMRTUXB', base, '--'], cwd=repo
+  tracked_output = run(
+    ['git', 'diff', '--name-only', base, '--'],
+    cwd=repo,
   ).stdout
-  return [line.strip() for line in output.splitlines() if line.strip()]
+  untracked_output = run(
+    ['git', 'ls-files', '--others', '--exclude-standard'],
+    cwd=repo,
+  ).stdout
+  return sorted(
+    {
+      line.strip()
+      for output in (tracked_output, untracked_output)
+      for line in output.splitlines()
+      if line.strip()
+    }
+  )
 
 
 def copy_build_environment(config: Config, repo: pathlib.Path) -> None:
@@ -1313,6 +1326,78 @@ def proposal_state_path(config: Config, proposal_id: str) -> pathlib.Path:
   return config.state_dir / 'proposals' / f'{proposal_id}.json'
 
 
+def validate_site_with_codex_repair(
+  config: Config,
+  state: dict[str, Any],
+  workspace: pathlib.Path,
+  *,
+  phase: str,
+) -> None:
+  repairs = state.setdefault('validationRepairs', [])
+  for attempt in range(AUTONOMOUS_VALIDATION_REPAIR_LIMIT + 1):
+    try:
+      paths = changed_paths(workspace)
+      validate_analytics_paths(paths)
+      state['changedPaths'] = paths
+      state['validation'] = validate_site(config, workspace, full=True)
+      paths = changed_paths(workspace)
+      validate_analytics_paths(paths)
+      state['changedPaths'] = paths
+      return
+    except Exception as error:
+      if attempt >= AUTONOMOUS_VALIDATION_REPAIR_LIMIT:
+        raise
+
+      repair_number = len(repairs) + 1
+      repairs.append(
+        {
+          'phase': phase,
+          'attempt': repair_number,
+          'error': str(error)[-8000:],
+          'startedAt': datetime.now(timezone.utc).isoformat(),
+        }
+      )
+      state['updatedAt'] = datetime.now(timezone.utc).isoformat()
+      atomic_write_json(
+        proposal_state_path(config, state['proposalId']),
+        state,
+      )
+      prompt = f"""Automated validation failed before this proposal could be shown to the owner.
+
+Validation failure:
+---
+{str(error)[-8000:]}
+---
+
+Resume the same task and session. Diagnose the root cause, inspect the current diff,
+and fix it autonomously. Stay inside the public-site allowlist and preserve the
+original GA4-backed objective. Run the most relevant focused checks before finishing.
+Do not commit, push, open or merge a PR, deploy, or send email. The runner owns those
+actions. Do not ask the owner for help with build, test, lint, typecheck, or preview
+errors. End with exactly one public route on its own line:
+PREVIEW_PATH: /path-to-the-modified-page
+"""
+      session_id, report = run_codex(
+        config,
+        workspace,
+        prompt,
+        config.state_dir
+        / 'proposals'
+        / state['proposalId']
+        / f'{phase}-repair-{repair_number:02d}',
+        session_id=state['codexSessionId'],
+      )
+      if session_id != state['codexSessionId']:
+        raise AutomationError('Codex resumed under a different session id.')
+      state['agentReport'] = report[-8000:]
+      state['previewPath'] = public_preview_path(report)
+      repairs[-1]['completedAt'] = datetime.now(timezone.utc).isoformat()
+      atomic_write_json(
+        proposal_state_path(config, state['proposalId']),
+        state,
+      )
+
+
 def list_proposal_states(config: Config) -> list[dict[str, Any]]:
   states: list[dict[str, Any]] = []
   for path in sorted((config.state_dir / 'proposals').glob('analytics-*.json')):
@@ -1483,13 +1568,12 @@ def start_analytics_proposal(config: Config) -> dict[str, Any] | None:
       state['codexSessionId'] = session_id
       state['agentReport'] = report[-8000:]
       state['previewPath'] = public_preview_path(report)
-      paths = changed_paths(workspace)
-      validate_analytics_paths(paths)
-      state['changedPaths'] = paths
-      state['validation'] = validate_site(config, workspace, full=True)
-      paths = changed_paths(workspace)
-      validate_analytics_paths(paths)
-      state['changedPaths'] = paths
+      validate_site_with_codex_repair(
+        config,
+        state,
+        workspace,
+        phase='initial',
+      )
       head_sha = git_commit_and_push(
         workspace,
         branch,
@@ -1541,18 +1625,10 @@ def start_analytics_proposal(config: Config) -> dict[str, Any] | None:
       state['error'] = str(error)
       state['updatedAt'] = datetime.now(timezone.utc).isoformat()
       atomic_write_json(state_path, state)
-      try:
-        send_owner_email(
-          config,
-          subject=f'[Nayovi Analytics {proposal_id}] Échec à corriger',
-          body=(
-            'Le cycle Analytics autonome a échoué avant de créer une proposition.\n\n'
-            f'Erreur: {error}\n\n'
-            'Aucune modification n’a été fusionnée ni déployée.'
-          ),
-        )
-      except Exception as mail_error:  # noqa: BLE001
-        log(f'Unable to email Analytics failure: {mail_error}')
+      log(
+        f'Analytics cycle failed without owner notification: '
+        f'{proposal_id}: {error}'
+      )
       raise
 
 
@@ -1760,13 +1836,12 @@ def commit_pending_feedback(
   workspace: pathlib.Path,
   message: str,
 ) -> str:
-  paths = changed_paths(workspace)
-  validate_analytics_paths(paths)
-  state['changedPaths'] = paths
-  state['validation'] = validate_site(config, workspace, full=True)
-  paths = changed_paths(workspace)
-  validate_analytics_paths(paths)
-  state['changedPaths'] = paths
+  validate_site_with_codex_repair(
+    config,
+    state,
+    workspace,
+    phase='owner-feedback',
+  )
   status = run(['git', 'status', '--porcelain'], cwd=workspace).stdout.strip()
   if status:
     return git_commit_and_push(workspace, state['branch'], message)
@@ -2144,19 +2219,7 @@ def poll_owner_mail(config: Config) -> int:
         atomic_write_json(
           proposal_state_path(config, matching['proposalId']), latest_state
         )
-        try:
-          send_owner_email(
-            config,
-            subject=proposal_reply_subject(matching),
-            body=(
-              'J’ai reçu ton retour, mais son traitement automatique a échoué.\n\n'
-              f'Erreur: {error}\n\n'
-              'La PR n’a pas été fusionnée. Le service réessaiera après correction.'
-            ),
-            in_reply_to=str(message.get('Message-ID', '')).strip(),
-          )
-        except Exception as mail_error:  # noqa: BLE001
-          log(f'could not send owner failure reply: {mail_error}')
+        log('Owner failure email suppressed; the unread reply will be retried.')
         if terminal or inbound_message_id in latest_state.get(
           'processedInboundMessageIds', []
         ):
