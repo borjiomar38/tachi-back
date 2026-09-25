@@ -8,7 +8,13 @@
 		}
 		format json
 	}
-	reverse_proxy tachi-production-app:3000
+	@nayoviAutomation path /_nayovi-automation/*
+	handle @nayoviAutomation {
+		reverse_proxy host.docker.internal:8790
+	}
+	handle {
+		reverse_proxy tachi-production-app:3000
+	}
 }
 
 {$STAGING_APP_DOMAIN} {

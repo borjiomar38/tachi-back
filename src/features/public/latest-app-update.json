@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "version": "0.17.46",
+  "publishedDate": "2026-09-23",
+  "title": "Reliable reading position",
+  "summary": "Chapters now reopen at the correct reading position, including translated and compressed images.",
+  "highlights": [
+    "Keeps your place when you reopen a chapter",
+    "Restores the right position after translated images load",
+    "Works reliably with compressed chapter images"
+  ]
+}
