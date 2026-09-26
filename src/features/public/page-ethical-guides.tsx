@@ -27,8 +27,13 @@ const setupSteps = [
   {
     icon: SmartphoneIcon,
     title: 'Use official installs',
-    description:
-      'Download Nayovi from this site and use official Mihon, Tachiyomi, or TachiyomiAT project channels when you need a separate reader. Avoid patched APKs and unknown mirrors.',
+    description: (
+      <>
+        <a href="/download">Download Nayovi from this site</a> and use official
+        Mihon, Tachiyomi, or TachiyomiAT project channels when you need a
+        separate reader. Avoid patched APKs and unknown mirrors.
+      </>
+    ),
   },
   {
     icon: ShieldCheckIcon,
