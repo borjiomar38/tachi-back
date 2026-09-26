@@ -122,6 +122,14 @@ KNOWN_VALIDATION_ARTIFACTS = {
   'docs/ux/release-history-20260914/implementation-desktop.png',
   'docs/ux/release-history-20260914/implementation-mobile.png',
 }
+OWNER_WAITING_STATUSES = frozenset(
+  {
+    'email_submitted',
+    'ready_email_retry',
+    'waiting_owner',
+    'waiting_owner_unconfirmed',
+  }
+)
 
 
 class AutomationError(RuntimeError):
@@ -148,6 +156,10 @@ class Config:
   owner_email: str
   smtp_url: str
   email_from: str
+  owner_smtp_url: str
+  owner_email_from: str
+  fallback_smtp_url: str
+  fallback_email_from: str
   imap_host: str
   imap_port: int
   imap_user: str
@@ -160,6 +172,8 @@ class Config:
   staging_env_file: pathlib.Path
   staging_source_dir: pathlib.Path
   preview_wait_seconds: int
+  delivery_retry_seconds: int
+  delivery_max_attempts: int
 
   @classmethod
   def from_environment(cls) -> 'Config':
@@ -188,6 +202,42 @@ class Config:
     build_env_value = value(
       'NAYOVI_SITE_BUILD_ENV_FILE', '/opt/tachi-back/.env.production'
     ).strip()
+    imap_host = value(
+      'NAYOVI_IMAP_HOST', growth_env.get('GROWTH_AGENT_INBOUND_IMAP_HOST', '')
+    )
+    imap_port = int(
+      value(
+        'NAYOVI_IMAP_PORT',
+        growth_env.get('GROWTH_AGENT_INBOUND_IMAP_PORT', '993'),
+      )
+    )
+    imap_user = value(
+      'NAYOVI_IMAP_USER', growth_env.get('GROWTH_AGENT_INBOUND_IMAP_USER', '')
+    )
+    imap_password = value(
+      'NAYOVI_IMAP_PASSWORD',
+      growth_env.get('GROWTH_AGENT_INBOUND_IMAP_PASSWORD', ''),
+    )
+    legacy_imap_host = value(
+      'NAYOVI_FALLBACK_IMAP_HOST',
+      growth_env.get('GROWTH_AGENT_LEGACY_INBOUND_IMAP_HOST', ''),
+    )
+    legacy_imap_user = value(
+      'NAYOVI_FALLBACK_IMAP_USER',
+      growth_env.get('GROWTH_AGENT_LEGACY_INBOUND_IMAP_USER', ''),
+    )
+    legacy_imap_password = value(
+      'NAYOVI_FALLBACK_IMAP_PASSWORD',
+      growth_env.get('GROWTH_AGENT_LEGACY_INBOUND_IMAP_PASSWORD', ''),
+    )
+    owner_smtp_url = value('NAYOVI_OWNER_SMTP_URL') or mailbox_smtps_url(
+      imap_host, imap_user, imap_password
+    )
+    fallback_smtp_url = value('NAYOVI_FALLBACK_SMTP_URL') or mailbox_smtps_url(
+      legacy_imap_host,
+      legacy_imap_user,
+      legacy_imap_password,
+    )
     config = cls(
       state_dir=state_dir,
       log_dir=pathlib.Path(
@@ -215,22 +265,20 @@ class Config:
       owner_email=value('NAYOVI_OWNER_EMAIL', 'borjiomar38@gmail.com').lower(),
       smtp_url=value('NAYOVI_SMTP_URL', mail_env.get('EMAIL_SERVER', '')),
       email_from=value('NAYOVI_EMAIL_FROM', mail_env.get('EMAIL_FROM', '')),
-      imap_host=value(
-        'NAYOVI_IMAP_HOST', growth_env.get('GROWTH_AGENT_INBOUND_IMAP_HOST', '')
+      owner_smtp_url=owner_smtp_url,
+      owner_email_from=value(
+        'NAYOVI_OWNER_EMAIL_FROM',
+        f'Nayovi Analytics <{imap_user}>' if imap_user else '',
       ),
-      imap_port=int(
-        value(
-          'NAYOVI_IMAP_PORT',
-          growth_env.get('GROWTH_AGENT_INBOUND_IMAP_PORT', '993'),
-        )
+      fallback_smtp_url=fallback_smtp_url,
+      fallback_email_from=value(
+        'NAYOVI_FALLBACK_EMAIL_FROM',
+        f'Nayovi Analytics <{legacy_imap_user}>' if legacy_imap_user else '',
       ),
-      imap_user=value(
-        'NAYOVI_IMAP_USER', growth_env.get('GROWTH_AGENT_INBOUND_IMAP_USER', '')
-      ),
-      imap_password=value(
-        'NAYOVI_IMAP_PASSWORD',
-        growth_env.get('GROWTH_AGENT_INBOUND_IMAP_PASSWORD', ''),
-      ),
+      imap_host=imap_host,
+      imap_port=imap_port,
+      imap_user=imap_user,
+      imap_password=imap_password,
       imap_mailbox=value(
         'NAYOVI_IMAP_MAILBOX',
         growth_env.get('GROWTH_AGENT_INBOUND_IMAP_MAILBOX', 'INBOX'),
@@ -262,6 +310,12 @@ class Config:
         )
       ),
       preview_wait_seconds=int(value('NAYOVI_PREVIEW_WAIT_SECONDS', '900')),
+      delivery_retry_seconds=max(
+        60, int(value('NAYOVI_DELIVERY_RETRY_SECONDS', '900'))
+      ),
+      delivery_max_attempts=max(
+        1, int(value('NAYOVI_DELIVERY_MAX_ATTEMPTS', '2'))
+      ),
     )
     if config.codex_model != 'gpt-5.6-sol' or config.codex_effort != 'xhigh':
       raise AutomationError(
@@ -285,6 +339,14 @@ def clean_env_value(value: str) -> str:
   ):
     return cleaned[1:-1]
   return cleaned
+
+
+def mailbox_smtps_url(host: str, username: str, password: str) -> str:
+  if not all((host.strip(), username.strip(), password)):
+    return ''
+  encoded_username = urllib.parse.quote(username.strip(), safe='')
+  encoded_password = urllib.parse.quote(password, safe='')
+  return f'smtps://{encoded_username}:{encoded_password}@{host.strip()}:465'
 
 
 def read_env_file(path: pathlib.Path) -> dict[str, str]:
@@ -1632,7 +1694,12 @@ def list_proposal_states(config: Config) -> list[dict[str, Any]]:
 
 
 def active_proposal(config: Config) -> dict[str, Any] | None:
-  active_statuses = {'creating', 'revising', 'waiting_owner', 'approving'}
+  active_statuses = {
+    'creating',
+    'revising',
+    'approving',
+    *OWNER_WAITING_STATUSES,
+  }
   for state in reversed(list_proposal_states(config)):
     if state.get('status') in active_statuses:
       return state
@@ -1655,34 +1722,116 @@ def clone_proposal_workspace(
   return workspace
 
 
-def send_smtp_message(config: Config, message: EmailMessage) -> None:
-  if not config.smtp_url or not config.email_from:
+@dataclass(frozen=True)
+class MailTransport:
+  name: str
+  smtp_url: str
+  email_from: str
+
+
+@dataclass(frozen=True)
+class OutboundMailReceipt:
+  message_id: str
+  envelope_id: str
+  transport_index: int
+  transport_name: str
+  sender: str
+  dsn_requested: bool
+  submitted_at: str
+
+
+def mail_transports(config: Config) -> list[MailTransport]:
+  candidates = (
+    MailTransport(
+      'owner-mailbox',
+      str(getattr(config, 'owner_smtp_url', '') or ''),
+      str(getattr(config, 'owner_email_from', '') or ''),
+    ),
+    MailTransport(
+      'fallback-mailbox',
+      str(getattr(config, 'fallback_smtp_url', '') or ''),
+      str(getattr(config, 'fallback_email_from', '') or ''),
+    ),
+    MailTransport(
+      'application-mailbox',
+      str(getattr(config, 'smtp_url', '') or ''),
+      str(getattr(config, 'email_from', '') or ''),
+    ),
+  )
+  transports: list[MailTransport] = []
+  seen: set[tuple[str, str]] = set()
+  for candidate in candidates:
+    sender = parseaddr(candidate.email_from)[1].lower()
+    key = (candidate.smtp_url, sender)
+    if not candidate.smtp_url or not sender or key in seen:
+      continue
+    seen.add(key)
+    transports.append(candidate)
+  return transports
+
+
+def send_smtp_message(
+  config: Config,
+  message: EmailMessage,
+  *,
+  smtp_url: str = '',
+  email_from: str = '',
+  envelope_id: str = '',
+  request_dsn: bool = False,
+) -> dict[str, Any]:
+  resolved_url = smtp_url or str(getattr(config, 'smtp_url', '') or '')
+  resolved_from = email_from or str(getattr(config, 'email_from', '') or '')
+  if not resolved_url or not resolved_from:
     raise AutomationError('Nayovi SMTP configuration is missing.')
-  parsed = urllib.parse.urlparse(config.smtp_url)
+  parsed = urllib.parse.urlparse(resolved_url)
   if not parsed.hostname:
     raise AutomationError('SMTP URL has no host.')
   port = parsed.port or (465 if parsed.scheme == 'smtps' else 587)
   username = urllib.parse.unquote(parsed.username) if parsed.username else None
   password = urllib.parse.unquote(parsed.password) if parsed.password else None
-  sender = parseaddr(config.email_from)[1] or config.email_from
+  sender = parseaddr(resolved_from)[1] or resolved_from
+  recipient = parseaddr(str(message.get('To', '')))[1]
+  if not recipient:
+    raise AutomationError('Owner email has no valid recipient.')
+
+  def deliver(smtp: smtplib.SMTP) -> dict[str, Any]:
+    smtp.ehlo()
+    if username and password:
+      smtp.login(username, password)
+    dsn_requested = bool(request_dsn and smtp.has_extn('dsn'))
+    mail_options: tuple[str, ...] = ()
+    recipient_options: tuple[str, ...] = ()
+    if dsn_requested:
+      mail_options = ('RET=HDRS', f'ENVID={envelope_id}')
+      recipient_options = (
+        'NOTIFY=SUCCESS,FAILURE,DELAY',
+        f'ORCPT=rfc822;{recipient}',
+      )
+    refused = smtp.send_message(
+      message,
+      from_addr=sender,
+      to_addrs=[recipient],
+      mail_options=mail_options,
+      rcpt_options=recipient_options,
+    )
+    if refused:
+      raise AutomationError(
+        f'SMTP refused the owner recipient: {sorted(refused)}'
+      )
+    return {'dsnRequested': dsn_requested}
 
   if parsed.scheme == 'smtps':
     with smtplib.SMTP_SSL(
       parsed.hostname, port, context=ssl.create_default_context()
     ) as smtp:
-      if username and password:
-        smtp.login(username, password)
-      smtp.send_message(message, from_addr=sender)
-    return
+      return deliver(smtp)
 
   with smtplib.SMTP(parsed.hostname, port) as smtp:
     smtp.ehlo()
     if parsed.scheme == 'smtp' and port != 25:
       smtp.starttls(context=ssl.create_default_context())
       smtp.ehlo()
-    if username and password:
-      smtp.login(username, password)
-    smtp.send_message(message, from_addr=sender)
+    return deliver(smtp)
 
 
 def send_owner_email(
@@ -1692,24 +1841,53 @@ def send_owner_email(
   body: str,
   in_reply_to: str = '',
   references: str = '',
-) -> str:
-  sender_address = parseaddr(config.email_from)[1] or config.email_from
+  proposal_id: str = '',
+  transport_index: int = 0,
+) -> OutboundMailReceipt:
+  transports = mail_transports(config)
+  if transport_index < 0 or transport_index >= len(transports):
+    raise AutomationError('No configured owner email transport is available.')
+  transport = transports[transport_index]
+  sender_address = (
+    parseaddr(transport.email_from)[1] or transport.email_from
+  )
   reply_address = config.imap_user.strip() or sender_address
   sender_domain = sender_address.rsplit('@', 1)[-1] if '@' in sender_address else None
   message_id = make_msgid(domain=sender_domain)
+  envelope_prefix = re.sub(r'[^A-Za-z0-9._-]+', '-', proposal_id)[:70]
+  envelope_id = f'{envelope_prefix or "nayovi"}-{uuid.uuid4().hex[:16]}'
   message = EmailMessage()
-  message['From'] = config.email_from
+  message['From'] = transport.email_from
   message['To'] = config.owner_email
   message['Reply-To'] = reply_address
   message['Subject'] = subject[:180]
   message['Date'] = formatdate(localtime=True)
   message['Message-ID'] = message_id
+  if proposal_id:
+    message['X-Nayovi-Proposal-ID'] = proposal_id
   if in_reply_to:
     message['In-Reply-To'] = in_reply_to
     message['References'] = (references or in_reply_to)[-900:]
   message.set_content(body)
-  send_smtp_message(config, message)
-  return message_id
+  result = send_smtp_message(
+    config,
+    message,
+    smtp_url=transport.smtp_url,
+    email_from=transport.email_from,
+    envelope_id=envelope_id,
+    request_dsn=True,
+  )
+  return OutboundMailReceipt(
+    message_id=message_id,
+    envelope_id=envelope_id,
+    transport_index=transport_index,
+    transport_name=transport.name,
+    sender=sender_address,
+    dsn_requested=bool(
+      result.get('dsnRequested') if isinstance(result, dict) else False
+    ),
+    submitted_at=datetime.now(timezone.utc).isoformat(),
+  )
 
 
 def proposal_email_body(state: dict[str, Any]) -> str:
@@ -1717,32 +1895,215 @@ def proposal_email_body(state: dict[str, Any]) -> str:
     [
       'Bonjour Borji,',
       '',
-      'J’ai préparé une amélioration du site basée sur les données Google Analytics.',
-      '',
-      'Signal Analytics:',
-      str(state.get('analyticsSummary', '(indisponible)')),
-      '',
-      'Proposition:',
-      str(state.get('agentReport', '(rapport indisponible)'))[-5000:],
+      'L’amélioration du site basée sur Google Analytics est prête et testée.',
       '',
       f'Aperçu à tester: {state.get("previewUrl", "")}',
       f'Pull request: {state.get("prUrl", "")}',
       '',
-      'Tests exécutés:',
-      *[f'- {item}' for item in state.get('validation', [])],
-      '- Contrôles GitHub de la PR: réussis',
-      '',
       'Réponds directement à cet email:',
-      '- OK / oui / go: je refais une vérification finale, puis je fusionne et déploie.',
-      '- Un retour libre: le même agent reprend exactement cette session et corrige.',
-      '- NON / refuse / supprime: je ferme la PR et supprime la branche.',
-      '- Tu peux joindre une capture ou un fichier; il sera transmis au même agent.',
+      '- OK / oui / go: vérification finale, fusion et déploiement.',
+      '- Un retour libre ou une pièce jointe: le même agent reprend la même session.',
+      '- NON / refuse / supprime: fermeture de la PR et suppression de la branche.',
       '',
       f'Identifiant de suivi: {state.get("proposalId", "")}',
       '',
       'Nayovi Analytics Agent',
     ]
   )
+
+
+def email_attempts_for_purpose(
+  state: dict[str, Any], purpose: str
+) -> list[dict[str, Any]]:
+  attempts = state.get('deliveryAttempts', [])
+  if not isinstance(attempts, list):
+    return []
+  return [
+    item
+    for item in attempts
+    if isinstance(item, dict)
+    and (
+      item.get('purpose') == purpose
+      or (purpose == 'proposal' and not item.get('purpose'))
+    )
+  ]
+
+
+def save_proposal_state(config: Config, state: dict[str, Any]) -> None:
+  state['updatedAt'] = datetime.now(timezone.utc).isoformat()
+  atomic_write_json(
+    proposal_state_path(config, str(state['proposalId'])),
+    state,
+  )
+
+
+def submit_owner_notification(
+  config: Config,
+  state: dict[str, Any],
+  *,
+  subject: str,
+  body: str,
+  purpose: str,
+  in_reply_to: str = '',
+  references: str = '',
+  awaiting_owner: bool = False,
+) -> OutboundMailReceipt | None:
+  transports = mail_transports(config)
+  max_attempts = min(
+    len(transports), int(getattr(config, 'delivery_max_attempts', 2))
+  )
+  attempts = email_attempts_for_purpose(state, purpose)
+  used_indices = {
+    int(item['transportIndex'])
+    for item in attempts
+    if isinstance(item.get('transportIndex'), int)
+  }
+  next_index = max(used_indices, default=-1) + 1
+  if not used_indices and attempts:
+    # Compatibility with attempts recorded before transport indexes existed.
+    next_index = len(attempts)
+
+  for transport_index in range(next_index, max_attempts):
+    transport = transports[transport_index]
+    attempt: dict[str, Any] = {
+      'purpose': purpose,
+      'transportIndex': transport_index,
+      'transport': transport.name,
+      'sender': parseaddr(transport.email_from)[1] or transport.email_from,
+      'status': 'submitting',
+      'startedAt': datetime.now(timezone.utc).isoformat(),
+    }
+    state.setdefault('deliveryAttempts', []).append(attempt)
+    if awaiting_owner:
+      state['status'] = 'email_submitted'
+    save_proposal_state(config, state)
+    try:
+      receipt = send_owner_email(
+        config,
+        subject=subject,
+        body=body,
+        in_reply_to=in_reply_to,
+        references=references,
+        proposal_id=str(state['proposalId']),
+        transport_index=transport_index,
+      )
+    except Exception as error:  # noqa: BLE001 - try the next configured mailbox.
+      attempt['status'] = 'submission_failed'
+      attempt['error'] = str(error)[-2000:]
+      attempt['completedAt'] = datetime.now(timezone.utc).isoformat()
+      if awaiting_owner:
+        state['status'] = 'ready_email_retry'
+      save_proposal_state(config, state)
+      log(
+        f'owner email submission failed: {state["proposalId"]} '
+        f'transport={transport.name}: {error}'
+      )
+      continue
+
+    attempt.update(
+      {
+        'status': 'submitted',
+        'messageId': receipt.message_id,
+        'envelopeId': receipt.envelope_id,
+        'dsnRequested': receipt.dsn_requested,
+        'submittedAt': receipt.submitted_at,
+        'completedAt': receipt.submitted_at,
+      }
+    )
+    append_outbound_message_id(state, receipt.message_id)
+    state['lastEmailSubmittedAt'] = receipt.submitted_at
+    state.pop('lastEmailError', None)
+    if awaiting_owner:
+      state['status'] = 'waiting_owner_unconfirmed'
+    save_proposal_state(config, state)
+    log(
+      f'owner email submitted: {state["proposalId"]} '
+      f'transport={transport.name} delivery=unconfirmed'
+    )
+    return receipt
+
+  state['lastEmailError'] = 'No unused owner email transport remains.'
+  state.setdefault('deliveryExhaustedAt', datetime.now(timezone.utc).isoformat())
+  if awaiting_owner:
+    state['status'] = (
+      'waiting_owner_unconfirmed' if attempts else 'ready_email_retry'
+    )
+  save_proposal_state(config, state)
+  log(
+    f'owner email delivery remains unconfirmed: {state["proposalId"]}; '
+    'no error email was sent'
+  )
+  return None
+
+
+def parse_utc_timestamp(value: Any) -> datetime | None:
+  if not isinstance(value, str) or not value.strip():
+    return None
+  try:
+    parsed = datetime.fromisoformat(value.replace('Z', '+00:00'))
+  except ValueError:
+    return None
+  if parsed.tzinfo is None:
+    parsed = parsed.replace(tzinfo=timezone.utc)
+  return parsed.astimezone(timezone.utc)
+
+
+def retry_pending_owner_emails(config: Config) -> int:
+  retried = 0
+  now = datetime.now(timezone.utc)
+  retry_seconds = int(getattr(config, 'delivery_retry_seconds', 900))
+  max_attempts = min(
+    len(mail_transports(config)),
+    int(getattr(config, 'delivery_max_attempts', 2)),
+  )
+  for state in list_proposal_states(config):
+    if state.get('status') not in OWNER_WAITING_STATUSES:
+      continue
+    if state.get('emailDeliveredAt'):
+      if state.get('status') != 'waiting_owner':
+        state['status'] = 'waiting_owner'
+        save_proposal_state(config, state)
+      continue
+    if max_attempts == 0:
+      if state.get('status') != 'ready_email_retry':
+        state['status'] = 'ready_email_retry'
+        state['lastEmailError'] = 'No owner email transport is configured.'
+        save_proposal_state(config, state)
+      continue
+    attempts = email_attempts_for_purpose(state, 'proposal')
+    if len(attempts) >= max_attempts:
+      if state.get('status') != 'waiting_owner_unconfirmed':
+        state['status'] = 'waiting_owner_unconfirmed'
+        state.setdefault(
+          'deliveryExhaustedAt', datetime.now(timezone.utc).isoformat()
+        )
+        save_proposal_state(config, state)
+      continue
+    last_attempt = attempts[-1] if attempts else {}
+    last_status = str(last_attempt.get('status', '')).lower()
+    last_time = parse_utc_timestamp(
+      last_attempt.get('submittedAt') or last_attempt.get('completedAt')
+    )
+    if (
+      last_status not in {'failed', 'submission_failed'}
+      and last_time is not None
+      and (now - last_time).total_seconds() < retry_seconds
+    ):
+      continue
+    receipt = submit_owner_notification(
+      config,
+      state,
+      subject=str(
+        state.get('subject')
+        or f'[Nayovi Analytics {state["proposalId"]}] Validation de la proposition'
+      ),
+      body=proposal_email_body(state),
+      purpose='proposal',
+      awaiting_owner=True,
+    )
+    if receipt:
+      retried += 1
+  return retried
 
 
 def start_analytics_proposal(config: Config) -> dict[str, Any] | None:
@@ -1836,17 +2197,18 @@ def start_analytics_proposal(config: Config) -> dict[str, Any] | None:
         state['previewPath'],
         expected_sha=head_sha,
       )
-      state['status'] = 'waiting_owner'
       subject = f'[Nayovi Analytics {proposal_id}] Validation de la proposition'
-      message_id = send_owner_email(
+      state['subject'] = subject
+      state['status'] = 'email_submitted'
+      save_proposal_state(config, state)
+      submit_owner_notification(
         config,
         subject=subject,
         body=proposal_email_body(state),
+        state=state,
+        purpose='proposal',
+        awaiting_owner=True,
       )
-      state['subject'] = subject
-      state['outboundMessageIds'] = [message_id]
-      state['updatedAt'] = datetime.now(timezone.utc).isoformat()
-      atomic_write_json(state_path, state)
       log(f'Analytics proposal ready: {proposal_id} {state["previewUrl"]}')
       return state
     except Exception as error:
@@ -2322,16 +2684,15 @@ def process_owner_reply(
   references = ' '.join(
     [*state.get('outboundMessageIds', []), inbound_message_id]
   ).strip()
-  outbound_id = send_owner_email(
+  submit_owner_notification(
     config,
+    state,
     subject=proposal_reply_subject(state),
     body=response_body,
     in_reply_to=inbound_message_id,
     references=references,
+    purpose=f'owner-response-{len(processed_ids)}',
   )
-  append_outbound_message_id(state, outbound_id)
-  state['updatedAt'] = datetime.now(timezone.utc).isoformat()
-  atomic_write_json(state_path, state)
   log(f'owner reply processed: {proposal_id} action={action}')
 
 
@@ -2366,6 +2727,158 @@ def stable_message_key(message: Message) -> str:
   return hashlib.sha256(fallback.encode('utf-8')).hexdigest()
 
 
+def delivery_status_reports(message: Message) -> list[dict[str, str]]:
+  reports: list[dict[str, str]] = []
+  for part in message.walk():
+    if part.get_content_type() != 'message/delivery-status':
+      continue
+    payload = part.get_payload()
+    blocks = payload if isinstance(payload, list) else []
+    common: dict[str, str] = {}
+    if blocks:
+      common = {
+        'envelopeId': str(blocks[0].get('Original-Envelope-ID', '')).strip(),
+        'originalMessageId': str(
+          blocks[0].get('Original-Message-ID', '')
+        ).strip(),
+        'reportingMta': str(blocks[0].get('Reporting-MTA', '')).strip(),
+      }
+    recipient_blocks = blocks[1:] if len(blocks) > 1 else blocks
+    for block in recipient_blocks:
+      action = str(block.get('Action', '')).strip().lower()
+      status = str(block.get('Status', '')).strip()
+      if not action and not status:
+        continue
+      reports.append(
+        {
+          **common,
+          'action': action,
+          'status': status,
+          'diagnostic': str(block.get('Diagnostic-Code', '')).strip()[-2000:],
+          'finalRecipient': str(block.get('Final-Recipient', '')).strip(),
+        }
+      )
+  return reports
+
+
+def delivery_report_matches_state(
+  message_text: str,
+  report: dict[str, str],
+  state: dict[str, Any],
+) -> bool:
+  searchable = '\n'.join(
+    [
+      message_text,
+      report.get('envelopeId', ''),
+      report.get('originalMessageId', ''),
+    ]
+  )
+  proposal_id = str(state.get('proposalId', ''))
+  if proposal_id and proposal_id in searchable:
+    return True
+  return any(
+    str(identifier) in searchable
+    for identifier in state.get('outboundMessageIds', [])
+    if identifier
+  )
+
+
+def apply_delivery_report(
+  config: Config,
+  state: dict[str, Any],
+  report: dict[str, str],
+  *,
+  report_message_id: str,
+  message_text: str,
+) -> None:
+  recorded = state.setdefault('deliveryReports', [])
+  report_key = hashlib.sha256(
+    json.dumps(
+      [report_message_id, report], ensure_ascii=False, sort_keys=True
+    ).encode('utf-8')
+  ).hexdigest()
+  if any(item.get('key') == report_key for item in recorded if isinstance(item, dict)):
+    return
+  received_at = datetime.now(timezone.utc).isoformat()
+  recorded.append(
+    {
+      **report,
+      'key': report_key,
+      'messageId': report_message_id,
+      'receivedAt': received_at,
+    }
+  )
+  matching_attempt: dict[str, Any] | None = None
+  for attempt in reversed(state.get('deliveryAttempts', [])):
+    if not isinstance(attempt, dict):
+      continue
+    envelope_id = str(attempt.get('envelopeId', ''))
+    message_id = str(attempt.get('messageId', ''))
+    if (
+      (envelope_id and envelope_id == report.get('envelopeId'))
+      or (message_id and message_id in message_text)
+    ):
+      matching_attempt = attempt
+      break
+  if matching_attempt is not None:
+    matching_attempt['status'] = report.get('action') or report.get('status')
+    matching_attempt['deliveryStatus'] = report.get('status', '')
+    matching_attempt['deliveryDiagnostic'] = report.get('diagnostic', '')
+    matching_attempt['deliveryReportAt'] = received_at
+
+  action = report.get('action', '').lower()
+  if action == 'delivered':
+    state['emailDeliveredAt'] = received_at
+    state.pop('lastEmailError', None)
+    if state.get('status') in OWNER_WAITING_STATUSES:
+      state['status'] = 'waiting_owner'
+  elif action == 'failed':
+    state['lastEmailError'] = report.get('diagnostic') or 'Delivery failed.'
+    if state.get('status') in OWNER_WAITING_STATUSES:
+      state['status'] = 'ready_email_retry'
+  elif action in {'delayed', 'relayed', 'expanded'}:
+    if state.get('status') in OWNER_WAITING_STATUSES:
+      state['status'] = 'waiting_owner_unconfirmed'
+  save_proposal_state(config, state)
+  log(
+    f'owner email delivery report: {state["proposalId"]} '
+    f'action={action or "unknown"} status={report.get("status", "")}'
+  )
+
+
+def process_delivery_report_message(
+  config: Config,
+  proposals: list[dict[str, Any]],
+  message: Message,
+) -> bool:
+  reports = delivery_status_reports(message)
+  if not reports:
+    return False
+  message_text = message.as_string(policy=policy.default)
+  report_message_id = str(message.get('Message-ID', '')).strip()
+  matched = False
+  for report in reports:
+    state = next(
+      (
+        candidate
+        for candidate in proposals
+        if delivery_report_matches_state(message_text, report, candidate)
+      ),
+      None,
+    )
+    if state is None:
+      continue
+    apply_delivery_report(
+      config,
+      state,
+      report,
+      report_message_id=report_message_id,
+      message_text=message_text,
+    )
+    matched = True
+  return matched
+
+
 def poll_owner_mail(config: Config) -> int:
   if not all(
     [config.imap_host, config.imap_user, config.imap_password, config.owner_email]
@@ -2376,7 +2889,7 @@ def poll_owner_mail(config: Config) -> int:
   proposals = [
     state
     for state in list_proposal_states(config)
-    if state.get('status') == 'waiting_owner'
+    if state.get('status') in OWNER_WAITING_STATUSES
   ]
   if not proposals:
     return 0
@@ -2392,7 +2905,7 @@ def poll_owner_mail(config: Config) -> int:
     status, _ = mailbox.select(config.imap_mailbox)
     if status != 'OK':
       raise AutomationError(f'cannot select IMAP mailbox {config.imap_mailbox}')
-    status, data = mailbox.uid('SEARCH', None, 'UNSEEN')
+    status, data = mailbox.uid('SEARCH', None, 'ALL')
     if status != 'OK':
       raise AutomationError('IMAP search failed')
     for uid in data[0].split()[-50:]:
@@ -2414,16 +2927,23 @@ def poll_owner_mail(config: Config) -> int:
       message = BytesParser(policy=policy.default).parsebytes(raw)
       key = stable_message_key(message)
       if key in seen_values:
+        continue
+      if process_delivery_report_message(config, proposals, message):
+        seen_values.add(key)
+        atomic_write_json(seen_path, sorted(seen_values)[-5000:])
         mailbox.uid('STORE', uid, '+FLAGS', '(\\Seen)')
+        processed += 1
         continue
       sender = parseaddr(str(message.get('From', '')))[1].lower()
       if sender != config.owner_email:
+        seen_values.add(key)
+        atomic_write_json(seen_path, sorted(seen_values)[-5000:])
         continue
       matching = next(
         (
           state
           for state in proposals
-          if state.get('status') == 'waiting_owner'
+          if state.get('status') in OWNER_WAITING_STATUSES
           and message_matches_proposal(message, state)
         ),
         None,
@@ -2485,6 +3005,7 @@ def mail_loop(config: Config) -> None:
       with exclusive_lock(config.state_dir / 'mail.lock', blocking=False) as acquired:
         if acquired:
           poll_owner_mail(config)
+          retry_pending_owner_emails(config)
     except Exception as error:  # noqa: BLE001 - persistent service retries.
       log(f'mail poll failed: {error}')
     time.sleep(config.imap_poll_seconds)
@@ -2619,7 +3140,7 @@ def health(config: Config) -> dict[str, Any]:
       timeout=120,
     ).returncode
     == 0,
-    'smtpConfigured': bool(config.smtp_url and config.email_from),
+    'smtpConfigured': bool(mail_transports(config)),
     'imapConfigured': bool(
       config.imap_host and config.imap_user and config.imap_password
     ),
@@ -2655,6 +3176,7 @@ def main() -> int:
       start_analytics_proposal(config)
     elif args.command == 'mail-once':
       poll_owner_mail(config)
+      retry_pending_owner_emails(config)
     elif args.command == 'mail-loop':
       mail_loop(config)
     elif args.command == 'health':
