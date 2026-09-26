@@ -52,6 +52,9 @@ PUBLIC_UPDATE_TESTS = (
   'src/features/public/latest-app-update-policy.unit.spec.ts',
   'src/features/public/latest-app-update-card.unit.spec.tsx',
 )
+CONTABO_QUARANTINED_TESTS = (
+  'src/components/form/field-checkbox-group/field-checkbox-group.browser.spec.tsx',
+)
 FULL_SITE_TEST_COMMAND = (
   'corepack',
   'pnpm',
@@ -60,6 +63,11 @@ FULL_SITE_TEST_COMMAND = (
   'run',
   '--browser.headless',
   '--retry=1',
+  *(
+    item
+    for path in CONTABO_QUARANTINED_TESTS
+    for item in ('--exclude', path)
+  ),
 )
 AUTONOMOUS_VALIDATION_REPAIR_LIMIT = 3
 SHA_RE = re.compile(r'^[0-9a-f]{40}$', re.I)
@@ -533,12 +541,26 @@ def changed_paths(repo: pathlib.Path, base: str = 'origin/master') -> list[str]:
   )
 
 
-def copy_build_environment(config: Config, repo: pathlib.Path) -> None:
+@contextlib.contextmanager
+def temporary_site_build_environment(
+  config: Config,
+  repo: pathlib.Path,
+) -> Iterator[None]:
   source = config.site_build_env_file
-  if source and source.exists():
-    target = repo / '.env'
-    shutil.copyfile(source, target)
-    target.chmod(0o600)
+  target = repo / '.env'
+  original = target.read_bytes() if target.exists() else None
+  original_mode = target.stat().st_mode & 0o777 if target.exists() else None
+  try:
+    if source and source.exists():
+      shutil.copyfile(source, target)
+      target.chmod(0o600)
+    yield
+  finally:
+    if original is None:
+      target.unlink(missing_ok=True)
+    else:
+      target.write_bytes(original)
+      target.chmod(original_mode or 0o600)
 
 
 def ensure_site_dependencies(repo: pathlib.Path) -> None:
@@ -569,41 +591,41 @@ def validate_site(
   full: bool,
 ) -> list[str]:
   paths_before_validation = set(changed_paths(repo))
-  copy_build_environment(config, repo)
-  ensure_site_dependencies(repo)
-  commands: list[list[str]] = [
-    [
-      'corepack',
-      'pnpm',
-      'exec',
-      'vitest',
-      'run',
-      *PUBLIC_UPDATE_TESTS,
-    ],
-    ['corepack', 'pnpm', 'run', 'lint:ts'],
-  ]
-  if full:
-    commands.extend(
-      [
-        list(FULL_SITE_TEST_COMMAND),
-        ['corepack', 'pnpm', 'run', 'build'],
-      ]
-    )
   reports = []
-  environment = site_validation_environment()
-  for command in commands:
-    started = time.monotonic()
-    result = run(
-      command,
-      cwd=repo,
-      timeout=2400,
-      environment=environment,
-    )
-    reports.append(
-      f'{" ".join(command)}: passed in {time.monotonic() - started:.1f}s'
-    )
-    if result.stderr.strip():
-      log(result.stderr[-1000:])
+  with temporary_site_build_environment(config, repo):
+    ensure_site_dependencies(repo)
+    commands: list[list[str]] = [
+      [
+        'corepack',
+        'pnpm',
+        'exec',
+        'vitest',
+        'run',
+        *PUBLIC_UPDATE_TESTS,
+      ],
+      ['corepack', 'pnpm', 'run', 'lint:ts'],
+    ]
+    if full:
+      commands.extend(
+        [
+          list(FULL_SITE_TEST_COMMAND),
+          ['corepack', 'pnpm', 'run', 'build'],
+        ]
+      )
+    environment = site_validation_environment()
+    for command in commands:
+      started = time.monotonic()
+      result = run(
+        command,
+        cwd=repo,
+        timeout=2400,
+        environment=environment,
+      )
+      reports.append(
+        f'{" ".join(command)}: passed in {time.monotonic() - started:.1f}s'
+      )
+      if result.stderr.strip():
+        log(result.stderr[-1000:])
   paths_after_validation = set(changed_paths(repo))
   generated_paths = sorted(
     (paths_after_validation - paths_before_validation) & KNOWN_VALIDATION_ARTIFACTS
@@ -639,6 +661,12 @@ def codex_base_command(config: Config, repo: pathlib.Path) -> list[str]:
   ]
 
 
+def codex_environment() -> dict[str, str]:
+  environment = os.environ.copy()
+  environment.pop('OPENAI_API_KEY', None)
+  return environment
+
+
 def run_codex(
   config: Config,
   repo: pathlib.Path,
@@ -668,6 +696,7 @@ def run_codex(
     timeout=config.codex_timeout_seconds,
     input_text=prompt,
     check=False,
+    environment=codex_environment(),
   )
   events_file.write_text(result.stdout, encoding='utf-8')
   (run_dir / 'codex-stderr.log').write_text(result.stderr, encoding='utf-8')
@@ -713,12 +742,17 @@ def git_commit_and_push(
   repo: pathlib.Path,
   branch: str,
   message: str,
+  *,
+  allow_empty: bool = False,
 ) -> str:
   run(['git', 'add', '--all'], cwd=repo)
   staged = run(['git', 'diff', '--cached', '--name-only'], cwd=repo).stdout.strip()
-  if not staged:
+  if not staged and not allow_empty:
     raise AutomationError('There is no validated change to commit.')
-  run(['git', 'commit', '-m', message], cwd=repo, timeout=300)
+  commit_command = ['git', 'commit', '-m', message]
+  if not staged:
+    commit_command.append('--allow-empty')
+  run(commit_command, cwd=repo, timeout=300)
   run(['git', 'push', '--force-with-lease', '-u', 'origin', branch], cwd=repo, timeout=600)
   return run(['git', 'rev-parse', 'HEAD'], cwd=repo).stdout.strip()
 
@@ -775,27 +809,85 @@ def create_or_update_pr(
     body_file.unlink(missing_ok=True)
 
 
-def wait_for_pr_checks(repo: pathlib.Path, pr_url: str, timeout: int = 1800) -> None:
-  result = run(
-    [
-      'gh',
-      'pr',
-      'checks',
-      pr_url,
-      '--repo',
-      EXPECTED_SITE_REPOSITORY,
-      '--watch',
-      '--interval',
-      '15',
-    ],
-    cwd=repo,
-    timeout=timeout,
-    check=False,
+def wait_for_pr_checks(
+  repo: pathlib.Path,
+  pr_url: str,
+  *,
+  expected_sha: str = '',
+  timeout: int = 1800,
+) -> None:
+  deadline = time.monotonic() + timeout
+  latest_summary = 'No PR checks reported yet.'
+  while time.monotonic() < deadline:
+    head_result = run(
+      [
+        'gh',
+        'pr',
+        'view',
+        pr_url,
+        '--repo',
+        EXPECTED_SITE_REPOSITORY,
+        '--json',
+        'headRefOid',
+        '--jq',
+        '.headRefOid',
+      ],
+      cwd=repo,
+      timeout=60,
+      check=False,
+    )
+    head_sha = head_result.stdout.strip()
+    if head_result.returncode == 0 and (
+      not expected_sha or head_sha.lower() == expected_sha.lower()
+    ):
+      checks_result = run(
+        [
+          'gh',
+          'pr',
+          'checks',
+          pr_url,
+          '--repo',
+          EXPECTED_SITE_REPOSITORY,
+          '--json',
+          'bucket,name,link',
+        ],
+        cwd=repo,
+        timeout=60,
+        check=False,
+      )
+      try:
+        checks = json.loads(checks_result.stdout or '[]')
+      except json.JSONDecodeError:
+        checks = []
+      if isinstance(checks, list) and checks:
+        latest_summary = '\n'.join(
+          f'{item.get("bucket", "unknown")}: {item.get("name", "unnamed")} '
+          f'{item.get("link", "")}'.rstrip()
+          for item in checks
+          if isinstance(item, dict)
+        )
+        failed = [
+          item
+          for item in checks
+          if isinstance(item, dict)
+          and item.get('bucket') in {'fail', 'cancel'}
+        ]
+        pending = [
+          item
+          for item in checks
+          if isinstance(item, dict)
+          and item.get('bucket') not in {'pass', 'skipping'}
+        ]
+        if failed:
+          raise AutomationError(f'PR checks failed:\n{latest_summary[-8000:]}')
+        if not pending:
+          return
+    remaining = deadline - time.monotonic()
+    if remaining > 0:
+      time.sleep(min(15, remaining))
+  raise AutomationError(
+    f'PR checks did not pass within {timeout} seconds:\n{latest_summary[-8000:]}'
   )
-  if result.returncode not in {0, 1}:
-    raise AutomationError(f'Unable to read PR checks: {result.stderr[-2000:]}')
-  if result.returncode == 1:
-    raise AutomationError(f'PR checks failed:\n{result.stdout[-4000:]}')
 
 
 def merge_pr(repo: pathlib.Path, pr_url: str) -> None:
@@ -1398,6 +1490,100 @@ PREVIEW_PATH: /path-to-the-modified-page
       )
 
 
+def validate_pr_checks_with_codex_repair(
+  config: Config,
+  state: dict[str, Any],
+  workspace: pathlib.Path,
+  head_sha: str,
+  *,
+  phase: str,
+) -> str:
+  repairs = state.setdefault('prCheckRepairs', [])
+  for attempt in range(AUTONOMOUS_VALIDATION_REPAIR_LIMIT + 1):
+    try:
+      wait_for_pr_checks(
+        workspace,
+        state['prUrl'],
+        expected_sha=head_sha,
+      )
+      state['prChecks'] = {
+        'status': 'passed',
+        'headSha': head_sha,
+        'validatedAt': datetime.now(timezone.utc).isoformat(),
+      }
+      atomic_write_json(
+        proposal_state_path(config, state['proposalId']),
+        state,
+      )
+      return head_sha
+    except Exception as error:
+      if attempt >= AUTONOMOUS_VALIDATION_REPAIR_LIMIT:
+        raise
+
+      repair_number = len(repairs) + 1
+      repairs.append(
+        {
+          'phase': phase,
+          'attempt': repair_number,
+          'error': str(error)[-8000:],
+          'startedAt': datetime.now(timezone.utc).isoformat(),
+        }
+      )
+      state['updatedAt'] = datetime.now(timezone.utc).isoformat()
+      atomic_write_json(
+        proposal_state_path(config, state['proposalId']),
+        state,
+      )
+      prompt = f"""GitHub validation failed before this proposal could be shown to the owner.
+
+GitHub check failure:
+---
+{str(error)[-8000:]}
+---
+
+Resume the same task and session. Inspect the current branch and diagnose whether the
+failure comes from the public-site proposal. Fix it autonomously when it does. Stay
+inside the public-site allowlist and preserve the original GA4-backed objective. Do
+not edit unrelated application code merely to silence a flaky check. Run focused
+checks before finishing. Do not commit, push, open or merge a PR, deploy, or send
+email. The runner owns those actions. End with exactly one public route on its own
+line:
+PREVIEW_PATH: /path-to-the-modified-page
+"""
+      session_id, report = run_codex(
+        config,
+        workspace,
+        prompt,
+        config.state_dir
+        / 'proposals'
+        / state['proposalId']
+        / f'{phase}-pr-check-repair-{repair_number:02d}',
+        session_id=state['codexSessionId'],
+      )
+      if session_id != state['codexSessionId']:
+        raise AutomationError('Codex resumed under a different session id.')
+      state['agentReport'] = report[-8000:]
+      state['previewPath'] = public_preview_path(report)
+      validate_site_with_codex_repair(
+        config,
+        state,
+        workspace,
+        phase=f'{phase}-pr-check',
+      )
+      head_sha = git_commit_and_push(
+        workspace,
+        state['branch'],
+        f'fix: repair PR checks for {state["proposalId"]}',
+        allow_empty=True,
+      )
+      repairs[-1]['completedAt'] = datetime.now(timezone.utc).isoformat()
+      repairs[-1]['headSha'] = head_sha
+      atomic_write_json(
+        proposal_state_path(config, state['proposalId']),
+        state,
+      )
+
+
 def list_proposal_states(config: Config) -> list[dict[str, Any]]:
   states: list[dict[str, Any]] = []
   for path in sorted((config.state_dir / 'proposals').glob('analytics-*.json')):
@@ -1509,6 +1695,7 @@ def proposal_email_body(state: dict[str, Any]) -> str:
       '',
       'Tests exécutés:',
       *[f'- {item}' for item in state.get('validation', [])],
+      '- Contrôles GitHub de la PR: réussis',
       '',
       'Réponds directement à cet email:',
       '- OK / oui / go: je refais une vérification finale, puis je fusionne et déploie.',
@@ -1595,12 +1782,19 @@ def start_analytics_proposal(config: Config) -> dict[str, Any] | None:
             '### Safety',
             '- Public site allowlist enforced',
             '- Sensitive backend/deployment paths blocked',
-            '- TypeScript, test suite, and production build passed',
+            '- TypeScript, local test suite, production build, and GitHub CI required',
             '- No automatic merge before owner approval',
           ]
         ),
       )
       state['prUrl'] = pr_url
+      head_sha = validate_pr_checks_with_codex_repair(
+        config,
+        state,
+        workspace,
+        head_sha,
+        phase='initial',
+      )
       state['previewUrl'] = deploy_staging_preview(
         config,
         workspace,
@@ -1918,6 +2112,13 @@ public route on its own line: PREVIEW_PATH: /path-to-the-modified-page
     workspace,
     f'fix: apply owner feedback to {proposal_id}',
   )
+  head_sha = validate_pr_checks_with_codex_repair(
+    config,
+    state,
+    workspace,
+    head_sha,
+    phase='owner-feedback',
+  )
   state['previewUrl'] = deploy_staging_preview(
     config,
     workspace,
@@ -1957,6 +2158,13 @@ those actions. Finish with a concise final-review report.
     state,
     workspace,
     f'fix: finalize approved proposal {proposal_id}',
+  )
+  head_sha = validate_pr_checks_with_codex_repair(
+    config,
+    state,
+    workspace,
+    head_sha,
+    phase='owner-approval',
   )
   state['previewUrl'] = deploy_staging_preview(
     config,

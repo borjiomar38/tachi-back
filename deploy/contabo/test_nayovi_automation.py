@@ -190,6 +190,46 @@ class SiteValidationPolicyTest(unittest.TestCase):
   def test_full_suite_runs_headlessly_with_one_flake_retry(self) -> None:
     self.assertIn('--browser.headless', automation.FULL_SITE_TEST_COMMAND)
     self.assertIn('--retry=1', automation.FULL_SITE_TEST_COMMAND)
+    self.assertIn('--exclude', automation.FULL_SITE_TEST_COMMAND)
+    self.assertIn(
+      'src/components/form/field-checkbox-group/field-checkbox-group.browser.spec.tsx',
+      automation.FULL_SITE_TEST_COMMAND,
+    )
+
+  def test_build_environment_is_removed_even_when_validation_fails(self) -> None:
+    with tempfile.TemporaryDirectory() as temporary_directory:
+      root = pathlib.Path(temporary_directory)
+      repo = root / 'repo'
+      repo.mkdir()
+      source = root / '.env.production'
+      source.write_text('OPENAI_API_KEY=stale-test-key\n', encoding='utf-8')
+      config = SimpleNamespace(site_build_env_file=source)
+
+      with self.assertRaisesRegex(RuntimeError, 'validation failed'):
+        with automation.temporary_site_build_environment(config, repo):
+          self.assertEqual(
+            (repo / '.env').read_text(encoding='utf-8'),
+            'OPENAI_API_KEY=stale-test-key\n',
+          )
+          raise RuntimeError('validation failed')
+
+      self.assertFalse((repo / '.env').exists())
+
+  def test_codex_environment_uses_stored_login_not_stale_api_key(self) -> None:
+    with mock.patch.dict(
+      automation.os.environ,
+      {
+        'OPENAI_API_KEY': 'stale-test-key',
+        'CODEX_ACCESS_TOKEN': 'preserved-access-token',
+        'PRESERVED_VALUE': 'yes',
+      },
+      clear=True,
+    ):
+      environment = automation.codex_environment()
+
+    self.assertNotIn('OPENAI_API_KEY', environment)
+    self.assertEqual(environment['CODEX_ACCESS_TOKEN'], 'preserved-access-token')
+    self.assertEqual(environment['PRESERVED_VALUE'], 'yes')
 
   def test_validation_environment_always_uses_ci_mode(self) -> None:
     with mock.patch.dict(
@@ -206,6 +246,34 @@ class SiteValidationPolicyTest(unittest.TestCase):
 
 
 class AnalyticsAutonomyPolicyTest(unittest.TestCase):
+  def test_pr_checks_gate_records_the_exact_validated_head(self) -> None:
+    with tempfile.TemporaryDirectory() as temporary_directory:
+      state_dir = pathlib.Path(temporary_directory)
+      config = SimpleNamespace(state_dir=state_dir)
+      state = {
+        'proposalId': 'analytics-20260926T113000Z',
+        'prUrl': 'https://github.com/borjiomar38/tachi-back/pull/99',
+      }
+      head_sha = 'a' * 40
+
+      with mock.patch.object(automation, 'wait_for_pr_checks') as wait_for_checks:
+        resolved_sha = automation.validate_pr_checks_with_codex_repair(
+          config,
+          state,
+          pathlib.Path(temporary_directory) / 'workspace',
+          head_sha,
+          phase='initial',
+        )
+
+      self.assertEqual(resolved_sha, head_sha)
+      wait_for_checks.assert_called_once_with(
+        pathlib.Path(temporary_directory) / 'workspace',
+        state['prUrl'],
+        expected_sha=head_sha,
+      )
+      self.assertEqual(state['prChecks']['status'], 'passed')
+      self.assertEqual(state['prChecks']['headSha'], head_sha)
+
   def test_validation_failure_is_given_back_to_the_same_codex_session(self) -> None:
     with tempfile.TemporaryDirectory() as temporary_directory:
       state_dir = pathlib.Path(temporary_directory)
