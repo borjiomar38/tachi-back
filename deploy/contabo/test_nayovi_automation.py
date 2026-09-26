@@ -5,6 +5,8 @@ import pathlib
 import sys
 import tempfile
 import unittest
+from email import policy
+from email.parser import BytesParser
 from types import SimpleNamespace
 from unittest import mock
 
@@ -115,18 +117,143 @@ class OwnerReplyPolicyTest(unittest.TestCase):
 
   def test_owner_email_replies_to_the_monitored_mailbox(self) -> None:
     config = SimpleNamespace(
+      owner_smtp_url='smtps://contact:secret@mail.example.test:465',
+      owner_email_from='Nayovi Analytics <contact@nayovi.com>',
+      fallback_smtp_url='',
+      fallback_email_from='',
+      smtp_url='',
       email_from='Nayovi <noreply@nayovi.com>',
       imap_user='contact@nayovi.com',
       owner_email='borjiomar38@gmail.com',
     )
 
-    with mock.patch.object(automation, 'send_smtp_message') as send_message:
+    with mock.patch.object(
+      automation,
+      'send_smtp_message',
+      return_value={'dsnRequested': True},
+    ) as send_message:
       automation.send_owner_email(config, subject='Test', body='Hello')
 
     message = send_message.call_args.args[1]
-    self.assertEqual(message['From'], 'Nayovi <noreply@nayovi.com>')
+    self.assertEqual(message['From'], 'Nayovi Analytics <contact@nayovi.com>')
     self.assertEqual(message['To'], 'borjiomar38@gmail.com')
     self.assertEqual(message['Reply-To'], 'contact@nayovi.com')
+    self.assertTrue(send_message.call_args.kwargs['request_dsn'])
+
+  def test_proposal_email_is_concise_and_excludes_agent_internals(self) -> None:
+    body = automation.proposal_email_body(
+      {
+        'proposalId': 'analytics-1',
+        'previewUrl': 'https://preview.example/download',
+        'prUrl': 'https://github.example/pull/1',
+        'analyticsSummary': 'sensitive analytics detail',
+        'agentReport': 'large internal agent report',
+      }
+    )
+
+    self.assertIn('https://preview.example/download', body)
+    self.assertNotIn('sensitive analytics detail', body)
+    self.assertNotIn('large internal agent report', body)
+
+  def test_relayed_dsn_stays_unconfirmed(self) -> None:
+    raw = b'''From: MAILER-DAEMON@example.test
+Message-ID: <dsn-1@example.test>
+Content-Type: multipart/report; report-type=delivery-status; boundary="dsn"
+
+--dsn
+Content-Type: text/plain
+
+Relayed.
+--dsn
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; relay.example.test
+Original-Envelope-ID: analytics-20260926T123843Z-abc
+
+Final-Recipient: rfc822; borjiomar38@gmail.com
+Action: relayed
+Status: 2.0.0
+Diagnostic-Code: smtp; delivered via antispam service
+
+--dsn--
+'''
+    message = BytesParser(policy=policy.default).parsebytes(raw)
+    reports = automation.delivery_status_reports(message)
+    self.assertEqual(reports[0]['action'], 'relayed')
+
+    with tempfile.TemporaryDirectory() as temporary_directory:
+      state_dir = pathlib.Path(temporary_directory)
+      config = SimpleNamespace(state_dir=state_dir)
+      state = {
+        'proposalId': 'analytics-20260926T123843Z',
+        'status': 'email_submitted',
+        'outboundMessageIds': ['<proposal-1@nayovi.com>'],
+        'deliveryAttempts': [
+          {
+            'messageId': '<proposal-1@nayovi.com>',
+            'envelopeId': 'analytics-20260926T123843Z-abc',
+            'status': 'submitted',
+          }
+        ],
+      }
+      self.assertTrue(
+        automation.delivery_report_matches_state(
+          message.as_string(policy=policy.default), reports[0], state
+        )
+      )
+
+      automation.apply_delivery_report(
+        config,
+        state,
+        reports[0],
+        report_message_id='<dsn-1@example.test>',
+        message_text=message.as_string(policy=policy.default),
+      )
+
+      self.assertEqual(state['status'], 'waiting_owner_unconfirmed')
+      self.assertNotIn('emailDeliveredAt', state)
+      self.assertEqual(state['deliveryAttempts'][0]['status'], 'relayed')
+
+  def test_unconfirmed_delivery_keeps_the_proposal_active_without_resending(self) -> None:
+    with tempfile.TemporaryDirectory() as temporary_directory:
+      state_dir = pathlib.Path(temporary_directory)
+      proposal_dir = state_dir / 'proposals'
+      proposal_dir.mkdir()
+      state = {
+        'proposalId': 'analytics-20260926T123843Z',
+        'status': 'email_submitted',
+        'deliveryAttempts': [
+          {'sender': 'contact@nayovi.com', 'submittedAt': '2026-09-26T12:00:00Z'},
+          {'sender': 'contact@dev-ring.com', 'submittedAt': '2026-09-26T12:15:00Z'},
+        ],
+      }
+      automation.atomic_write_json(
+        proposal_dir / 'analytics-20260926T123843Z.json', state
+      )
+      config = SimpleNamespace(
+        state_dir=state_dir,
+        owner_smtp_url='smtps://contact:secret@mail.example.test:465',
+        owner_email_from='Nayovi Analytics <contact@nayovi.com>',
+        fallback_smtp_url='smtps://fallback:secret@mail2.example.test:465',
+        fallback_email_from='Nayovi Analytics <contact@dev-ring.com>',
+        smtp_url='',
+        email_from='',
+        delivery_max_attempts=2,
+        delivery_retry_seconds=60,
+      )
+
+      with mock.patch.object(automation, 'send_owner_email') as send_owner_email:
+        self.assertEqual(automation.retry_pending_owner_emails(config), 0)
+
+      send_owner_email.assert_not_called()
+      saved = automation.read_json(
+        proposal_dir / 'analytics-20260926T123843Z.json'
+      )
+      self.assertEqual(saved['status'], 'waiting_owner_unconfirmed')
+      self.assertEqual(
+        automation.active_proposal(config)['proposalId'],
+        'analytics-20260926T123843Z',
+      )
 
 
 class PreviewPolicyTest(unittest.TestCase):

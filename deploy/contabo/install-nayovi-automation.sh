@@ -111,6 +111,8 @@ ensure_env_default NAYOVI_OWNER_EMAIL borjiomar38@gmail.com
 ensure_env_default NAYOVI_MAIL_ENV_FILE /opt/tachi-back/.env.production
 ensure_env_default NAYOVI_GROWTH_ENV_FILE /opt/tachi-back/.env.growth-agent
 ensure_env_default NAYOVI_IMAP_POLL_SECONDS 30
+ensure_env_default NAYOVI_DELIVERY_RETRY_SECONDS 900
+ensure_env_default NAYOVI_DELIVERY_MAX_ATTEMPTS 2
 ensure_env_default NAYOVI_PREVIEW_BASE_URL https://staging.62.171.171.212.sslip.io
 ensure_env_default NAYOVI_STAGING_ENV_FILE /opt/tachi-back-staging/.env.staging
 ensure_env_default NAYOVI_STAGING_SOURCE_DIR /opt/tachi-back-staging
