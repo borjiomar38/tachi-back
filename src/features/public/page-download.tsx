@@ -94,8 +94,9 @@ export const PageDownload = ({
               Download Nayovi for manhwa and manga translation on Android.
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground md:text-lg">
-              Install the official APK, open a chapter, and try the translator
-              free.
+              Arriving from a TachiyomiAT or Mihon search? Nayovi is the current
+              branded Android APK and hosted translation path. Install it, open
+              a chapter, and try free translation tokens—no card required.
             </p>
 
             <a
