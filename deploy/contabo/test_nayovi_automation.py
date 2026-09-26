@@ -241,6 +241,7 @@ class SiteValidationPolicyTest(unittest.TestCase):
 
     self.assertEqual(environment['CI'], 'true')
     self.assertEqual(environment['SKIP_ENV_VALIDATION'], 'true')
+    self.assertEqual(environment['NODE_OPTIONS'], '--max-old-space-size=4096')
     self.assertEqual(environment['PRESERVED_VALUE'], 'yes')
     self.assertEqual(environment['VITE_BASE_URL'], 'http://localhost:3000')
 

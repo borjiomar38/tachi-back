@@ -577,6 +577,7 @@ def site_validation_environment() -> dict[str, str]:
   environment = os.environ.copy()
   environment['CI'] = 'true'
   environment['SKIP_ENV_VALIDATION'] = 'true'
+  environment.setdefault('NODE_OPTIONS', '--max-old-space-size=4096')
   environment.setdefault('VITE_BASE_URL', 'http://localhost:3000')
   environment.setdefault(
     'VITE_S3_BUCKET_PUBLIC_URL', 'http://localhost:9000/default'
