@@ -247,6 +247,56 @@ class SiteValidationPolicyTest(unittest.TestCase):
 
 
 class AnalyticsAutonomyPolicyTest(unittest.TestCase):
+  def test_legacy_github_cli_checks_are_parsed(self) -> None:
+    output = '\n'.join(
+      [
+        'TypeScript\tpass\t51s\thttps://example.test/typescript',
+        'E2E\tpending\t0\thttps://example.test/e2e',
+      ]
+    )
+
+    self.assertEqual(
+      automation.parse_legacy_pr_checks(output),
+      [
+        {
+          'name': 'TypeScript',
+          'bucket': 'pass',
+          'link': 'https://example.test/typescript',
+        },
+        {
+          'name': 'E2E',
+          'bucket': 'pending',
+          'link': 'https://example.test/e2e',
+        },
+      ],
+    )
+
+  def test_pr_checks_fall_back_for_github_cli_without_json_support(self) -> None:
+    modern_result = SimpleNamespace(
+      returncode=1,
+      stdout='',
+      stderr='unknown flag: --json',
+    )
+    legacy_result = SimpleNamespace(
+      returncode=0,
+      stdout='Linter\tpass\t28s\thttps://example.test/linter\n',
+      stderr='',
+    )
+
+    with mock.patch.object(
+      automation,
+      'run',
+      side_effect=[modern_result, legacy_result],
+    ) as run_command:
+      checks = automation.read_pr_checks(
+        pathlib.Path('/tmp/repo'),
+        'https://github.com/borjiomar38/tachi-back/pull/16',
+      )
+
+    self.assertEqual(checks[0]['bucket'], 'pass')
+    self.assertEqual(run_command.call_count, 2)
+    self.assertNotIn('--json', run_command.call_args_list[1].args[0])
+
   def test_pr_checks_gate_records_the_exact_validated_head(self) -> None:
     with tempfile.TemporaryDirectory() as temporary_directory:
       state_dir = pathlib.Path(temporary_directory)

@@ -841,25 +841,7 @@ def wait_for_pr_checks(
     if head_result.returncode == 0 and (
       not expected_sha or head_sha.lower() == expected_sha.lower()
     ):
-      checks_result = run(
-        [
-          'gh',
-          'pr',
-          'checks',
-          pr_url,
-          '--repo',
-          EXPECTED_SITE_REPOSITORY,
-          '--json',
-          'bucket,name,link',
-        ],
-        cwd=repo,
-        timeout=60,
-        check=False,
-      )
-      try:
-        checks = json.loads(checks_result.stdout or '[]')
-      except json.JSONDecodeError:
-        checks = []
+      checks = read_pr_checks(repo, pr_url)
       if isinstance(checks, list) and checks:
         latest_summary = '\n'.join(
           f'{item.get("bucket", "unknown")}: {item.get("name", "unnamed")} '
@@ -889,6 +871,58 @@ def wait_for_pr_checks(
   raise AutomationError(
     f'PR checks did not pass within {timeout} seconds:\n{latest_summary[-8000:]}'
   )
+
+
+def parse_legacy_pr_checks(output: str) -> list[dict[str, str]]:
+  checks: list[dict[str, str]] = []
+  valid_buckets = {'pass', 'fail', 'pending', 'skipping', 'cancel'}
+  for line in output.splitlines():
+    fields = line.split('\t')
+    if len(fields) < 4 or fields[1] not in valid_buckets:
+      continue
+    checks.append(
+      {
+        'name': fields[0],
+        'bucket': fields[1],
+        'link': fields[3],
+      }
+    )
+  return checks
+
+
+def read_pr_checks(repo: pathlib.Path, pr_url: str) -> list[dict[str, Any]]:
+  base_command = [
+    'gh',
+    'pr',
+    'checks',
+    pr_url,
+    '--repo',
+    EXPECTED_SITE_REPOSITORY,
+  ]
+  checks_result = run(
+    [*base_command, '--json', 'bucket,name,link'],
+    cwd=repo,
+    timeout=60,
+    check=False,
+  )
+  try:
+    checks = json.loads(checks_result.stdout or '[]')
+  except json.JSONDecodeError:
+    checks = []
+  if isinstance(checks, list) and checks:
+    return checks
+
+  command_output = f'{checks_result.stdout}\n{checks_result.stderr}'
+  if 'unknown flag: --json' not in command_output:
+    return []
+
+  legacy_result = run(
+    base_command,
+    cwd=repo,
+    timeout=60,
+    check=False,
+  )
+  return parse_legacy_pr_checks(legacy_result.stdout)
 
 
 def merge_pr(repo: pathlib.Path, pr_url: str) -> None:
