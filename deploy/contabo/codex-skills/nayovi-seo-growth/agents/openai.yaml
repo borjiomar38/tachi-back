@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nayovi SEO Growth"
+  short_description: "Evidence-led SEO growth for Nayovi"
+  default_prompt: "Use $nayovi-seo-growth to select, implement, and verify one measurable white-hat SEO improvement."
