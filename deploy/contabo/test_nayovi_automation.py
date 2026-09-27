@@ -16,6 +16,18 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 import nayovi_automation as automation  # noqa: E402
 
 
+class InstallerPolicyTest(unittest.TestCase):
+  def test_installer_persists_skill_evening_schedule_and_safe_refresh(self) -> None:
+    installer = pathlib.Path(__file__).with_name(
+      'install-nayovi-automation.sh'
+    ).read_text(encoding='utf-8')
+
+    self.assertIn('.codex/skills/nayovi-seo-growth', installer)
+    self.assertIn('audience-copy-and-conversion.md', installer)
+    self.assertIn('OnCalendar=*-*-* 17:00:00 UTC', installer)
+    self.assertIn('--on-active=15m', installer)
+
+
 class WebhookPolicyTest(unittest.TestCase):
   def test_signature_requires_current_timestamp_and_exact_body(self) -> None:
     body = b'{"hello":"nayovi"}'
@@ -146,12 +158,21 @@ class OwnerReplyPolicyTest(unittest.TestCase):
         'proposalId': 'analytics-1',
         'previewUrl': 'https://preview.example/download',
         'prUrl': 'https://github.example/pull/1',
+        'ownerChangeSummary': (
+          'Le texte de téléchargement répond plus clairement au besoin du visiteur.'
+        ),
+        'ownerBenefitSummary': (
+          'Cela devrait attirer des visiteurs plus qualifiés vers le téléchargement.'
+        ),
         'analyticsSummary': 'sensitive analytics detail',
         'agentReport': 'large internal agent report',
       }
     )
 
     self.assertIn('https://preview.example/download', body)
+    self.assertIn('Ce qui change', body)
+    self.assertIn('répond plus clairement', body)
+    self.assertIn('visiteurs plus qualifiés', body)
     self.assertNotIn('sensitive analytics detail', body)
     self.assertNotIn('large internal agent report', body)
 
@@ -272,6 +293,35 @@ class PreviewPolicyTest(unittest.TestCase):
         with self.assertRaises(automation.AutomationError):
           automation.public_preview_path(report)
 
+  def test_extracts_non_technical_owner_summary(self) -> None:
+    report = '\n'.join(
+      [
+        'Evidence and validation passed.',
+        'OWNER_CHANGE: La page explique plus clairement comment essayer Nayovi.',
+        'OWNER_BENEFIT: Cela devrait aider les bons visiteurs à passer au téléchargement.',
+        'PREVIEW_PATH: /download',
+      ]
+    )
+    state: dict[str, object] = {}
+
+    automation.update_proposal_report(state, report)
+
+    self.assertEqual(state['previewPath'], '/download')
+    self.assertIn('explique plus clairement', state['ownerChangeSummary'])
+    self.assertIn('passer au téléchargement', state['ownerBenefitSummary'])
+
+  def test_rejects_internal_details_in_owner_summary(self) -> None:
+    report = '\n'.join(
+      [
+        'OWNER_CHANGE: Le fichier src/features/public/page-download.tsx change.',
+        'OWNER_BENEFIT: La page devrait être plus utile.',
+        'PREVIEW_PATH: /download',
+      ]
+    )
+
+    with self.assertRaises(automation.AutomationError):
+      automation.update_proposal_report({}, report)
+
 
 class SiteValidationPolicyTest(unittest.TestCase):
   def test_changed_paths_include_untracked_files_and_deletions(self) -> None:
@@ -301,6 +351,16 @@ class SiteValidationPolicyTest(unittest.TestCase):
         'src/features/analytics/analytics-consent.tsx',
         'src/features/analytics/google-analytics.ts',
         'src/features/analytics/apk-download-tracking.unit.spec.ts',
+      ]
+    )
+
+  def test_analytics_agent_can_add_public_english_and_french_copy(self) -> None:
+    automation.validate_analytics_paths(
+      [
+        'src/locales/en/public.json',
+        'src/locales/en/index.ts',
+        'src/locales/fr/public.json',
+        'src/locales/fr/index.ts',
       ]
     )
 
@@ -374,6 +434,111 @@ class SiteValidationPolicyTest(unittest.TestCase):
 
 
 class AnalyticsAutonomyPolicyTest(unittest.TestCase):
+  def test_prompt_requires_the_nayovi_seo_skill_and_evidence_boundaries(self) -> None:
+    prompt = automation.build_analytics_prompt(
+      pathlib.Path('/tmp/analytics-snapshot.json')
+    )
+
+    self.assertIn('Use $nayovi-seo-growth', prompt)
+    self.assertIn('ordinary, non-technical readers', prompt)
+    self.assertIn('only the\n  Search Console section', prompt)
+    self.assertIn('OWNER_CHANGE:', prompt)
+    self.assertIn('OWNER_BENEFIT:', prompt)
+
+  def test_google_token_requests_both_readonly_scopes(self) -> None:
+    with mock.patch.object(
+      automation,
+      'run',
+      return_value=SimpleNamespace(stdout='token-value\n'),
+    ) as run_command:
+      self.assertEqual(automation.gcloud_access_token(), 'token-value')
+
+    scopes = next(
+      argument
+      for argument in run_command.call_args.args[0]
+      if argument.startswith('--scopes=')
+    )
+    self.assertIn('analytics.readonly', scopes)
+    self.assertIn('webmasters.readonly', scopes)
+
+  def test_summary_does_not_infer_rankings_when_search_console_is_unavailable(self) -> None:
+    current = {
+      'activeUsers': 10,
+      'sessions': 12,
+      'engagedSessions': 8,
+      'keyEvents': 2,
+    }
+    previous = {
+      'activeUsers': 8,
+      'sessions': 10,
+      'engagedSessions': 6,
+      'keyEvents': 1,
+    }
+    summary = automation.analytics_summary(
+      {
+        'periods': {'last28Days': current, 'previous28Days': previous},
+        'searchConsole': {'status': 'unavailable'},
+      }
+    )
+
+    self.assertIn('ranking baseline: unavailable', summary)
+    self.assertIn('do not infer rankings from GA4', summary)
+
+  def test_merge_is_idempotent_and_returns_the_existing_merge_sha(self) -> None:
+    merge_sha = 'a' * 40
+    with (
+      mock.patch.object(automation, 'wait_for_pr_checks'),
+      mock.patch.object(
+        automation,
+        'run',
+        return_value=SimpleNamespace(
+          stdout=json.dumps(
+            {'state': 'MERGED', 'mergeCommit': {'oid': merge_sha}}
+          )
+        ),
+      ) as run_command,
+    ):
+      result = automation.merge_pr(
+        pathlib.Path('/tmp/repo'),
+        'https://github.com/borjiomar38/tachi-back/pull/99',
+      )
+
+    self.assertEqual(result, merge_sha)
+    self.assertEqual(run_command.call_count, 1)
+
+  def test_wait_for_production_deploy_checks_workflow_and_public_health(self) -> None:
+    run_url = 'https://github.com/borjiomar38/tachi-back/actions/runs/123'
+    results = [
+      SimpleNamespace(
+        returncode=0,
+        stdout=json.dumps(
+          [
+            {
+              'databaseId': 123,
+              'name': automation.PRODUCTION_DEPLOY_WORKFLOW,
+              'workflowName': automation.PRODUCTION_DEPLOY_WORKFLOW,
+              'status': 'completed',
+              'conclusion': 'success',
+              'url': run_url,
+            }
+          ]
+        ),
+        stderr='',
+      ),
+      SimpleNamespace(returncode=0, stdout='success', stderr=''),
+      SimpleNamespace(returncode=0, stdout='healthy', stderr=''),
+    ]
+    with mock.patch.object(automation, 'run', side_effect=results) as run_command:
+      result = automation.wait_for_production_deploy(
+        pathlib.Path('/tmp/repo'), 'b' * 40, timeout=120
+      )
+
+    self.assertEqual(result, run_url)
+    self.assertEqual(
+      run_command.call_args_list[-1].args[0],
+      ['curl', '-fsSL', '--max-time', '30', automation.PRODUCTION_HEALTH_URL],
+    )
+
   def test_legacy_github_cli_checks_are_parsed(self) -> None:
     output = '\n'.join(
       [
@@ -462,7 +627,14 @@ class AnalyticsAutonomyPolicyTest(unittest.TestCase):
         'codexSessionId': 'session-123',
       }
       changed = ['src/features/public/page-download.tsx']
-      repaired_report = 'Validation repaired.\nPREVIEW_PATH: /download\n'
+      repaired_report = '\n'.join(
+        [
+          'Validation repaired.',
+          'OWNER_CHANGE: La page explique plus clairement la valeur de Nayovi.',
+          'OWNER_BENEFIT: Cela devrait aider les bons visiteurs à télécharger l’application.',
+          'PREVIEW_PATH: /download',
+        ]
+      )
 
       with (
         mock.patch.object(automation, 'changed_paths', return_value=changed),

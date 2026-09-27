@@ -4,6 +4,7 @@ set -euo pipefail
 APP_DIR="${TACHI_APP_DIR:-/opt/tachi-back}"
 DEPLOY_USER="${TACHI_DEPLOY_USER:-borjiomar38}"
 ENV_FILE="${NAYOVI_AUTOMATION_ENV_FILE:-/etc/nayovi-automation.env}"
+SEO_SKILL_SOURCE="${APP_DIR}/deploy/contabo/codex-skills/nayovi-seo-growth"
 ENABLE_SERVICES=false
 REFRESH_ONLY=false
 
@@ -17,6 +18,16 @@ done
 
 if [[ "${EUID}" -ne 0 ]]; then
   echo 'Run this installer with sudo.' >&2
+  exit 1
+fi
+
+DEPLOY_HOME="$(getent passwd "${DEPLOY_USER}" | cut -d: -f6)"
+if [[ -z "${DEPLOY_HOME}" || ! -d "${DEPLOY_HOME}" ]]; then
+  echo "Cannot resolve a home directory for ${DEPLOY_USER}." >&2
+  exit 1
+fi
+if [[ ! -f "${SEO_SKILL_SOURCE}/SKILL.md" ]]; then
+  echo "Nayovi SEO skill is missing: ${SEO_SKILL_SOURCE}/SKILL.md" >&2
   exit 1
 fi
 
@@ -79,6 +90,28 @@ configure_proxy_firewall() {
 }
 
 install -m 0755 "${APP_DIR}/deploy/contabo/nayovi_automation.py" /usr/local/bin/nayovi-automation
+SEO_SKILL_DESTINATION="${DEPLOY_HOME}/.codex/skills/nayovi-seo-growth"
+install -d -m 0755 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" \
+  "${DEPLOY_HOME}/.codex" \
+  "${DEPLOY_HOME}/.codex/skills" \
+  "${SEO_SKILL_DESTINATION}" \
+  "${SEO_SKILL_DESTINATION}/agents" \
+  "${SEO_SKILL_DESTINATION}/references"
+install -m 0644 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" \
+  "${SEO_SKILL_SOURCE}/SKILL.md" \
+  "${SEO_SKILL_DESTINATION}/SKILL.md"
+install -m 0644 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" \
+  "${SEO_SKILL_SOURCE}/agents/openai.yaml" \
+  "${SEO_SKILL_DESTINATION}/agents/openai.yaml"
+install -m 0644 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" \
+  "${SEO_SKILL_SOURCE}/references/evidence-and-opportunity.md" \
+  "${SEO_SKILL_DESTINATION}/references/evidence-and-opportunity.md"
+install -m 0644 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" \
+  "${SEO_SKILL_SOURCE}/references/audience-copy-and-conversion.md" \
+  "${SEO_SKILL_DESTINATION}/references/audience-copy-and-conversion.md"
+install -m 0644 -o "${DEPLOY_USER}" -g "${DEPLOY_USER}" \
+  "${SEO_SKILL_SOURCE}/references/implementation-and-verification.md" \
+  "${SEO_SKILL_DESTINATION}/references/implementation-and-verification.md"
 if [[ "${REFRESH_ONLY}" != true ]]; then
   apt-get update
   apt-get install -y ca-certificates curl ffmpeg file git jq poppler-utils python3 ripgrep
@@ -107,6 +140,7 @@ ensure_env_default NAYOVI_MOBILE_REPO_URL https://github.com/borjiomar38/tachi-m
 ensure_env_default NAYOVI_SITE_REPO_URL https://github.com/borjiomar38/tachi-back.git
 ensure_env_default NAYOVI_SITE_BUILD_ENV_FILE /opt/tachi-back/.env.production
 ensure_env_default NAYOVI_GA_PROPERTY_ID 551184068
+ensure_env_default NAYOVI_SEARCH_CONSOLE_SITE_URL sc-domain:tachiyomiat.com
 ensure_env_default NAYOVI_OWNER_EMAIL borjiomar38@gmail.com
 ensure_env_default NAYOVI_MAIL_ENV_FILE /opt/tachi-back/.env.production
 ensure_env_default NAYOVI_GROWTH_ENV_FILE /opt/tachi-back/.env.growth-agent
@@ -173,7 +207,7 @@ EOF
 
 cat >/etc/systemd/system/nayovi-analytics-agent.service <<EOF
 [Unit]
-Description=Nayovi daily GA4 improvement proposal agent
+Description=Nayovi daily evidence-led SEO improvement agent
 After=network-online.target nayovi-automation-api.service
 Wants=network-online.target
 
@@ -190,10 +224,10 @@ EOF
 
 cat >/etc/systemd/system/nayovi-analytics-agent.timer <<'EOF'
 [Unit]
-Description=Run the Nayovi GA4 improvement agent daily
+Description=Run the Nayovi SEO improvement agent daily
 
 [Timer]
-OnCalendar=*-*-* 06:00:00 UTC
+OnCalendar=*-*-* 17:00:00 UTC
 Persistent=true
 RandomizedDelaySec=15m
 Unit=nayovi-analytics-agent.service
@@ -219,9 +253,23 @@ if [[ "${ENABLE_SERVICES}" == true ]]; then
     nayovi-automation-api.service \
     nayovi-automation-mail.service \
     nayovi-analytics-agent.timer
-  systemctl restart \
-    nayovi-automation-api.service \
-    nayovi-automation-mail.service
+  if [[ "${REFRESH_ONLY}" == true ]]; then
+    # A production deploy can be initiated by the mail service itself after owner
+    # approval. Restarting it synchronously here would kill that in-flight approval
+    # before it records the successful deploy and sends the final confirmation.
+    systemd-run \
+      --unit="nayovi-automation-refresh-$(date +%s)" \
+      --description='Restart Nayovi automation after production deploy settles' \
+      --on-active=15m \
+      --collect \
+      /bin/systemctl restart \
+      nayovi-automation-api.service \
+      nayovi-automation-mail.service
+  else
+    systemctl restart \
+      nayovi-automation-api.service \
+      nayovi-automation-mail.service
+  fi
   systemctl start nayovi-analytics-agent.timer
 else
   echo 'Installed. Enable after configuring the webhook secret:'
