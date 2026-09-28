@@ -4,6 +4,15 @@ type OcrLayoutPageLike = {
   ocrPage: NormalizedOcrPage;
 };
 
+export function applyOcrPageContinuationPolicy<T extends OcrLayoutPageLike>(
+  pages: T[],
+  layoutMode: 'continuous' | 'paged'
+): T[] {
+  return layoutMode === 'continuous'
+    ? coalesceOcrPageContinuations(pages)
+    : pages;
+}
+
 export function coalesceOcrLineBlocks(
   ocrPage: NormalizedOcrPage,
   _options: { mobileOcrRegionHints?: unknown } = {}

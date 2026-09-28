@@ -18,6 +18,9 @@ const zPageChecksumSha256 = z
   .length(64)
   .regex(/^[a-f0-9]+$/i);
 
+export const zTranslationLayoutMode = z.enum(['continuous', 'paged']);
+export type TranslationLayoutMode = z.infer<typeof zTranslationLayoutMode>;
+
 const MAX_TRANSLATION_JOB_UPLOAD_TOTAL_BYTES = 10_000_000_000;
 const OCR_UPLOAD_COMPRESSION_POLICY_REVISION_PATTERN = new RegExp(
   `^ocr-upload-v${OCR_UPLOAD_COMPRESSION_POLICY_VERSION}-[a-f\\d]{16}$`
@@ -350,6 +353,7 @@ function hasCompleteLogicalGeometry(
 export const zCreateTranslationJobInput = z
   .object({
     chapterIdentity: zTranslationChapterIdentity.optional(),
+    layoutMode: zTranslationLayoutMode.default('continuous'),
     ocrUpload: zTranslationJobOcrUploadMetadata.optional(),
     ocrProvider: z.literal('google_cloud_vision').optional(),
     pages: z
@@ -571,6 +575,7 @@ export const zTranslationJobResultManifest = z.object({
   completedAt: z.date(),
   deviceId: z.string(),
   jobId: z.string(),
+  layoutMode: zTranslationLayoutMode.default('continuous'),
   licenseId: z.string(),
   pageCount: z.number().int().positive(),
   pageFingerprints: z

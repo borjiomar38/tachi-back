@@ -118,6 +118,7 @@ function buildManifest(input: {
     completedAt: new Date('2026-05-03T00:00:00.000Z'),
     deviceId: 'device',
     jobId: 'job',
+    layoutMode: 'continuous',
     licenseId: 'license',
     pageCount: 1,
     pageOrder: ['001.jpg'],

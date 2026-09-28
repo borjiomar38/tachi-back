@@ -50,6 +50,7 @@ describe('job storage inline fallback', () => {
       completedAt: new Date('2026-04-07T14:15:00.000Z'),
       deviceId: 'device-1',
       jobId: 'job-inline',
+      layoutMode: 'continuous' as const,
       licenseId: 'license-1',
       pageCount: 1,
       pageOrder: ['page-001.png'],

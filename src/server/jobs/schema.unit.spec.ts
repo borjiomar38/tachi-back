@@ -273,6 +273,45 @@ describe('translation job upload source page schema', () => {
 });
 
 describe('translation job OCR upload observability schema', () => {
+  it('defaults legacy translation jobs to continuous layout', () => {
+    const parsed = zCreateTranslationJobInput.parse({
+      pages: [
+        {
+          fileName: '001.jpg',
+          mimeType: 'image/jpeg',
+          sizeBytes: 1_024,
+        },
+      ],
+      targetLanguage: 'en',
+    });
+
+    expect(parsed.layoutMode).toBe('continuous');
+  });
+
+  it('accepts paged translation jobs and rejects unknown layouts', () => {
+    const request = {
+      pages: [
+        {
+          fileName: '001.jpg',
+          mimeType: 'image/jpeg',
+          sizeBytes: 1_024,
+        },
+      ],
+      targetLanguage: 'en',
+    };
+
+    expect(
+      zCreateTranslationJobInput.parse({ ...request, layoutMode: 'paged' })
+        .layoutMode
+    ).toBe('paged');
+    expect(
+      zCreateTranslationJobInput.safeParse({
+        ...request,
+        layoutMode: 'horizontal',
+      }).success
+    ).toBe(false);
+  });
+
   it('keeps create-job requests without OCR upload metadata valid', () => {
     expect(
       zCreateTranslationJobInput.parse({

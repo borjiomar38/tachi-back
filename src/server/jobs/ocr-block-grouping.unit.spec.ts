@@ -4,6 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { type NormalizedOcrPage } from '@/server/provider-gateway/schema';
 
 import {
+  applyOcrPageContinuationPolicy,
   coalesceOcrLineBlocks,
   coalesceOcrPageContinuations,
   shouldCoalesceOcrBlocks,
@@ -1114,6 +1115,69 @@ describe('OCR block grouping', () => {
       '" RIGHT NOW, THE WORLD ALREADY BELONGS TO THE ALLIANCE."',
     ]);
     expect(result[1]?.ocrPage.blocks[0]?.renderMode).toBeUndefined();
+  });
+
+  it('keeps boundary blocks separate for paged reading', () => {
+    const pages = [
+      buildLayoutPage('001.webp', [
+        block({
+          height: 55,
+          text: 'RIGHT NOW, THE WORLD ALREADY',
+          width: 230,
+          x: 260,
+          y: 835,
+        }),
+      ]),
+      buildLayoutPage('002.webp', [
+        block({
+          height: 90,
+          text: 'BELONGS TO THE ALLIANCE',
+          width: 250,
+          x: 250,
+          y: 18,
+        }),
+      ]),
+    ];
+
+    const result = applyOcrPageContinuationPolicy(pages, 'paged');
+
+    expect(result).toBe(pages);
+    expect(result[0]?.ocrPage.blocks[0]).toEqual(
+      expect.objectContaining({
+        text: 'RIGHT NOW, THE WORLD ALREADY',
+      })
+    );
+    expect(result[1]?.ocrPage.blocks[0]).toEqual(
+      expect.objectContaining({
+        text: 'BELONGS TO THE ALLIANCE',
+      })
+    );
+    expect(result.flatMap((page) => page.ocrPage.blocks)).toHaveLength(2);
+  });
+
+  it('uses cross-page merging for continuous reading', () => {
+    const result = applyOcrPageContinuationPolicy(
+      [
+        buildLayoutPage('001.webp', [
+          block({ text: 'RIGHT NOW, THE WORLD ALREADY', y: 835 }),
+        ]),
+        buildLayoutPage('002.webp', [
+          block({ text: 'BELONGS TO THE ALLIANCE', y: 18 }),
+        ]),
+      ],
+      'continuous'
+    );
+
+    expect(result.flatMap((page) => page.ocrPage.blocks)).toHaveLength(2);
+    expect(
+      result
+        .flatMap((page) => page.ocrPage.blocks)
+        .some((item) =>
+          item.text.includes(
+            'RIGHT NOW, THE WORLD ALREADY BELONGS TO THE ALLIANCE'
+          )
+        )
+    ).toBe(true);
   });
 
   it('does not merge a completed bottom bubble with a new top bubble', () => {

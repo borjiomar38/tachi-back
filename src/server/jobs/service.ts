@@ -35,11 +35,12 @@ import {
   normalizeTranslationChapterIdentity,
 } from './chapter-identity';
 import {
+  applyOcrPageContinuationPolicy,
   coalesceOcrLineBlocks,
-  coalesceOcrPageContinuations,
 } from './ocr-block-grouping';
 import {
   getTranslationJobLogicalGeometryConflicts,
+  type TranslationLayoutMode,
   type TranslationJobOcrUploadMetadata,
   type TranslationJobResultManifest,
   type TranslationJobUploadSourcePage,
@@ -383,6 +384,7 @@ export async function createTranslationJob(
         jobId: createdJob.id,
         kind: 'page_upload',
         metadata: buildPendingUploadAssetMetadata({
+          layoutMode: input.layoutMode,
           ocrUpload: input.ocrUpload,
           sourcePages: page.sourcePages,
         }),
@@ -503,10 +505,12 @@ function buildServerTranslationJobUpload(job: Pick<JobRecord, 'expiresAt'>) {
 }
 
 function buildPendingUploadAssetMetadata(page: {
+  layoutMode: TranslationLayoutMode;
   ocrUpload?: TranslationJobOcrUploadMetadata | undefined;
   sourcePages?: TranslationJobUploadSourcePage[] | undefined;
 }): Prisma.InputJsonValue {
   const metadata: Record<string, unknown> = {
+    layoutMode: page.layoutMode,
     uploadStatus: 'pending',
   };
 
@@ -1726,7 +1730,8 @@ async function processStartedTranslationJob(
       lineGroupedOcrDebugPages = cloneOcrDebugPages(layoutPages);
     }
 
-    layoutPages = coalesceOcrPageContinuations(layoutPages);
+    const layoutMode = getTranslationJobLayoutMode(startedJob);
+    layoutPages = applyOcrPageContinuationPolicy(layoutPages, layoutMode);
     const groupedOcrDebugPages = cloneOcrDebugPages(layoutPages);
 
     const detectedLanguages = layoutPages.map(
@@ -1867,6 +1872,7 @@ async function processStartedTranslationJob(
       completedAt,
       deviceId: startedJob.deviceId,
       jobId: startedJob.id,
+      layoutMode,
       licenseId: startedJob.licenseId,
       pageCount: startedJob.pageCount,
       pageFingerprints:
@@ -2630,7 +2636,9 @@ function calculateReservedTokens(_pageCount: number) {
 }
 
 function buildTranslationCacheProviderSignature(job: JobRecord) {
+  const layoutMode = getTranslationJobLayoutMode(job);
   return JSON.stringify({
+    ...(layoutMode === 'paged' ? { layoutMode } : {}),
     ocrProvider: job.resolvedOcrProvider,
     promptVersion: envServer.TRANSLATION_PROMPT_VERSION ?? null,
     resultVersion: JOB_RESULT_VERSION,
@@ -2849,6 +2857,20 @@ function getRecord(value: unknown): Record<string, unknown> | null {
   }
 
   return value as Record<string, unknown>;
+}
+
+function getAssetTranslationLayoutMode(
+  metadata: unknown
+): TranslationLayoutMode {
+  const layoutMode = getRecord(metadata)?.layoutMode;
+  return layoutMode === 'paged' ? 'paged' : 'continuous';
+}
+
+function getTranslationJobLayoutMode(
+  job: Pick<JobRecord, 'assets'>
+): TranslationLayoutMode {
+  const pageAsset = job.assets.find((asset) => asset.kind === 'page_upload');
+  return getAssetTranslationLayoutMode(pageAsset?.metadata);
 }
 
 async function getCachedTranslationResultManifest(input: {
@@ -3280,6 +3302,10 @@ function getCachedManifestCompatibilityIssue(input: {
   requireFingerprints: boolean;
   uploadAssets: JobAssetRecord[];
 }): string | null {
+  const jobLayoutMode = getTranslationJobLayoutMode(input.job);
+  if (input.manifest.layoutMode !== jobLayoutMode) {
+    return `layout_mode_mismatch:${input.manifest.layoutMode}:${jobLayoutMode}`;
+  }
   if (input.manifest.pageCount !== input.job.pageCount) {
     return `page_count_mismatch:${input.manifest.pageCount}:${input.job.pageCount}`;
   }
