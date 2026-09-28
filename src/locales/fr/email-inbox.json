@@ -1,0 +1,52 @@
+{
+  "title": "Boîte email",
+  "searchPlaceholder": "Rechercher expéditeur, destinataire, objet ou message",
+  "summary": {
+    "total": "Tous les messages",
+    "totalDescription": "Conversations reçues par les adresses Nayovi",
+    "unread": "Non lus",
+    "unreadDescription": "Conversations en attente de lecture",
+    "replied": "Répondus",
+    "repliedDescription": "Conversations avec une réponse envoyée",
+    "mailboxes": "Boîtes mail",
+    "mailboxesDescription": "Adresses Nayovi actuellement synchronisées"
+  },
+  "filters": {
+    "all": "Tous",
+    "unread": "Non lus",
+    "read": "Lus",
+    "replied": "Répondus"
+  },
+  "allMailboxes": "Toutes les boîtes Nayovi",
+  "live": {
+    "connecting": "Connexion",
+    "databaseOnly": "Base en direct",
+    "live": "En direct",
+    "reconnecting": "Reconnexion"
+  },
+  "list": {
+    "empty": "Aucune conversation email pour le moment.",
+    "emptySearch": "Aucune conversation ne correspond à ces filtres.",
+    "error": "Impossible de charger la boîte email.",
+    "loadingMore": "Chargement…",
+    "showing": "{{visible}} conversations affichées sur {{total}}"
+  },
+  "detail": {
+    "empty": "Sélectionnez une conversation pour la lire.",
+    "error": "Impossible de charger cette conversation.",
+    "from": "De",
+    "to": "À",
+    "openContact": "Ouvrir le contact",
+    "reply": "Répondre par email",
+    "retry": "Réessayer",
+    "sent": "Envoyé",
+    "received": "Reçu",
+    "aiReply": "Réponse automatique Nayovi"
+  },
+  "status": {
+    "unread": "Non lu",
+    "in_progress": "En cours",
+    "resolved": "Résolu",
+    "spam": "Spam"
+  }
+}

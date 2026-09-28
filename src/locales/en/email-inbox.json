@@ -1,0 +1,52 @@
+{
+  "title": "Email inbox",
+  "searchPlaceholder": "Search sender, recipient, subject or message",
+  "summary": {
+    "total": "All messages",
+    "totalDescription": "Email conversations received by Nayovi",
+    "unread": "Unread",
+    "unreadDescription": "Conversations waiting to be reviewed",
+    "replied": "Replied",
+    "repliedDescription": "Conversations with a sent reply",
+    "mailboxes": "Mailboxes",
+    "mailboxesDescription": "Nayovi addresses currently synchronized"
+  },
+  "filters": {
+    "all": "All",
+    "unread": "Unread",
+    "read": "Read",
+    "replied": "Replied"
+  },
+  "allMailboxes": "All Nayovi mailboxes",
+  "live": {
+    "connecting": "Connecting",
+    "databaseOnly": "Database live",
+    "live": "Live",
+    "reconnecting": "Reconnecting"
+  },
+  "list": {
+    "empty": "No email conversations yet.",
+    "emptySearch": "No email conversation matches these filters.",
+    "error": "The inbox could not be loaded.",
+    "loadingMore": "Loading more…",
+    "showing": "Showing {{visible}} of {{total}} conversations"
+  },
+  "detail": {
+    "empty": "Select a conversation to read it.",
+    "error": "This conversation could not be loaded.",
+    "from": "From",
+    "to": "To",
+    "openContact": "Open contact",
+    "reply": "Reply by email",
+    "retry": "Try again",
+    "sent": "Sent",
+    "received": "Received",
+    "aiReply": "Nayovi automated reply"
+  },
+  "status": {
+    "unread": "Unread",
+    "in_progress": "In progress",
+    "resolved": "Resolved",
+    "spam": "Spam"
+  }
+}

@@ -8,6 +8,7 @@ import {
   InboxIcon,
   KeyRoundIcon,
   LayoutDashboardIcon,
+  MailIcon,
   MapPinnedIcon,
   PanelLeftIcon,
   SettingsIcon,
@@ -123,6 +124,23 @@ export const NavSidebar = (props: { children?: ReactNode }) => {
                               <span>
                                 <InboxIcon />
                                 <span>{t('layout:nav.contacts')}</span>
+                              </span>
+                            }
+                          />
+                        )}
+                      </Link>
+                    </SidebarMenuItem>
+                  </WithPermissions>
+                  <WithPermissions permissions={[permissionContact.read]}>
+                    <SidebarMenuItem>
+                      <Link to="/manager/email-inbox">
+                        {({ isActive }) => (
+                          <SidebarMenuButton
+                            isActive={isActive}
+                            render={
+                              <span>
+                                <MailIcon />
+                                <span>{t('layout:nav.emailInbox')}</span>
                               </span>
                             }
                           />

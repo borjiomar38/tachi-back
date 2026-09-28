@@ -61,6 +61,7 @@ import { Route as ManagerManhwaIndexRouteImport } from './routes/manager/manhwa/
 import { Route as ManagerLicensesIndexRouteImport } from './routes/manager/licenses/index'
 import { Route as ManagerJobsIndexRouteImport } from './routes/manager/jobs/index'
 import { Route as ManagerFreeTrialsIndexRouteImport } from './routes/manager/free-trials/index'
+import { Route as ManagerEmailInboxIndexRouteImport } from './routes/manager/email-inbox/index'
 import { Route as ManagerDevicesIndexRouteImport } from './routes/manager/devices/index'
 import { Route as ManagerDashboardIndexRouteImport } from './routes/manager/dashboard.index'
 import { Route as ManagerContentPolicyIndexRouteImport } from './routes/manager/content-policy/index'
@@ -85,6 +86,7 @@ import { Route as ApiMobileHeartbeatRouteImport } from './routes/api/mobile/hear
 import { Route as ApiMobileFunnelEventsRouteImport } from './routes/api/mobile/funnel-events'
 import { Route as ApiMobileExtensionPolicyRouteImport } from './routes/api/mobile/extension-policy'
 import { Route as ApiMobileAppUpdatePolicyRouteImport } from './routes/api/mobile/app-update-policy'
+import { Route as ApiEmailInboxEventsRouteImport } from './routes/api/email-inbox/events'
 import { Route as ApiDownloadTachiyomiatLatestDotapkRouteImport } from './routes/api/download/tachiyomiat-latest[.]apk'
 import { Route as ApiDownloadApkRouteImport } from './routes/api/download/apk'
 import { Route as ApiCronSeoDistributionRouteImport } from './routes/api/cron/seo-distribution'
@@ -414,6 +416,11 @@ const ManagerFreeTrialsIndexRoute = ManagerFreeTrialsIndexRouteImport.update({
   path: '/free-trials/',
   getParentRoute: () => ManagerRouteRoute,
 } as any)
+const ManagerEmailInboxIndexRoute = ManagerEmailInboxIndexRouteImport.update({
+  id: '/email-inbox/',
+  path: '/email-inbox/',
+  getParentRoute: () => ManagerRouteRoute,
+} as any)
 const ManagerDevicesIndexRoute = ManagerDevicesIndexRouteImport.update({
   id: '/devices/',
   path: '/devices/',
@@ -538,6 +545,11 @@ const ApiMobileAppUpdatePolicyRoute =
     path: '/api/mobile/app-update-policy',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiEmailInboxEventsRoute = ApiEmailInboxEventsRouteImport.update({
+  id: '/api/email-inbox/events',
+  path: '/api/email-inbox/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiDownloadTachiyomiatLatestDotapkRoute =
   ApiDownloadTachiyomiatLatestDotapkRouteImport.update({
     id: '/api/download/tachiyomiat-latest.apk',
@@ -907,6 +919,7 @@ export interface FileRoutesByFullPath {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
+  '/api/email-inbox/events': typeof ApiEmailInboxEventsRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRouteWithChildren
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
@@ -931,6 +944,7 @@ export interface FileRoutesByFullPath {
   '/manager/content-policy/': typeof ManagerContentPolicyIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/devices/': typeof ManagerDevicesIndexRoute
+  '/manager/email-inbox/': typeof ManagerEmailInboxIndexRoute
   '/manager/free-trials/': typeof ManagerFreeTrialsIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
@@ -1038,6 +1052,7 @@ export interface FileRoutesByTo {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
+  '/api/email-inbox/events': typeof ApiEmailInboxEventsRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRouteWithChildren
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
@@ -1062,6 +1077,7 @@ export interface FileRoutesByTo {
   '/manager/content-policy': typeof ManagerContentPolicyIndexRoute
   '/manager/dashboard': typeof ManagerDashboardIndexRoute
   '/manager/devices': typeof ManagerDevicesIndexRoute
+  '/manager/email-inbox': typeof ManagerEmailInboxIndexRoute
   '/manager/free-trials': typeof ManagerFreeTrialsIndexRoute
   '/manager/jobs': typeof ManagerJobsIndexRoute
   '/manager/licenses': typeof ManagerLicensesIndexRoute
@@ -1174,6 +1190,7 @@ export interface FileRoutesById {
   '/api/cron/seo-distribution': typeof ApiCronSeoDistributionRoute
   '/api/download/apk': typeof ApiDownloadApkRoute
   '/api/download/tachiyomiat-latest.apk': typeof ApiDownloadTachiyomiatLatestDotapkRoute
+  '/api/email-inbox/events': typeof ApiEmailInboxEventsRoute
   '/api/mobile/app-update-policy': typeof ApiMobileAppUpdatePolicyRouteWithChildren
   '/api/mobile/extension-policy': typeof ApiMobileExtensionPolicyRoute
   '/api/mobile/funnel-events': typeof ApiMobileFunnelEventsRoute
@@ -1198,6 +1215,7 @@ export interface FileRoutesById {
   '/manager/content-policy/': typeof ManagerContentPolicyIndexRoute
   '/manager/dashboard/': typeof ManagerDashboardIndexRoute
   '/manager/devices/': typeof ManagerDevicesIndexRoute
+  '/manager/email-inbox/': typeof ManagerEmailInboxIndexRoute
   '/manager/free-trials/': typeof ManagerFreeTrialsIndexRoute
   '/manager/jobs/': typeof ManagerJobsIndexRoute
   '/manager/licenses/': typeof ManagerLicensesIndexRoute
@@ -1311,6 +1329,7 @@ export interface FileRouteTypes {
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/download/tachiyomiat-latest.apk'
+    | '/api/email-inbox/events'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
     | '/api/mobile/funnel-events'
@@ -1335,6 +1354,7 @@ export interface FileRouteTypes {
     | '/manager/content-policy/'
     | '/manager/dashboard/'
     | '/manager/devices/'
+    | '/manager/email-inbox/'
     | '/manager/free-trials/'
     | '/manager/jobs/'
     | '/manager/licenses/'
@@ -1442,6 +1462,7 @@ export interface FileRouteTypes {
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/download/tachiyomiat-latest.apk'
+    | '/api/email-inbox/events'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
     | '/api/mobile/funnel-events'
@@ -1466,6 +1487,7 @@ export interface FileRouteTypes {
     | '/manager/content-policy'
     | '/manager/dashboard'
     | '/manager/devices'
+    | '/manager/email-inbox'
     | '/manager/free-trials'
     | '/manager/jobs'
     | '/manager/licenses'
@@ -1577,6 +1599,7 @@ export interface FileRouteTypes {
     | '/api/cron/seo-distribution'
     | '/api/download/apk'
     | '/api/download/tachiyomiat-latest.apk'
+    | '/api/email-inbox/events'
     | '/api/mobile/app-update-policy'
     | '/api/mobile/extension-policy'
     | '/api/mobile/funnel-events'
@@ -1601,6 +1624,7 @@ export interface FileRouteTypes {
     | '/manager/content-policy/'
     | '/manager/dashboard/'
     | '/manager/devices/'
+    | '/manager/email-inbox/'
     | '/manager/free-trials/'
     | '/manager/jobs/'
     | '/manager/licenses/'
@@ -1710,6 +1734,7 @@ export interface RootRouteChildren {
   ApiCronSeoDistributionRoute: typeof ApiCronSeoDistributionRoute
   ApiDownloadApkRoute: typeof ApiDownloadApkRoute
   ApiDownloadTachiyomiatLatestDotapkRoute: typeof ApiDownloadTachiyomiatLatestDotapkRoute
+  ApiEmailInboxEventsRoute: typeof ApiEmailInboxEventsRoute
   ApiMobileAppUpdatePolicyRoute: typeof ApiMobileAppUpdatePolicyRouteWithChildren
   ApiMobileExtensionPolicyRoute: typeof ApiMobileExtensionPolicyRoute
   ApiMobileFunnelEventsRoute: typeof ApiMobileFunnelEventsRoute
@@ -2119,6 +2144,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ManagerFreeTrialsIndexRouteImport
       parentRoute: typeof ManagerRouteRoute
     }
+    '/manager/email-inbox/': {
+      id: '/manager/email-inbox/'
+      path: '/email-inbox'
+      fullPath: '/manager/email-inbox/'
+      preLoaderRoute: typeof ManagerEmailInboxIndexRouteImport
+      parentRoute: typeof ManagerRouteRoute
+    }
     '/manager/devices/': {
       id: '/manager/devices/'
       path: '/devices'
@@ -2285,6 +2317,13 @@ declare module '@tanstack/react-router' {
       path: '/api/mobile/app-update-policy'
       fullPath: '/api/mobile/app-update-policy'
       preLoaderRoute: typeof ApiMobileAppUpdatePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/email-inbox/events': {
+      id: '/api/email-inbox/events'
+      path: '/api/email-inbox/events'
+      fullPath: '/api/email-inbox/events'
+      preLoaderRoute: typeof ApiEmailInboxEventsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/download/tachiyomiat-latest.apk': {
@@ -2727,6 +2766,7 @@ interface ManagerRouteRouteChildren {
   ManagerContentPolicyIndexRoute: typeof ManagerContentPolicyIndexRoute
   ManagerDashboardIndexRoute: typeof ManagerDashboardIndexRoute
   ManagerDevicesIndexRoute: typeof ManagerDevicesIndexRoute
+  ManagerEmailInboxIndexRoute: typeof ManagerEmailInboxIndexRoute
   ManagerFreeTrialsIndexRoute: typeof ManagerFreeTrialsIndexRoute
   ManagerJobsIndexRoute: typeof ManagerJobsIndexRoute
   ManagerLicensesIndexRoute: typeof ManagerLicensesIndexRoute
@@ -2758,6 +2798,7 @@ const ManagerRouteRouteChildren: ManagerRouteRouteChildren = {
   ManagerContentPolicyIndexRoute: ManagerContentPolicyIndexRoute,
   ManagerDashboardIndexRoute: ManagerDashboardIndexRoute,
   ManagerDevicesIndexRoute: ManagerDevicesIndexRoute,
+  ManagerEmailInboxIndexRoute: ManagerEmailInboxIndexRoute,
   ManagerFreeTrialsIndexRoute: ManagerFreeTrialsIndexRoute,
   ManagerJobsIndexRoute: ManagerJobsIndexRoute,
   ManagerLicensesIndexRoute: ManagerLicensesIndexRoute,
@@ -2941,6 +2982,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiDownloadApkRoute: ApiDownloadApkRoute,
   ApiDownloadTachiyomiatLatestDotapkRoute:
     ApiDownloadTachiyomiatLatestDotapkRoute,
+  ApiEmailInboxEventsRoute: ApiEmailInboxEventsRoute,
   ApiMobileAppUpdatePolicyRoute: ApiMobileAppUpdatePolicyRouteWithChildren,
   ApiMobileExtensionPolicyRoute: ApiMobileExtensionPolicyRoute,
   ApiMobileFunnelEventsRoute: ApiMobileFunnelEventsRoute,

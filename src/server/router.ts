@@ -9,6 +9,7 @@ import configRouter from './routers/config';
 import contactRouter from './routers/contact';
 import contentPolicyRouter from './routers/content-policy';
 import deviceRouter from './routers/device';
+import emailInboxRouter from './routers/email-inbox';
 import freeTrialRouter from './routers/free-trial';
 import jobRouter from './routers/job';
 import licenseRouter from './routers/license';
@@ -30,6 +31,7 @@ export const router = {
   config: configRouter,
   contentPolicy: contentPolicyRouter,
   contact: contactRouter,
+  emailInbox: emailInboxRouter,
   chapter: chapterRouter,
   provider: providerRouter,
   license: licenseRouter,

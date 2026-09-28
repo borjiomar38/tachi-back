@@ -3,6 +3,10 @@ import { simpleParser } from 'mailparser';
 
 import { envServer } from '@/env/server';
 import {
+  ContactMailboxConfig,
+  getContactMailboxConfigs,
+} from '@/server/contact/mailbox-config';
+import {
   extractLatestContactReply,
   getContactReferenceMessageIds,
   normalizeContactMessageId,
@@ -11,8 +15,8 @@ import {
 import { getContactTriageSource } from '@/server/contact/triage-audit';
 import { db } from '@/server/db';
 import { Prisma } from '@/server/db/generated/client';
+import { publishEmailInboxChange } from '@/server/email-inbox/live-events';
 
-const CHECKPOINT_KEY = 'contact-inbox-checkpoint:v1';
 const MAX_MESSAGE_BYTES = 5 * 1024 * 1024;
 const THREAD_FALLBACK_WINDOW_DAYS = 90;
 
@@ -20,28 +24,6 @@ interface ContactInboxCheckpoint {
   lastUid: number;
   uidValidity: string;
 }
-
-const getMailboxConfig = () => {
-  if (!envServer.CONTACT_IMAP_SERVER) return null;
-  const url = new URL(envServer.CONTACT_IMAP_SERVER);
-
-  if (url.protocol !== 'imaps:') {
-    throw new Error('CONTACT_IMAP_SERVER must use imaps://');
-  }
-  if (!url.username || !url.password) {
-    throw new Error('CONTACT_IMAP_SERVER must include mailbox credentials');
-  }
-
-  return {
-    auth: {
-      pass: decodeURIComponent(url.password),
-      user: decodeURIComponent(url.username),
-    },
-    host: url.hostname,
-    port: Number(url.port || 993),
-    secure: true,
-  } as const;
-};
 
 const parseCheckpoint = (value: unknown): ContactInboxCheckpoint | null => {
   if (!value || typeof value !== 'object') return null;
@@ -55,15 +37,18 @@ const parseCheckpoint = (value: unknown): ContactInboxCheckpoint | null => {
   return { lastUid: record.lastUid, uidValidity: record.uidValidity };
 };
 
-const saveCheckpoint = async (checkpoint: ContactInboxCheckpoint) => {
+const saveCheckpoint = async (
+  checkpointKey: string,
+  checkpoint: ContactInboxCheckpoint
+) => {
   const value = {
     lastUid: checkpoint.lastUid,
     uidValidity: checkpoint.uidValidity,
   } satisfies Prisma.InputJsonObject;
   await db.appConfig.upsert({
-    create: { key: CHECKPOINT_KEY, value },
+    create: { key: checkpointKey, value },
     update: { value },
-    where: { key: CHECKPOINT_KEY },
+    where: { key: checkpointKey },
   });
 };
 
@@ -190,71 +175,81 @@ const storeInboundEmail = async (input: {
     subject: input.subject,
   });
 
-  return await db.$transaction(async (tx) => {
-    const existing = await tx.contactConversationMessage.findUnique({
-      select: { id: true },
-      where: { messageId: input.messageId },
-    });
-    if (existing) return false;
+  try {
+    return await db.$transaction(async (tx) => {
+      const existing = await tx.contactConversationMessage.findUnique({
+        select: { id: true },
+        where: { messageId: input.messageId },
+      });
+      if (existing) return false;
 
-    const contact = resolved
-      ? await tx.contactMessage.update({
-          data: {
-            readAt: null,
-            resolvedAt: null,
-            source: getContactTriageSource('pending'),
-            status: 'unread',
-          },
-          select: { id: true },
-          where: { id: resolved.id },
-        })
-      : await tx.contactMessage.create({
-          data: {
-            email: input.senderEmail,
-            message: input.bodyText,
-            name:
-              input.name ||
-              input.senderEmail.split('@')[0] ||
-              input.senderEmail,
-            source: getContactTriageSource('pending'),
-            subject: input.subject,
-            userAgent: 'email/imap',
-          },
-          select: { id: true },
-        });
+      const contact = resolved
+        ? await tx.contactMessage.update({
+            data: {
+              readAt: null,
+              resolvedAt: null,
+              source: getContactTriageSource('pending'),
+              status: 'unread',
+            },
+            select: { id: true },
+            where: { id: resolved.id },
+          })
+        : await tx.contactMessage.create({
+            data: {
+              email: input.senderEmail,
+              message: input.bodyText,
+              name:
+                input.name ||
+                input.senderEmail.split('@')[0] ||
+                input.senderEmail,
+              source: getContactTriageSource('pending'),
+              subject: input.subject,
+              userAgent: 'email/imap',
+            },
+            select: { id: true },
+          });
 
-    await tx.contactConversationMessage.create({
-      data: {
-        automationStatus: 'pending',
-        bodyText: input.bodyText,
-        contactId: contact.id,
-        deliveryStatus: 'received',
-        direction: 'inbound',
-        inReplyTo: input.inReplyTo,
-        messageId: input.messageId,
-        providerUid: input.providerUid,
-        receivedAt: input.receivedAt,
-        recipientEmail: input.recipientEmail,
-        references: input.references,
-        senderEmail: input.senderEmail,
-        source: 'email',
-        subject: input.subject,
-      },
+      await tx.contactConversationMessage.create({
+        data: {
+          automationStatus: 'pending',
+          bodyText: input.bodyText,
+          contactId: contact.id,
+          deliveryStatus: 'received',
+          direction: 'inbound',
+          inReplyTo: input.inReplyTo,
+          messageId: input.messageId,
+          providerUid: input.providerUid,
+          receivedAt: input.receivedAt,
+          recipientEmail: input.recipientEmail,
+          references: input.references,
+          senderEmail: input.senderEmail,
+          source: 'email',
+          subject: input.subject,
+        },
+      });
+      return true;
     });
-    return true;
-  });
+  } catch (error) {
+    if (
+      error instanceof Prisma.PrismaClientKnownRequestError &&
+      error.code === 'P2002'
+    ) {
+      return false;
+    }
+    throw error;
+  }
 };
 
-export const syncContactInbox = async () => {
-  const config = getMailboxConfig();
-  if (!config) return { configured: false, imported: 0, scanned: 0 };
-
+export const syncContactMailbox = async (config: ContactMailboxConfig) => {
   const client = new ImapFlow({
-    ...config,
+    auth: config.auth,
     connectionTimeout: 15_000,
     greetingTimeout: 15_000,
+    host: config.host,
     logger: false,
     maxLiteralSize: MAX_MESSAGE_BYTES,
+    port: config.port,
+    secure: config.secure,
     socketTimeout: 30_000,
   });
   let imported = 0;
@@ -262,14 +257,14 @@ export const syncContactInbox = async () => {
 
   try {
     await client.connect();
-    const lock = await client.getMailboxLock(envServer.CONTACT_IMAP_MAILBOX);
+    const lock = await client.getMailboxLock(config.mailbox);
 
     try {
       if (!client.mailbox) throw new Error('Contact mailbox did not open');
       const uidValidity = client.mailbox.uidValidity.toString();
       const stored = await db.appConfig.findUnique({
         select: { value: true },
-        where: { key: CHECKPOINT_KEY },
+        where: { key: config.checkpointKey },
       });
       const checkpoint = parseCheckpoint(stored?.value);
       let lastUid =
@@ -305,7 +300,8 @@ export const syncContactInbox = async () => {
             : [];
         const bodyText = getConversationBody(parsed);
         const rawMessageId =
-          parsed.messageId ?? `<imap-${uidValidity}-${message.uid}@nayovi.com>`;
+          parsed.messageId ??
+          `<imap-${config.id}-${uidValidity}-${message.uid}@nayovi.com>`;
         const messageId = normalizeContactMessageId(rawMessageId);
 
         if (
@@ -326,7 +322,7 @@ export const syncContactInbox = async () => {
               (message.internalDate
                 ? new Date(message.internalDate)
                 : new Date()),
-            recipientEmail: recipient.email || envServer.SUPPORT_EMAIL,
+            recipientEmail: recipient.email || config.address,
             references: references
               .map(normalizeContactMessageId)
               .filter(Boolean),
@@ -337,7 +333,7 @@ export const syncContactInbox = async () => {
         }
 
         lastUid = message.uid;
-        await saveCheckpoint({ lastUid, uidValidity });
+        await saveCheckpoint(config.checkpointKey, { lastUid, uidValidity });
       }
 
       return { configured: true, imported, scanned };
@@ -348,4 +344,26 @@ export const syncContactInbox = async () => {
     if (client.usable) await client.logout();
     else client.close();
   }
+};
+
+export const syncContactInbox = async () => {
+  const configs = getContactMailboxConfigs();
+  if (!configs.length) {
+    return { configured: false, imported: 0, mailboxes: 0, scanned: 0 };
+  }
+
+  const results = [];
+  for (const config of configs) {
+    results.push(await syncContactMailbox(config));
+  }
+
+  const result = {
+    configured: true,
+    imported: results.reduce((sum, mailbox) => sum + mailbox.imported, 0),
+    mailboxes: configs.length,
+    scanned: results.reduce((sum, mailbox) => sum + mailbox.scanned, 0),
+  };
+
+  if (result.imported > 0) publishEmailInboxChange('imap');
+  return result;
 };

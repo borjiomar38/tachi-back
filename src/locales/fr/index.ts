@@ -8,6 +8,7 @@ import components from './components.json' with { type: 'json' };
 import contact from './contact.json' with { type: 'json' };
 import contentPolicy from './content-policy.json' with { type: 'json' };
 import dashboard from './dashboard.json' with { type: 'json' };
+import emailInbox from './email-inbox.json' with { type: 'json' };
 import emails from './emails.json' with { type: 'json' };
 import layout from './layout.json' with { type: 'json' };
 import releaseHistory from './release-history.json' with { type: 'json' };
@@ -25,6 +26,7 @@ export default {
   contentPolicy,
   dashboard,
   emails,
+  emailInbox,
   layout,
   settings,
   releaseHistory,
