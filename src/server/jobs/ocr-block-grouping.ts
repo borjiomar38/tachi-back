@@ -1,8 +1,23 @@
+import {
+  canAttachOcrPunctuationAngle,
+  canMergeOcrBlockTypography,
+  getOcrBlockSourceTypography,
+  isStrictOcrPunctuationText,
+} from '@/server/jobs/ocr-block-compatibility';
+import { mergeOcrBlockOrientedGeometry } from '@/server/jobs/ocr-block-oriented-geometry';
 import { type NormalizedOcrPage } from '@/server/provider-gateway/schema';
 
 type OcrLayoutPageLike = {
   ocrPage: NormalizedOcrPage;
 };
+type OcrBlock = NormalizedOcrPage['blocks'][number];
+type OcrBlockBounds = Pick<OcrBlock, 'height' | 'width' | 'x' | 'y'>;
+
+export function isAlreadyGroupedOcrPage(
+  page: Pick<NormalizedOcrPage, 'providerModel'>
+): boolean {
+  return page.providerModel === 'cached_result_manifest';
+}
 
 export function applyOcrPageContinuationPolicy<T extends OcrLayoutPageLike>(
   pages: T[],
@@ -19,14 +34,19 @@ export function coalesceOcrLineBlocks(
 ): NormalizedOcrPage {
   const sanitizedPage = sanitizeOcrPageForGrouping(ocrPage);
 
-  if (sanitizedPage.blocks.length < 2) {
+  if (
+    isAlreadyGroupedOcrPage(sanitizedPage) ||
+    sanitizedPage.blocks.length < 2
+  ) {
     return sanitizedPage;
   }
 
-  const sortedBlocks = [...sanitizedPage.blocks].sort(
-    (left, right) => left.y - right.y || left.x - right.x
+  const punctuationBlocks = sanitizedPage.blocks.filter(isPunctuationOnlyBlock);
+  const sortedBlocks = sortOcrBlocksForReading(
+    sanitizedPage.blocks.filter((block) => !isPunctuationOnlyBlock(block))
   );
   const parent = sortedBlocks.map((_, index) => index);
+  const groupMembers = sortedBlocks.map((block) => [block]);
   const find = (index: number): number => {
     const parentIndex = parent[index];
 
@@ -42,8 +62,19 @@ export function coalesceOcrLineBlocks(
     const leftRoot = find(left);
     const rightRoot = find(right);
 
-    if (leftRoot !== rightRoot) {
+    // A pair can match while the complete group still drifts in size or angle.
+    if (
+      leftRoot !== rightRoot &&
+      canMergeOcrBlockTypography([
+        ...groupMembers[leftRoot]!,
+        ...groupMembers[rightRoot]!,
+      ])
+    ) {
       parent[rightRoot] = leftRoot;
+      groupMembers[leftRoot] = [
+        ...groupMembers[leftRoot]!,
+        ...groupMembers[rightRoot]!,
+      ];
     }
   };
 
@@ -86,9 +117,12 @@ export function coalesceOcrLineBlocks(
 
   return {
     ...sanitizedPage,
-    blocks: [...groups.values()]
-      .map(mergeOcrBlockGroup)
-      .sort((left, right) => left.y - right.y || left.x - right.x),
+    blocks: sortOcrBlocksForReading(
+      attachPunctuationToCoreGroups(
+        [...groups.values()].map(mergeOcrBlockGroup),
+        punctuationBlocks
+      )
+    ),
   };
 }
 
@@ -103,15 +137,21 @@ export function coalesceOcrPageContinuations<T extends OcrLayoutPageLike>(
     ...page,
     ocrPage: {
       ...page.ocrPage,
-      blocks: sortOcrBlocksForReading(page.ocrPage.blocks),
+      blocks: isAlreadyGroupedOcrPage(page.ocrPage)
+        ? [...page.ocrPage.blocks]
+        : sortOcrBlocksForReading(page.ocrPage.blocks),
     },
   }));
-
   for (let pageIndex = 0; pageIndex < nextPages.length - 1; pageIndex += 1) {
     const previousPage = nextPages[pageIndex];
     const nextPage = nextPages[pageIndex + 1];
 
-    if (!previousPage || !nextPage) {
+    if (
+      !previousPage ||
+      !nextPage ||
+      isAlreadyGroupedOcrPage(previousPage.ocrPage) ||
+      isAlreadyGroupedOcrPage(nextPage.ocrPage)
+    ) {
       continue;
     }
 
@@ -141,25 +181,33 @@ export function coalesceOcrPageContinuations<T extends OcrLayoutPageLike>(
     }
 
     const combinedText = combineOcrText(previousBlock.text, nextBlock.text);
+    const sourceTypography = getOcrBlockSourceTypography([
+      previousBlock,
+      nextBlock,
+    ]);
     const keepPrevious =
       previousBlock.width * previousBlock.height >=
       nextBlock.width * nextBlock.height;
 
     if (keepPrevious) {
-      previousPage.ocrPage.blocks[previousBlockIndex] = {
+      const mergedBlock = {
         ...previousBlock,
+        sourceTypography,
         symHeight: (previousBlock.symHeight + nextBlock.symHeight) / 2,
         symWidth: (previousBlock.symWidth + nextBlock.symWidth) / 2,
         text: combinedText,
       };
+      previousPage.ocrPage.blocks[previousBlockIndex] = mergedBlock;
       nextPage.ocrPage.blocks[nextBlockIndex] = toMaskOnlyBlock(nextBlock);
     } else {
-      nextPage.ocrPage.blocks[nextBlockIndex] = {
+      const mergedBlock = {
         ...nextBlock,
+        sourceTypography,
         symHeight: (previousBlock.symHeight + nextBlock.symHeight) / 2,
         symWidth: (previousBlock.symWidth + nextBlock.symWidth) / 2,
         text: combinedText,
       };
+      nextPage.ocrPage.blocks[nextBlockIndex] = mergedBlock;
       previousPage.ocrPage.blocks[previousBlockIndex] =
         toMaskOnlyBlock(previousBlock);
     }
@@ -174,6 +222,21 @@ export function shouldCoalesceOcrBlocks(
   page?: NormalizedOcrPage
 ) {
   if (
+    isPunctuationOnlyBlock(previousBlock) ||
+    isPunctuationOnlyBlock(nextBlock) ||
+    previousBlock.hasLetterOrDigit === false ||
+    nextBlock.hasLetterOrDigit === false ||
+    !hasOcrLetterOrDigit(previousBlock) ||
+    !hasOcrLetterOrDigit(nextBlock)
+  ) {
+    return false;
+  }
+
+  if (!canMergeOcrBlockTypography([previousBlock, nextBlock])) {
+    return false;
+  }
+
+  if (
     previousBlock.renderMode === 'mask_only' ||
     nextBlock.renderMode === 'mask_only'
   ) {
@@ -187,12 +250,21 @@ export function shouldCoalesceOcrBlocks(
     return false;
   }
 
-  if (shouldCoalesceVertically(previousBlock, nextBlock, page)) {
+  const previousGroupingBlock = getOcrGroupingBlock(previousBlock);
+  const nextGroupingBlock = getOcrGroupingBlock(nextBlock);
+
+  if (
+    shouldCoalesceVertically(previousGroupingBlock, nextGroupingBlock, page)
+  ) {
     return true;
   }
 
   return page
-    ? shouldCoalesceHorizontalRowFragments(previousBlock, nextBlock, page)
+    ? shouldCoalesceHorizontalRowFragments(
+        previousGroupingBlock,
+        nextGroupingBlock,
+        page
+      )
     : false;
 }
 
@@ -228,10 +300,6 @@ function shouldCoalesceVertically(
   );
 
   if (verticalGap > maxVerticalGap) {
-    return false;
-  }
-
-  if (Math.abs(previousBlock.angle - nextBlock.angle) > 8) {
     return false;
   }
 
@@ -351,9 +419,6 @@ function canUseResolutionScaledVerticalGap(input: {
     12,
     Math.min(pageWidth * 0.02, averageSymbolHeight * 0.5)
   );
-  const symbolHeightRatio =
-    Math.min(previousBlock.symHeight, nextBlock.symHeight) /
-    Math.max(1, previousBlock.symHeight, nextBlock.symHeight);
   const widthGrowth = nextBlock.width - previousBlock.width;
   const hasCompatibleWidth =
     widthGrowth <= 0 ||
@@ -381,7 +446,6 @@ function canUseResolutionScaledVerticalGap(input: {
   return (
     overlapRatio >= 0.7 &&
     centerDistance <= maxCenterDistance &&
-    symbolHeightRatio >= 0.8 &&
     fillRatio >= 0.55 &&
     hasCompatibleWidth
   );
@@ -456,10 +520,24 @@ function shouldCoalesceOcrPageContinuationBlocks(input: {
   previousPage: NormalizedOcrPage;
 }) {
   if (
-    input.previousBlock.y + input.previousBlock.height <
+    isPunctuationOnlyBlock(input.previousBlock) ||
+    isPunctuationOnlyBlock(input.nextBlock)
+  ) {
+    return false;
+  }
+
+  if (!canMergeOcrBlockTypography([input.previousBlock, input.nextBlock])) {
+    return false;
+  }
+
+  const previousBlock = getOcrGroupingBlock(input.previousBlock);
+  const nextBlock = getOcrGroupingBlock(input.nextBlock);
+
+  if (
+    previousBlock.y + previousBlock.height <
       input.previousPage.imgHeight -
         getPageBoundaryMargin(input.previousPage) ||
-    input.nextBlock.y > getPageBoundaryMargin(input.nextPage)
+    nextBlock.y > getPageBoundaryMargin(input.nextPage)
   ) {
     return false;
   }
@@ -480,13 +558,13 @@ function shouldCoalesceOcrPageContinuationBlocks(input: {
 
   const overlap =
     Math.min(
-      input.previousBlock.x + input.previousBlock.width,
-      input.nextBlock.x + input.nextBlock.width
-    ) - Math.max(input.previousBlock.x, input.nextBlock.x);
-  const minWidth = Math.min(input.previousBlock.width, input.nextBlock.width);
+      previousBlock.x + previousBlock.width,
+      nextBlock.x + nextBlock.width
+    ) - Math.max(previousBlock.x, nextBlock.x);
+  const minWidth = Math.min(previousBlock.width, nextBlock.width);
   const overlapRatio = minWidth > 0 ? overlap / minWidth : 0;
-  const previousCenter = input.previousBlock.x + input.previousBlock.width / 2;
-  const nextCenter = input.nextBlock.x + input.nextBlock.width / 2;
+  const previousCenter = previousBlock.x + previousBlock.width / 2;
+  const nextCenter = nextBlock.x + nextBlock.width / 2;
   const averageSymbolHeight =
     (input.previousBlock.symHeight + input.nextBlock.symHeight) / 2;
   const maxCenterDistance = Math.max(
@@ -512,10 +590,23 @@ function mergeOcrBlockGroup(
   const top = Math.min(...blocks.map((block) => block.y));
   const right = Math.max(...blocks.map((block) => block.x + block.width));
   const bottom = Math.max(...blocks.map((block) => block.y + block.height));
+  const orientedGeometry = mergeOcrBlockOrientedGeometry(blocks);
 
   return {
-    angle: blocks[0]?.angle ?? 0,
+    angle: orientedGeometry?.angle ?? blocks[0]?.angle ?? 0,
     height: bottom - top,
+    ...(blocks.some((block) => block.groupingBounds)
+      ? { groupingBounds: getOcrBlockBounds(blocks.map(getOcrGroupingBlock)) }
+      : {}),
+    sourceTypography: getOcrBlockSourceTypography(blocks),
+    ...(orientedGeometry
+      ? {
+          orientedHeight: orientedGeometry.orientedHeight,
+          orientedWidth: orientedGeometry.orientedWidth,
+          orientedX: orientedGeometry.orientedX,
+          orientedY: orientedGeometry.orientedY,
+        }
+      : {}),
     symHeight:
       blocks.reduce((sum, block) => sum + block.symHeight, 0) / blocks.length,
     symWidth:
@@ -528,8 +619,122 @@ function mergeOcrBlockGroup(
 }
 
 function sortOcrBlocksForReading(blocks: NormalizedOcrPage['blocks']) {
-  return [...blocks].sort(
-    (left, right) => left.y - right.y || left.x - right.x
+  return [...blocks].sort((left, right) => {
+    const leftBounds = getOcrGroupingBlock(left);
+    const rightBounds = getOcrGroupingBlock(right);
+    return leftBounds.y - rightBounds.y || leftBounds.x - rightBounds.x;
+  });
+}
+
+function isPunctuationOnlyBlock(block: OcrBlock): boolean {
+  return (
+    block.renderMode !== 'mask_only' && isStrictOcrPunctuationText(block.text)
+  );
+}
+
+function hasOcrLetterOrDigit(block: OcrBlock): boolean {
+  return /[\p{L}\p{N}]/u.test(block.text);
+}
+
+function getOcrGroupingBlock(block: OcrBlock): OcrBlock {
+  return block.groupingBounds ? { ...block, ...block.groupingBounds } : block;
+}
+
+function getOcrBlockBounds(blocks: readonly OcrBlockBounds[]): OcrBlockBounds {
+  const x = Math.min(...blocks.map((block) => block.x));
+  const y = Math.min(...blocks.map((block) => block.y));
+  return {
+    height: Math.max(...blocks.map((block) => block.y + block.height)) - y,
+    width: Math.max(...blocks.map((block) => block.x + block.width)) - x,
+    x,
+    y,
+  };
+}
+
+function attachPunctuationToCoreGroups(
+  coreGroups: OcrBlock[],
+  punctuationBlocks: OcrBlock[]
+): OcrBlock[] {
+  const result = [...coreGroups];
+  const unattached: OcrBlock[] = [];
+
+  for (const punctuation of punctuationBlocks) {
+    const eligibleGroupIndices = coreGroups.flatMap((core, index) =>
+      canAttachPunctuationToCore(core, punctuation) ? [index] : []
+    );
+
+    if (eligibleGroupIndices.length !== 1) {
+      unattached.push(punctuation);
+      continue;
+    }
+
+    const groupIndex = eligibleGroupIndices[0]!;
+    const currentGroup = result[groupIndex]!;
+    const core = coreGroups[groupIndex]!;
+
+    if (!canMergeOcrBlockTypography([currentGroup, punctuation])) {
+      unattached.push(punctuation);
+      continue;
+    }
+
+    const fullBounds = getOcrBlockBounds([currentGroup, punctuation]);
+    const orientedGeometry = mergeOcrBlockOrientedGeometry([
+      currentGroup,
+      punctuation,
+    ]);
+    const textBlocks = [currentGroup, punctuation].sort(
+      (left, right) => left.x - right.x
+    );
+    result[groupIndex] = {
+      ...currentGroup,
+      ...fullBounds,
+      ...orientedGeometry,
+      // Rendering covers attached punctuation; later grouping keeps core geometry.
+      groupingBounds: getOcrBlockBounds([getOcrGroupingBlock(core)]),
+      sourceTypography: getOcrBlockSourceTypography([
+        currentGroup,
+        punctuation,
+      ]),
+      text: textBlocks.map((block) => block.text).join(' '),
+    };
+  }
+
+  return [...result, ...unattached];
+}
+
+function canAttachPunctuationToCore(
+  core: OcrBlock,
+  punctuation: OcrBlock
+): boolean {
+  if (
+    core.renderMode === 'mask_only' ||
+    !hasOcrLetterOrDigit(core) ||
+    !canAttachOcrPunctuationAngle(core, punctuation)
+  ) {
+    return false;
+  }
+
+  const coreBounds = getOcrGroupingBlock(core);
+  const coreTypography = getOcrBlockSourceTypography([core]).filter(
+    (block) => block.hasLetterOrDigit !== false
+  );
+  const symbolHeight =
+    coreTypography.reduce((sum, block) => sum + block.symHeight, 0) /
+    coreTypography.length;
+  const horizontalGap = Math.max(
+    0,
+    coreBounds.x - (punctuation.x + punctuation.width),
+    punctuation.x - (coreBounds.x + coreBounds.width)
+  );
+  const baselineOffset = Math.abs(
+    punctuation.y + punctuation.height - (coreBounds.y + coreBounds.height)
+  );
+
+  return (
+    horizontalGap <= symbolHeight * 0.75 &&
+    baselineOffset <= symbolHeight * 0.35 &&
+    punctuation.height <= symbolHeight * 1.5 &&
+    punctuation.width <= symbolHeight * 2
   );
 }
 
@@ -543,7 +748,12 @@ function findBottomContinuationBlockIndex(ocrPage: NormalizedOcrPage) {
       continue;
     }
 
-    if (block.y + block.height < ocrPage.imgHeight - margin) {
+    if (isPunctuationOnlyBlock(block)) {
+      continue;
+    }
+
+    const bounds = getOcrGroupingBlock(block);
+    if (bounds.y + bounds.height < ocrPage.imgHeight - margin) {
       return null;
     }
 
@@ -559,7 +769,11 @@ function findTopContinuationBlockIndex(ocrPage: NormalizedOcrPage) {
   const margin = getPageBoundaryMargin(ocrPage);
 
   for (const [index, block] of ocrPage.blocks.entries()) {
-    if (block.y > margin) {
+    if (isPunctuationOnlyBlock(block)) {
+      continue;
+    }
+
+    if (getOcrGroupingBlock(block).y > margin) {
       return null;
     }
 

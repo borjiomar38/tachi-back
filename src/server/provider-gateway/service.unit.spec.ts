@@ -155,6 +155,57 @@ describe('provider gateway service', () => {
     expect(result.blocks[0]?.translation).toBe('أين هذا المكان؟');
   });
 
+  it('preserves OCR orientation in the hosted manifest block', () => {
+    const result = mergeHostedPageTranslation({
+      ocrPage: {
+        blocks: [
+          {
+            angle: -18,
+            height: 70,
+            orientedHeight: 34,
+            orientedWidth: 120,
+            orientedX: 88,
+            orientedY: 104,
+            symHeight: 34,
+            symWidth: 22,
+            text: 'HUFF',
+            width: 125,
+            x: 85,
+            y: 82,
+          },
+        ],
+        imgHeight: 1600,
+        imgWidth: 900,
+        provider: 'google_cloud_vision',
+        providerModel: 'TEXT_DETECTION',
+        providerRequestId: null,
+        sourceLanguage: 'en',
+        usage: {
+          inputTokens: null,
+          latencyMs: 10,
+          outputTokens: null,
+          pageCount: 1,
+          providerRequestId: null,
+          requestCount: 1,
+        },
+      },
+      targetLanguage: 'ar',
+      translationPage: {
+        blocks: [{ index: 0, sourceText: 'HUFF', translation: 'هف' }],
+        pageKey: '001.webp',
+      },
+      translatorType: 'openai',
+    });
+
+    expect(result.blocks[0]).toMatchObject({
+      angle: -18,
+      orientedHeight: 34,
+      orientedWidth: 120,
+      orientedX: 88,
+      orientedY: 104,
+    });
+  });
+
   it('splits hosted translation batches by payload size and reassembles split pages', async () => {
     mockPerformTranslationWithProvider.mockImplementation(
       async (rawInput: unknown) => {

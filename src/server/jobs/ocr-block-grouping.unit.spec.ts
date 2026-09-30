@@ -1,7 +1,11 @@
 import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
 
-import { type NormalizedOcrPage } from '@/server/provider-gateway/schema';
+import {
+  type NormalizedOcrPage,
+  zHostedPageTranslation,
+  zNormalizedOcrPage,
+} from '@/server/provider-gateway/schema';
 
 import {
   applyOcrPageContinuationPolicy,
@@ -31,6 +35,617 @@ describe('OCR block grouping', () => {
       })
     );
   });
+
+  it('keeps oriented geometry when compatible inclined lines merge', () => {
+    const result = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({
+          angle: 12,
+          orientedHeight: 20,
+          orientedWidth: 120,
+          orientedX: 100,
+          orientedY: 100,
+          text: 'FIRST LINE',
+        }),
+        block({
+          angle: 12,
+          orientedHeight: 20,
+          orientedWidth: 120,
+          orientedX: 104,
+          orientedY: 124,
+          text: 'SECOND LINE',
+          x: 104,
+          y: 124,
+        }),
+      ])
+    );
+
+    expect(result.blocks).toHaveLength(1);
+    expect(result.blocks[0]).toEqual(
+      expect.objectContaining({
+        angle: expect.closeTo(12),
+        orientedHeight: expect.any(Number),
+        orientedWidth: expect.any(Number),
+        orientedX: expect.any(Number),
+        orientedY: expect.any(Number),
+      })
+    );
+  });
+
+  it('compares letter heights instead of multiline block heights', () => {
+    const first = block({ height: 20, symHeight: 20, text: 'FIRST LINE' });
+    const second = block({
+      height: 70,
+      symHeight: 21,
+      text: 'SECOND AND THIRD LINES',
+      y: 125,
+    });
+
+    const result = coalesceOcrLineBlocks(buildOcrPage([first, second]));
+
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      'FIRST LINE SECOND AND THIRD LINES',
+    ]);
+  });
+
+  it('merges mixed-case fragments without comparing uppercase to lowercase height', () => {
+    const result = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({
+          height: 30,
+          symbolMetrics: { uppercase: { count: 2, height: 30 } },
+          symHeight: 30,
+          text: 'HI',
+        }),
+        block({
+          height: 20,
+          symbolMetrics: { lowercase: { count: 5, height: 20 } },
+          symHeight: 20,
+          text: 'there',
+          y: 134,
+        }),
+      ])
+    );
+
+    expect(result.blocks.map((item) => item.text)).toEqual(['HI there']);
+    expect(
+      result.blocks[0]?.sourceTypography?.[0]?.symbolMetrics?.uppercase?.height
+    ).toBe(30);
+  });
+
+  it('attaches nearby baseline punctuation without changing core typography', () => {
+    const core = block({
+      hasLetterOrDigit: true,
+      height: 20,
+      symbolMetrics: { lowercase: { count: 2, height: 20 } },
+      symHeight: 20,
+      text: 'hi',
+      width: 30,
+    });
+    const punctuation = block({
+      height: 4,
+      symHeight: 4,
+      text: '...',
+      width: 12,
+      x: 135,
+      y: 116,
+    });
+    const result = coalesceOcrLineBlocks(buildOcrPage([core, punctuation]));
+
+    expect(result.blocks).toEqual([
+      expect.objectContaining({
+        groupingBounds: { height: 20, width: 30, x: 100, y: 100 },
+        height: 20,
+        symHeight: 20,
+        text: 'hi ...',
+        width: 47,
+      }),
+    ]);
+    expect(result.blocks[0]?.sourceTypography?.[1]?.hasLetterOrDigit).toBe(
+      false
+    );
+    expect(shouldCoalesceOcrBlocks(core, punctuation)).toBe(false);
+  });
+
+  it.each([
+    { reason: 'far horizontally', angle: 0, text: '...', x: 180, y: 116 },
+    { reason: 'off the baseline', angle: 0, text: '...', x: 135, y: 100 },
+    { reason: 'incompatible angle', angle: 9, text: '...', x: 135, y: 116 },
+    {
+      reason: 'emoji instead of punctuation',
+      angle: 0,
+      text: '💥',
+      x: 135,
+      y: 116,
+    },
+    {
+      reason: 'math instead of punctuation',
+      angle: 0,
+      text: '+++',
+      x: 135,
+      y: 116,
+    },
+  ])(
+    'does not attach $reason',
+    ({ reason: _reason, ...punctuationMetrics }) => {
+      const result = coalesceOcrLineBlocks(
+        buildOcrPage([
+          block({ height: 20, symHeight: 20, text: 'hi', width: 30 }),
+          block({
+            ...punctuationMetrics,
+            hasLetterOrDigit: false,
+            height: 4,
+            symHeight: 4,
+            width: 12,
+          }),
+        ])
+      );
+
+      expect(result.blocks).toHaveLength(2);
+    }
+  );
+
+  it.each(['💥', '+++'])(
+    'keeps legacy symbol-only %s standalone without explicit character metadata',
+    (text) => {
+      const core = block({
+        height: 20,
+        symbolMetrics: { lowercase: { count: 2, height: 20 } },
+        symHeight: 20,
+        text: 'hi',
+        width: 30,
+      });
+      const symbolOnly = block({
+        height: 4,
+        symbolMetrics: {},
+        symHeight: 4,
+        text,
+        width: 12,
+        x: 135,
+        y: 116,
+      });
+      const page = buildOcrPage([core, symbolOnly]);
+
+      expect(shouldCoalesceOcrBlocks(core, symbolOnly, page)).toBe(false);
+      expect(
+        coalesceOcrLineBlocks(page).blocks.map((item) => item.text)
+      ).toEqual(['hi', text]);
+    }
+  );
+
+  it('keeps ambiguous punctuation separate instead of bridging two dialogues', () => {
+    const result = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({ height: 20, symHeight: 20, text: 'hi', width: 30 }),
+        block({
+          height: 20,
+          symHeight: 20,
+          text: 'bye',
+          width: 30,
+          x: 185,
+        }),
+        block({
+          hasLetterOrDigit: false,
+          height: 4,
+          symHeight: 4,
+          text: '...',
+          width: 40,
+          x: 140,
+          y: 116,
+        }),
+      ])
+    );
+
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      'hi',
+      'bye',
+      '...',
+    ]);
+  });
+
+  it('does not expand core grouping geometry through multiple punctuation attachments', () => {
+    const result = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({ height: 20, symHeight: 20, text: 'hi', width: 30 }),
+        block({
+          height: 4,
+          symHeight: 4,
+          text: '...',
+          width: 12,
+          x: 135,
+          y: 116,
+        }),
+        block({
+          height: 4,
+          symHeight: 4,
+          text: '...',
+          width: 12,
+          x: 160,
+          y: 116,
+        }),
+      ])
+    );
+
+    expect(result.blocks.map((item) => item.text)).toEqual(['hi ...', '...']);
+  });
+
+  it('retains core bounds after serialization and repeated grouping', () => {
+    const groupedPage = zNormalizedOcrPage.parse(
+      JSON.parse(
+        JSON.stringify(
+          coalesceOcrLineBlocks(
+            buildOcrPage([
+              block({ height: 20, symHeight: 20, text: 'hi', width: 30 }),
+              block({
+                height: 20,
+                symHeight: 20,
+                text: 'bye',
+                width: 30,
+                x: 185,
+                y: 112,
+              }),
+              block({
+                height: 4,
+                symHeight: 4,
+                text: '...',
+                width: 39,
+                x: 139,
+                y: 116,
+              }),
+            ])
+          )
+        )
+      )
+    );
+    const regroupedPage = coalesceOcrLineBlocks(groupedPage);
+
+    expect(groupedPage.blocks.map((item) => item.text)).toEqual([
+      'hi ...',
+      'bye',
+    ]);
+    expect(regroupedPage.blocks.map((item) => item.text)).toEqual([
+      'hi ...',
+      'bye',
+    ]);
+  });
+
+  it('preserves final groups after a public hosted cache strips internal provenance', () => {
+    const groupedPage = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({ height: 20, symHeight: 20, text: 'hi', width: 30 }),
+        block({
+          height: 20,
+          symHeight: 20,
+          text: 'bye',
+          width: 30,
+          x: 185,
+          y: 112,
+        }),
+        block({
+          height: 4,
+          symHeight: 4,
+          text: '...',
+          width: 39,
+          x: 139,
+          y: 116,
+        }),
+      ])
+    );
+    const hostedPage = zHostedPageTranslation.parse({
+      blocks: groupedPage.blocks.map((item) => ({
+        ...item,
+        translation: item.text,
+      })),
+      imgHeight: groupedPage.imgHeight,
+      imgWidth: groupedPage.imgWidth,
+      sourceLanguage: 'en',
+      targetLanguage: 'ar',
+      translatorType: 'openai',
+    });
+    const cachedPage = zNormalizedOcrPage.parse({
+      ...groupedPage,
+      blocks: hostedPage.blocks,
+      providerModel: 'cached_result_manifest',
+    });
+
+    expect(hostedPage.blocks[0]).not.toHaveProperty('groupingBounds');
+    expect(hostedPage.blocks[0]).not.toHaveProperty('sourceTypography');
+    expect(
+      coalesceOcrLineBlocks(cachedPage).blocks.map((item) => item.text)
+    ).toEqual(['hi ...', 'bye']);
+  });
+
+  it('keeps core reading order when attached punctuation extends above its text', () => {
+    const result = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({
+          height: 20,
+          symHeight: 20,
+          text: 'FIRST',
+          width: 30,
+          x: 300,
+          y: 96,
+        }),
+        block({
+          height: 20,
+          symHeight: 20,
+          text: 'SECOND',
+          width: 30,
+          x: 100,
+          y: 100,
+        }),
+        block({
+          height: 27,
+          symHeight: 27,
+          text: '?',
+          width: 10,
+          x: 132,
+          y: 94,
+        }),
+      ])
+    );
+
+    expect(result.blocks.map((item) => item.text)).toEqual([
+      'FIRST',
+      'SECOND ?',
+    ]);
+    expect(result.blocks[1]?.y).toBe(94);
+    expect(result.blocks[1]?.groupingBounds?.y).toBe(100);
+  });
+
+  it.each(['previous', 'next'])(
+    'does not regroup authoritative hosted cache across pages when %s page is cached',
+    (cachedSide) => {
+      const result = coalesceOcrPageContinuations([
+        {
+          fileName: '001.webp',
+          ocrPage: {
+            ...buildOcrPage([
+              block({ text: 'RIGHT NOW THE WORLD ALREADY', y: 835 }),
+            ]),
+            providerModel:
+              cachedSide === 'previous'
+                ? 'cached_result_manifest'
+                : 'TEXT_DETECTION',
+          },
+        },
+        {
+          fileName: '002.webp',
+          ocrPage: {
+            ...buildOcrPage([
+              block({ text: 'BELONGS TO THE ALLIANCE', y: 18 }),
+            ]),
+            providerModel:
+              cachedSide === 'next'
+                ? 'cached_result_manifest'
+                : 'TEXT_DETECTION',
+          },
+        },
+      ]);
+
+      expect(
+        result.flatMap((page) => page.ocrPage.blocks.map((item) => item.text))
+      ).toEqual(['RIGHT NOW THE WORLD ALREADY', 'BELONGS TO THE ALLIANCE']);
+      expect(
+        result
+          .flatMap((page) => page.ocrPage.blocks)
+          .every((item) => !item.renderMode)
+      ).toBe(true);
+    }
+  );
+
+  it('preserves authoritative cached reading order during continuation processing', () => {
+    const cachedPage = {
+      ...buildOcrPage([
+        block({
+          height: 20,
+          symHeight: 20,
+          text: 'FIRST',
+          width: 30,
+          x: 300,
+          y: 96,
+        }),
+        block({
+          height: 27,
+          symHeight: 20,
+          text: 'SECOND ?',
+          width: 42,
+          x: 100,
+          y: 94,
+        }),
+      ]),
+      providerModel: 'cached_result_manifest',
+    };
+    const result = coalesceOcrPageContinuations([
+      { fileName: '001.webp', ocrPage: cachedPage },
+      buildLayoutPage('002.webp', []),
+    ]);
+
+    expect(result[0]?.ocrPage.blocks.map((item) => item.text)).toEqual([
+      'FIRST',
+      'SECOND ?',
+    ]);
+  });
+
+  it('does not let punctuation expansion create a page continuation', () => {
+    const previousPage = coalesceOcrLineBlocks(
+      buildOcrPage([
+        block({
+          height: 20,
+          symHeight: 20,
+          text: '" RIGHT NOW THE WORLD ALREADY',
+          width: 120,
+          y: 815,
+        }),
+        block({
+          height: 4,
+          symHeight: 4,
+          text: '...',
+          width: 12,
+          x: 225,
+          y: 837,
+        }),
+      ])
+    );
+    const result = coalesceOcrPageContinuations([
+      { fileName: '001.webp', ocrPage: previousPage },
+      buildLayoutPage('002.webp', [
+        block({
+          height: 20,
+          symHeight: 20,
+          text: 'BELONGS TO THE ALLIANCE',
+          y: 18,
+        }),
+      ]),
+    ]);
+
+    expect(previousPage.blocks[0]?.height).toBe(26);
+    expect(previousPage.blocks[0]?.groupingBounds?.height).toBe(20);
+    expect(result[0]?.ocrPage.blocks[0]?.renderMode).toBeUndefined();
+    expect(result[1]?.ocrPage.blocks[0]?.text).toBe('BELONGS TO THE ALLIANCE');
+  });
+
+  it.each([
+    { angle: 0, symHeight: 28 },
+    { angle: 9, symHeight: 20 },
+  ])('keeps stacked lines with incompatible typography separate', (metrics) => {
+    const first = block({ height: 20, symHeight: 20, text: 'FIRST LINE' });
+    const second = block({ ...metrics, text: 'SECOND LINE', y: 124 });
+    const page = buildOcrPage([first, second]);
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(false);
+    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(2);
+  });
+
+  it('keeps the production HUFF bridge separate from both dialogues', () => {
+    const page = {
+      ...buildOcrPage([
+        block({
+          height: 54,
+          symHeight: 54,
+          text: "PLEASE DON'T",
+          width: 432,
+          x: 229,
+          y: 10905,
+        }),
+        block({
+          height: 57,
+          symHeight: 57,
+          text: 'CHASE ME AWAY…',
+          width: 549,
+          x: 168,
+          y: 10985,
+        }),
+        block({
+          height: 159,
+          symHeight: 156,
+          text: 'JUFZ',
+          width: 283,
+          x: 68,
+          y: 11073,
+        }),
+        block({
+          height: 34,
+          symHeight: 34,
+          text: "I'D LIKE A",
+          width: 188,
+          x: 466,
+          y: 11245,
+        }),
+        block({
+          height: 83,
+          symHeight: 34.1111,
+          text: 'CUP OF REFRESHING COLD WATER',
+          width: 390,
+          x: 363,
+          y: 11294,
+        }),
+      ]),
+      imgHeight: 13000,
+      imgWidth: 1000,
+    };
+
+    expect(coalesceOcrLineBlocks(page).blocks.map((item) => item.text)).toEqual(
+      [
+        "PLEASE DON'T CHASE ME AWAY…",
+        'JUFZ',
+        "I'D LIKE A CUP OF REFRESHING COLD WATER",
+      ]
+    );
+  });
+
+  it.each([
+    {
+      firstMetrics: { angle: 0, symHeight: 20 },
+      secondMetrics: { angle: 0, symHeight: 24 },
+      thirdMetrics: { angle: 0, symHeight: 28 },
+      reason: 'letter-size drift',
+    },
+    {
+      firstMetrics: { angle: 0, symHeight: 20 },
+      secondMetrics: { angle: 6, symHeight: 20 },
+      thirdMetrics: { angle: 12, symHeight: 20 },
+      reason: 'angle drift',
+    },
+  ])('checks the whole proposed group to prevent $reason', (metrics) => {
+    const first = block({ ...metrics.firstMetrics, text: 'FIRST', y: 100 });
+    const second = block({ ...metrics.secondMetrics, text: 'SECOND', y: 124 });
+    const third = block({ ...metrics.thirdMetrics, text: 'THIRD', y: 148 });
+    const page = buildOcrPage([first, second, third]);
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(true);
+    expect(shouldCoalesceOcrBlocks(second, third, page)).toBe(true);
+    expect(coalesceOcrLineBlocks(page).blocks.map((item) => item.text)).toEqual(
+      ['FIRST SECOND', 'THIRD']
+    );
+  });
+
+  it.each([
+    {
+      firstMetrics: { angle: 0, symHeight: 20 },
+      secondMetrics: { angle: 0, symHeight: 24 },
+      thirdMetrics: { angle: 0, symHeight: 26 },
+      reason: 'letter-size drift',
+    },
+    {
+      firstMetrics: { angle: 6, symHeight: 20 },
+      secondMetrics: { angle: 0, symHeight: 20 },
+      thirdMetrics: { angle: 12, symHeight: 20 },
+      reason: 'angle drift',
+    },
+  ])(
+    'preserves source metrics across repeated grouping to prevent $reason',
+    (metrics) => {
+      const groupedPage = zNormalizedOcrPage.parse(
+        JSON.parse(
+          JSON.stringify(
+            coalesceOcrLineBlocks(
+              buildOcrPage([
+                block({ ...metrics.firstMetrics, text: 'FIRST', y: 100 }),
+                block({ ...metrics.secondMetrics, text: 'SECOND', y: 124 }),
+              ])
+            )
+          )
+        )
+      );
+      const regroupedPage = coalesceOcrLineBlocks({
+        ...groupedPage,
+        blocks: [
+          ...groupedPage.blocks,
+          block({ ...metrics.thirdMetrics, text: 'THIRD', y: 148 }),
+        ],
+      });
+
+      expect(groupedPage.blocks[0]?.sourceTypography).toEqual([
+        metrics.firstMetrics,
+        metrics.secondMetrics,
+      ]);
+      expect(regroupedPage.blocks.map((item) => item.text)).toEqual([
+        'FIRST SECOND',
+        'THIRD',
+      ]);
+    }
+  );
 
   it('merges overlapping OCR line fragments from one tall bubble', () => {
     const page = buildOcrPage([
@@ -388,6 +1003,33 @@ describe('OCR block grouping', () => {
     expect(result.blocks.map((item) => item.text)).toEqual([
       'YOU ARE AS BEAUTIFUL',
     ]);
+  });
+
+  it.each([
+    { angle: 0, height: 20, symHeight: 20 },
+    { angle: 9, height: 14, symHeight: 14 },
+  ])('rejects incompatible typography in same-row fragments', (metrics) => {
+    const first = block({
+      height: 14,
+      symHeight: 14,
+      symWidth: 10,
+      text: 'YOU',
+      width: 35,
+      x: 451,
+      y: 692,
+    });
+    const second = block({
+      ...metrics,
+      symWidth: 15.36,
+      text: 'ARE AS BEAUTIFUL',
+      width: 147,
+      x: 488,
+      y: 692,
+    });
+    const page = buildOcrPage([first, second]);
+
+    expect(shouldCoalesceOcrBlocks(first, second, page)).toBe(false);
+    expect(coalesceOcrLineBlocks(page).blocks).toHaveLength(2);
   });
 
   it('uses dynamic page scale to merge small ManhuaUS speech bubble lines', () => {
@@ -1116,6 +1758,116 @@ describe('OCR block grouping', () => {
     ]);
     expect(result[1]?.ocrPage.blocks[0]?.renderMode).toBeUndefined();
   });
+
+  it.each([
+    { angle: 0, symHeight: 16 },
+    { angle: 9, symHeight: 12 },
+  ])('rejects incompatible typography across an image boundary', (metrics) => {
+    const result = coalesceOcrPageContinuations([
+      buildLayoutPage('001.webp', [
+        block({ text: 'RIGHT NOW, THE WORLD ALREADY', y: 835 }),
+      ]),
+      buildLayoutPage('002.webp', [
+        block({ ...metrics, text: 'BELONGS TO THE ALLIANCE', y: 18 }),
+      ]),
+    ]);
+
+    expect(
+      result.flatMap((page) => page.ocrPage.blocks.map((item) => item.text))
+    ).toEqual(['RIGHT NOW, THE WORLD ALREADY', 'BELONGS TO THE ALLIANCE']);
+    expect(
+      result
+        .flatMap((page) => page.ocrPage.blocks)
+        .every((item) => !item.renderMode)
+    ).toBe(true);
+  });
+
+  it('keeps original letter sizes when a continuation spans several pages', () => {
+    const result = coalesceOcrPageContinuations([
+      buildLayoutPage('001.webp', [
+        block({
+          symHeight: 20,
+          text: 'RIGHT NOW THE WORLD',
+          y: 835,
+        }),
+      ]),
+      buildLayoutPage('002.webp', [
+        block({
+          height: 900,
+          symHeight: 24,
+          text: 'ALREADY BELONGS TO',
+          y: 0,
+        }),
+      ]),
+      buildLayoutPage('003.webp', [
+        block({
+          symHeight: 26,
+          text: 'THE ALLIANCE OF FIGHTERS',
+          y: 18,
+        }),
+      ]),
+    ]);
+
+    expect(result[1]?.ocrPage.blocks[0]?.text).toBe(
+      'RIGHT NOW THE WORLD ALREADY BELONGS TO'
+    );
+    expect(result[2]?.ocrPage.blocks[0]?.text).toBe('THE ALLIANCE OF FIGHTERS');
+    expect(result[2]?.ocrPage.blocks[0]?.renderMode).toBeUndefined();
+  });
+
+  it.each([
+    {
+      firstMetrics: { angle: 0, symHeight: 20 },
+      secondMetrics: { angle: 0, symHeight: 24 },
+      nextMetrics: { angle: 0, symHeight: 26 },
+      reason: 'letter-size drift',
+    },
+    {
+      firstMetrics: { angle: 6, symHeight: 20 },
+      secondMetrics: { angle: 0, symHeight: 20 },
+      nextMetrics: { angle: 12, symHeight: 20 },
+      reason: 'angle drift',
+    },
+  ])(
+    'uses pre-merge source metrics at a page boundary to prevent $reason',
+    (metrics) => {
+      const previousPage = zNormalizedOcrPage.parse(
+        JSON.parse(
+          JSON.stringify(
+            coalesceOcrLineBlocks(
+              buildOcrPage([
+                block({ ...metrics.firstMetrics, text: 'RIGHT NOW', y: 812 }),
+                block({
+                  ...metrics.secondMetrics,
+                  text: 'THE WORLD ALREADY',
+                  y: 836,
+                }),
+              ])
+            )
+          )
+        )
+      );
+      const result = coalesceOcrPageContinuations([
+        { fileName: '001.webp', ocrPage: previousPage },
+        buildLayoutPage('002.webp', [
+          block({
+            ...metrics.nextMetrics,
+            text: 'BELONGS TO THE ALLIANCE',
+            y: 18,
+          }),
+        ]),
+      ]);
+
+      expect(result[0]?.ocrPage.blocks[0]?.text).toBe(
+        'RIGHT NOW THE WORLD ALREADY'
+      );
+      expect(result[0]?.ocrPage.blocks[0]?.renderMode).toBeUndefined();
+      expect(result[1]?.ocrPage.blocks[0]?.text).toBe(
+        'BELONGS TO THE ALLIANCE'
+      );
+      expect(result[1]?.ocrPage.blocks[0]?.renderMode).toBeUndefined();
+    }
+  );
 
   it('keeps boundary blocks separate for paged reading', () => {
     const pages = [

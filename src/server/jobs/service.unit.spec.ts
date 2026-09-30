@@ -523,11 +523,13 @@ describe('job service', () => {
         data: [
           expect.objectContaining({
             metadata: {
+              layoutMode: 'continuous',
               uploadStatus: 'pending',
             },
           }),
           expect.objectContaining({
             metadata: {
+              layoutMode: 'continuous',
               uploadStatus: 'pending',
             },
           }),
@@ -608,12 +610,14 @@ describe('job service', () => {
         data: [
           expect.objectContaining({
             metadata: {
+              layoutMode: 'continuous',
               ocrUpload,
               uploadStatus: 'pending',
             },
           }),
           expect.objectContaining({
             metadata: {
+              layoutMode: 'continuous',
               ocrUpload,
               uploadStatus: 'pending',
             },
@@ -805,6 +809,7 @@ describe('job service', () => {
         data: [
           expect.objectContaining({
             metadata: {
+              layoutMode: 'continuous',
               logicalPageCount: 1,
               sourcePages: [
                 expect.objectContaining({
@@ -982,6 +987,7 @@ describe('job service', () => {
       completedAt: new Date('2026-03-20T09:00:00.000Z'),
       deviceId: 'device-original',
       jobId: 'job-original',
+      layoutMode: 'continuous',
       licenseId: 'license-original',
       pageCount: 2,
       pageOrder: ['old-001.jpg', 'old-002.jpg'],
@@ -1903,6 +1909,7 @@ describe('job service', () => {
       completedAt: new Date('2026-03-20T09:00:00.000Z'),
       deviceId: 'device-original',
       jobId: 'job-original',
+      layoutMode: 'continuous',
       licenseId: 'license-original',
       pageCount: 2,
       pageOrder: ['old-001.jpg', 'old-002.jpg'],
@@ -2505,7 +2512,18 @@ describe('job service', () => {
       blocks: [
         {
           angle: 3,
+          groupingBounds: { height: 16, width: 30, x: -5, y: 1322 },
+          hasLetterOrDigit: true,
           height: 30,
+          sourceTypography: [
+            {
+              angle: 3,
+              hasLetterOrDigit: true,
+              symbolMetrics: { lowercase: { count: 5, height: 9 } },
+              symHeight: 9,
+            },
+          ],
+          symbolMetrics: { lowercase: { count: 5, height: 9 } },
           symHeight: 9,
           symWidth: 8,
           text: 'hello',
@@ -2606,6 +2624,48 @@ describe('job service', () => {
     expect(translatedBlock?.height).toBeCloseTo(13 * scaleY);
     expect(translatedBlock?.symWidth).toBeCloseTo(10);
     expect(translatedBlock?.symHeight).toBeCloseTo(9 * scaleY);
+    expect(mockPutTranslationJobDebugArtifact).toHaveBeenCalledWith(
+      expect.objectContaining({
+        body: expect.objectContaining({
+          rawOcrPages: [
+            expect.objectContaining({
+              ocrPage: expect.objectContaining({
+                blocks: [
+                  expect.objectContaining({
+                    groupingBounds: {
+                      height: expect.closeTo(11 * scaleY),
+                      width: 31.25,
+                      x: 0,
+                      y: expect.closeTo(1322 * scaleY),
+                    },
+                    hasLetterOrDigit: true,
+                    sourceTypography: [
+                      {
+                        angle: 3,
+                        hasLetterOrDigit: true,
+                        symbolMetrics: {
+                          lowercase: {
+                            count: 5,
+                            height: expect.closeTo(9 * scaleY),
+                          },
+                        },
+                        symHeight: expect.closeTo(9 * scaleY),
+                      },
+                    ],
+                    symbolMetrics: {
+                      lowercase: {
+                        count: 5,
+                        height: expect.closeTo(9 * scaleY),
+                      },
+                    },
+                  }),
+                ],
+              }),
+            }),
+          ],
+        }),
+      })
+    );
     expect(mockPerformHostedTranslation).toHaveBeenCalledWith(
       expect.objectContaining({
         pages: [

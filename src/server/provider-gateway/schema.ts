@@ -19,11 +19,48 @@ export const zProviderUsageSnapshot = z.object({
   requestCount: z.number().int().positive(),
 });
 
-export const zNormalizedOcrBlock = z.object({
-  angle: z.number(),
+export const OCR_SYMBOL_CATEGORIES = [
+  'uppercase',
+  'lowercase',
+  'digit',
+  'uncased',
+] as const;
+
+const zOcrSymbolMetric = z.object({
+  count: z.number().int().positive(),
   height: z.number().positive(),
-  renderMode: z.enum(['translation', 'mask_only']).optional(),
+});
+
+export const zOcrSymbolMetrics = z.object({
+  digit: zOcrSymbolMetric.optional(),
+  lowercase: zOcrSymbolMetric.optional(),
+  uncased: zOcrSymbolMetric.optional(),
+  uppercase: zOcrSymbolMetric.optional(),
+});
+
+export const zOcrBlockTypography = z.object({
+  angle: z.number(),
+  hasLetterOrDigit: z.boolean().optional(),
+  symbolMetrics: zOcrSymbolMetrics.optional(),
   symHeight: z.number().positive(),
+});
+
+export const zNormalizedOcrBlock = zOcrBlockTypography.extend({
+  groupingBounds: z
+    .object({
+      height: z.number().positive(),
+      width: z.number().positive(),
+      x: z.number(),
+      y: z.number(),
+    })
+    .optional(),
+  height: z.number().positive(),
+  orientedHeight: z.number().positive().optional(),
+  orientedWidth: z.number().positive().optional(),
+  orientedX: z.number().optional(),
+  orientedY: z.number().optional(),
+  renderMode: z.enum(['translation', 'mask_only']).optional(),
+  sourceTypography: z.array(zOcrBlockTypography).min(1).optional(),
   symWidth: z.number().positive(),
   text: z.string().trim().min(1),
   width: z.number().positive(),
@@ -99,6 +136,10 @@ export const zHostedPageTranslation = z.object({
     z.object({
       angle: z.number(),
       height: z.number().positive(),
+      orientedHeight: z.number().positive().optional(),
+      orientedWidth: z.number().positive().optional(),
+      orientedX: z.number().optional(),
+      orientedY: z.number().optional(),
       renderMode: z.enum(['translation', 'mask_only']).optional(),
       symHeight: z.number().positive(),
       symWidth: z.number().positive(),
@@ -142,6 +183,9 @@ export const zProviderGatewayManifest = z.object({
 });
 
 export type HostedPageTranslation = z.infer<typeof zHostedPageTranslation>;
+export type OcrSymbolCategory = (typeof OCR_SYMBOL_CATEGORIES)[number];
+export type OcrSymbolMetrics = z.infer<typeof zOcrSymbolMetrics>;
+export type OcrBlockTypography = z.infer<typeof zOcrBlockTypography>;
 export type NormalizedOcrPage = z.infer<typeof zNormalizedOcrPage>;
 export type NormalizedTranslationBatch = z.infer<
   typeof zNormalizedTranslationBatch

@@ -4,7 +4,13 @@ import {
   createInvalidProviderResponseError,
   createProviderConfigError,
 } from '@/server/provider-gateway/errors';
-import { zNormalizedOcrPage } from '@/server/provider-gateway/schema';
+import {
+  type NormalizedOcrPage,
+  OCR_SYMBOL_CATEGORIES,
+  type OcrSymbolCategory,
+  type OcrSymbolMetrics,
+  zNormalizedOcrPage,
+} from '@/server/provider-gateway/schema';
 import {
   fetchTextWithTimeout,
   parseJsonObjectText,
@@ -255,16 +261,7 @@ function parseFullTextAnnotation(fullTextAnnotation: Record<string, unknown>) {
   const pages = Array.isArray(fullTextAnnotation.pages)
     ? fullTextAnnotation.pages
     : [];
-  const blocks: Array<{
-    angle: number;
-    height: number;
-    symHeight: number;
-    symWidth: number;
-    text: string;
-    width: number;
-    x: number;
-    y: number;
-  }> = [];
+  const blocks: NormalizedOcrPage['blocks'] = [];
 
   for (const page of pages) {
     const pageRecord = asRecord(page);
@@ -306,21 +303,28 @@ function parseTextAnnotations(textAnnotations: unknown[]) {
       typeof annotationRecord.description === 'string'
         ? annotationRecord.description.trim()
         : '';
-    if (text.length <= 1) {
+    if (!shouldKeepOcrText(text)) {
       return [];
     }
 
-    const bounds = getBoundsFromBoundingBox(annotationRecord.boundingPoly);
+    const bounds = getCloudVisionBoundingGeometry(
+      annotationRecord.boundingPoly
+    );
     if (!bounds) {
       return [];
     }
 
     return [
       {
-        angle: 0,
+        angle: bounds.angle,
+        hasLetterOrDigit: /[\p{L}\p{N}]/u.test(text),
         height: bounds.height,
-        symHeight: Math.max(bounds.height / Math.max(text.length, 1), 1),
-        symWidth: Math.max(bounds.width / Math.max(text.length, 1), 1),
+        orientedHeight: bounds.orientedHeight,
+        orientedWidth: bounds.orientedWidth,
+        orientedX: bounds.orientedX,
+        orientedY: bounds.orientedY,
+        symHeight: bounds.orientedHeight,
+        symWidth: Math.max(bounds.orientedWidth / Math.max(text.length, 1), 1),
         text,
         width: bounds.width,
         x: bounds.x,
@@ -607,7 +611,26 @@ function getGeminiUsageNumber(
   return typeof value === 'number' ? value : null;
 }
 
-function getBoundsFromBoundingBox(boundingBox: unknown) {
+type CloudVisionBoundingGeometry = {
+  angle: number;
+  height: number;
+  orientedHeight: number;
+  orientedWidth: number;
+  orientedX: number;
+  orientedY: number;
+  width: number;
+  x: number;
+  y: number;
+};
+
+type CloudVisionPoint = {
+  x: number;
+  y: number;
+};
+
+function getCloudVisionBoundingGeometry(
+  boundingBox: unknown
+): CloudVisionBoundingGeometry | null {
   const boundingBoxRecord = asRecord(boundingBox);
   const vertices =
     boundingBoxRecord && Array.isArray(boundingBoxRecord.vertices)
@@ -618,40 +641,146 @@ function getBoundsFromBoundingBox(boundingBox: unknown) {
     return null;
   }
 
-  let minX = Number.POSITIVE_INFINITY;
-  let minY = Number.POSITIVE_INFINITY;
-  let maxX = Number.NEGATIVE_INFINITY;
-  let maxY = Number.NEGATIVE_INFINITY;
-
-  for (const vertex of vertices) {
+  const points = vertices.slice(0, 4).flatMap((vertex) => {
     const vertexRecord = asRecord(vertex);
     if (!vertexRecord) {
-      continue;
+      return [];
     }
 
-    const x = typeof vertexRecord.x === 'number' ? vertexRecord.x : 0;
-    const y = typeof vertexRecord.y === 'number' ? vertexRecord.y : 0;
-    minX = Math.min(minX, x);
-    minY = Math.min(minY, y);
-    maxX = Math.max(maxX, x);
-    maxY = Math.max(maxY, y);
+    // Vision omits coordinates whose value is zero.
+    const x = vertexRecord.x ?? 0;
+    const y = vertexRecord.y ?? 0;
+    return typeof x === 'number' &&
+      typeof y === 'number' &&
+      Number.isFinite(x) &&
+      Number.isFinite(y)
+      ? [{ x, y }]
+      : [];
+  });
+  const [topLeft, topRight, bottomRight, bottomLeft] = points;
+
+  if (!topLeft || !topRight || !bottomRight || !bottomLeft) {
+    return null;
   }
 
+  const horizontalX = topRight.x - topLeft.x + bottomRight.x - bottomLeft.x;
+  const horizontalY = topRight.y - topLeft.y + bottomRight.y - bottomLeft.y;
+  const orientedWidth =
+    (Math.hypot(topRight.x - topLeft.x, topRight.y - topLeft.y) +
+      Math.hypot(bottomRight.x - bottomLeft.x, bottomRight.y - bottomLeft.y)) /
+    2;
+  const orientedHeight =
+    (Math.hypot(bottomLeft.x - topLeft.x, bottomLeft.y - topLeft.y) +
+      Math.hypot(bottomRight.x - topRight.x, bottomRight.y - topRight.y)) /
+    2;
+
   if (
-    !Number.isFinite(minX) ||
-    !Number.isFinite(minY) ||
-    !Number.isFinite(maxX) ||
-    !Number.isFinite(maxY)
+    orientedWidth <= 0 ||
+    orientedHeight <= 0 ||
+    Math.hypot(horizontalX, horizontalY) <= 0
   ) {
     return null;
   }
 
+  const minX = Math.min(...points.map((point) => point.x));
+  const minY = Math.min(...points.map((point) => point.y));
+  const maxX = Math.max(...points.map((point) => point.x));
+  const maxY = Math.max(...points.map((point) => point.y));
+  const centerX = points.reduce((sum, point) => sum + point.x, 0) / 4;
+  const centerY = points.reduce((sum, point) => sum + point.y, 0) / 4;
+
   return {
+    angle: (Math.atan2(horizontalY, horizontalX) * 180) / Math.PI,
     height: Math.max(maxY - minY, 1),
+    orientedHeight,
+    orientedWidth,
+    orientedX: centerX - orientedWidth / 2,
+    orientedY: centerY - orientedHeight / 2,
     width: Math.max(maxX - minX, 1),
     x: minX,
     y: minY,
   };
+}
+
+function mergeCloudVisionBoundingGeometries(
+  geometries: readonly CloudVisionBoundingGeometry[]
+): CloudVisionBoundingGeometry | null {
+  if (geometries.length === 0) return null;
+
+  const angle = getRepresentativeTextAngle(
+    geometries.map((geometry) => geometry.angle)
+  );
+  const radians = (angle * Math.PI) / 180;
+  const horizontalX = Math.cos(radians);
+  const horizontalY = Math.sin(radians);
+  const verticalX = -horizontalY;
+  const verticalY = horizontalX;
+  const points = geometries.flatMap(getCloudVisionGeometryCorners);
+  const horizontalCoordinates = points.map(
+    (point) => point.x * horizontalX + point.y * horizontalY
+  );
+  const verticalCoordinates = points.map(
+    (point) => point.x * verticalX + point.y * verticalY
+  );
+  const minHorizontal = Math.min(...horizontalCoordinates);
+  const maxHorizontal = Math.max(...horizontalCoordinates);
+  const minVertical = Math.min(...verticalCoordinates);
+  const maxVertical = Math.max(...verticalCoordinates);
+  const orientedWidth = Math.max(maxHorizontal - minHorizontal, 1);
+  const orientedHeight = Math.max(maxVertical - minVertical, 1);
+  const centerHorizontal = (minHorizontal + maxHorizontal) / 2;
+  const centerVertical = (minVertical + maxVertical) / 2;
+  const centerX = centerHorizontal * horizontalX + centerVertical * verticalX;
+  const centerY = centerHorizontal * horizontalY + centerVertical * verticalY;
+  const minX = Math.min(...points.map((point) => point.x));
+  const minY = Math.min(...points.map((point) => point.y));
+  const maxX = Math.max(...points.map((point) => point.x));
+  const maxY = Math.max(...points.map((point) => point.y));
+
+  return {
+    angle,
+    height: Math.max(maxY - minY, 1),
+    orientedHeight,
+    orientedWidth,
+    orientedX: centerX - orientedWidth / 2,
+    orientedY: centerY - orientedHeight / 2,
+    width: Math.max(maxX - minX, 1),
+    x: minX,
+    y: minY,
+  };
+}
+
+function getCloudVisionGeometryCorners(
+  geometry: CloudVisionBoundingGeometry
+): CloudVisionPoint[] {
+  const radians = (geometry.angle * Math.PI) / 180;
+  const horizontalX = Math.cos(radians);
+  const horizontalY = Math.sin(radians);
+  const verticalX = -horizontalY;
+  const verticalY = horizontalX;
+  const centerX = geometry.orientedX + geometry.orientedWidth / 2;
+  const centerY = geometry.orientedY + geometry.orientedHeight / 2;
+  const halfWidth = geometry.orientedWidth / 2;
+  const halfHeight = geometry.orientedHeight / 2;
+
+  return [
+    {
+      x: centerX - horizontalX * halfWidth - verticalX * halfHeight,
+      y: centerY - horizontalY * halfWidth - verticalY * halfHeight,
+    },
+    {
+      x: centerX + horizontalX * halfWidth - verticalX * halfHeight,
+      y: centerY + horizontalY * halfWidth - verticalY * halfHeight,
+    },
+    {
+      x: centerX + horizontalX * halfWidth + verticalX * halfHeight,
+      y: centerY + horizontalY * halfWidth + verticalY * halfHeight,
+    },
+    {
+      x: centerX - horizontalX * halfWidth + verticalX * halfHeight,
+      y: centerY - horizontalY * halfWidth + verticalY * halfHeight,
+    },
+  ];
 }
 
 function getNestedObject(
@@ -677,21 +806,43 @@ function asRecord(value: unknown) {
     : null;
 }
 
+type CloudVisionParagraphMetrics = {
+  maxX: number;
+  maxY: number;
+  minX: number;
+  minY: number;
+  symbolHeights: number[];
+  symbolCategoryHeights: Record<OcrSymbolCategory, number[]>;
+  symbolWidths: number[];
+  text: string;
+  wordAngles: number[];
+  wordGeometries: CloudVisionBoundingGeometry[];
+  wordHeights: number[];
+};
+
 function parseParagraphToBlock(paragraph: unknown) {
   const paragraphRecord = asRecord(paragraph);
   if (!paragraphRecord || !Array.isArray(paragraphRecord.words)) {
     return null;
   }
 
-  const accumulator = {
+  const accumulator: CloudVisionParagraphMetrics = {
     maxX: Number.NEGATIVE_INFINITY,
     maxY: Number.NEGATIVE_INFINITY,
     minX: Number.POSITIVE_INFINITY,
     minY: Number.POSITIVE_INFINITY,
-    symbolCount: 0,
-    symbolHeight: 0,
-    symbolWidth: 0,
+    symbolHeights: [],
+    symbolCategoryHeights: {
+      digit: [],
+      lowercase: [],
+      uncased: [],
+      uppercase: [],
+    },
+    symbolWidths: [],
     text: '',
+    wordAngles: [],
+    wordGeometries: [],
+    wordHeights: [],
   };
 
   for (const word of paragraphRecord.words) {
@@ -700,7 +851,7 @@ function parseParagraphToBlock(paragraph: unknown) {
 
   const normalizedText = accumulator.text.trim();
   if (
-    normalizedText.length <= 1 ||
+    !shouldKeepOcrText(normalizedText) ||
     !Number.isFinite(accumulator.minX) ||
     !Number.isFinite(accumulator.minY) ||
     !Number.isFinite(accumulator.maxX) ||
@@ -709,16 +860,33 @@ function parseParagraphToBlock(paragraph: unknown) {
     return null;
   }
 
+  const orientedGeometry =
+    getCloudVisionBoundingGeometry(paragraphRecord.boundingBox) ??
+    mergeCloudVisionBoundingGeometries(accumulator.wordGeometries);
+
   return {
-    angle: 0,
+    angle:
+      orientedGeometry?.angle ??
+      getRepresentativeTextAngle(accumulator.wordAngles),
+    hasLetterOrDigit: /[\p{L}\p{N}]/u.test(normalizedText),
     height: Math.max(accumulator.maxY - accumulator.minY, 1),
+    ...(orientedGeometry
+      ? {
+          orientedHeight: orientedGeometry.orientedHeight,
+          orientedWidth: orientedGeometry.orientedWidth,
+          orientedX: orientedGeometry.orientedX,
+          orientedY: orientedGeometry.orientedY,
+        }
+      : {}),
+    symbolMetrics: getSymbolCategoryMetrics(accumulator.symbolCategoryHeights),
     symHeight:
-      accumulator.symbolCount > 0
-        ? accumulator.symbolHeight / accumulator.symbolCount
-        : 16,
+      getMedian(accumulator.symbolHeights) ??
+      getMedian(accumulator.wordHeights) ??
+      16,
     symWidth:
-      accumulator.symbolCount > 0
-        ? accumulator.symbolWidth / accumulator.symbolCount
+      accumulator.symbolWidths.length > 0
+        ? accumulator.symbolWidths.reduce((sum, width) => sum + width, 0) /
+          accumulator.symbolWidths.length
         : 12,
     text: normalizedText,
     width: Math.max(accumulator.maxX - accumulator.minX, 1),
@@ -728,16 +896,7 @@ function parseParagraphToBlock(paragraph: unknown) {
 }
 
 function collectWordMetrics(
-  accumulator: {
-    maxX: number;
-    maxY: number;
-    minX: number;
-    minY: number;
-    symbolCount: number;
-    symbolHeight: number;
-    symbolWidth: number;
-    text: string;
-  },
+  accumulator: CloudVisionParagraphMetrics,
   word: unknown
 ) {
   const wordRecord = asRecord(word);
@@ -754,8 +913,11 @@ function collectWordMetrics(
     appendSymbolMetrics(accumulator, symbol);
   }
 
-  const wordBounds = getBoundsFromBoundingBox(wordRecord.boundingBox);
+  const wordBounds = getCloudVisionBoundingGeometry(wordRecord.boundingBox);
   if (wordBounds) {
+    accumulator.wordAngles.push(wordBounds.angle);
+    accumulator.wordGeometries.push(wordBounds);
+    accumulator.wordHeights.push(wordBounds.orientedHeight);
     accumulator.minX = Math.min(accumulator.minX, wordBounds.x);
     accumulator.minY = Math.min(accumulator.minY, wordBounds.y);
     accumulator.maxX = Math.max(
@@ -770,12 +932,7 @@ function collectWordMetrics(
 }
 
 function appendSymbolMetrics(
-  accumulator: {
-    symbolCount: number;
-    symbolHeight: number;
-    symbolWidth: number;
-    text: string;
-  },
+  accumulator: CloudVisionParagraphMetrics,
   symbol: unknown
 ) {
   const symbolRecord = asRecord(symbol);
@@ -787,11 +944,16 @@ function appendSymbolMetrics(
     accumulator.text += symbolRecord.text;
   }
 
-  const symbolBounds = getBoundsFromBoundingBox(symbolRecord.boundingBox);
+  const symbolBounds = getCloudVisionBoundingGeometry(symbolRecord.boundingBox);
   if (symbolBounds) {
-    accumulator.symbolWidth += symbolBounds.width;
-    accumulator.symbolHeight += symbolBounds.height;
-    accumulator.symbolCount += 1;
+    accumulator.symbolWidths.push(symbolBounds.orientedWidth);
+    const category = getSymbolCategory(symbolRecord.text);
+    if (category) {
+      accumulator.symbolHeights.push(symbolBounds.orientedHeight);
+      accumulator.symbolCategoryHeights[category].push(
+        symbolBounds.orientedHeight
+      );
+    }
   }
 
   const detectedBreak = getNestedObject(
@@ -806,4 +968,50 @@ function appendSymbolMetrics(
   ) {
     accumulator.text += ' ';
   }
+}
+
+function getSymbolCategory(text: unknown): OcrSymbolCategory | null {
+  if (typeof text !== 'string') return null;
+  if (/[\p{Lu}\p{Lt}]/u.test(text)) return 'uppercase';
+  if (/\p{Ll}/u.test(text)) return 'lowercase';
+  if (/\p{N}/u.test(text)) return 'digit';
+  if (/\p{L}/u.test(text)) return 'uncased';
+  return null;
+}
+
+function shouldKeepOcrText(text: string): boolean {
+  // Preserve standalone punctuation without changing legacy single-letter filtering.
+  return text.length > 1 || (text.length > 0 && /^\p{P}+$/u.test(text));
+}
+
+function getSymbolCategoryMetrics(
+  categoryHeights: Record<OcrSymbolCategory, number[]>
+): OcrSymbolMetrics | undefined {
+  const metrics: OcrSymbolMetrics = {};
+  for (const category of OCR_SYMBOL_CATEGORIES) {
+    const heights = categoryHeights[category];
+    const height = getMedian(heights);
+    if (height != null) {
+      metrics[category] = { count: heights.length, height };
+    }
+  }
+  return Object.keys(metrics).length > 0 ? metrics : undefined;
+}
+
+function getMedian(values: number[]): number | null {
+  if (values.length === 0) return null;
+  const sorted = [...values].sort((left, right) => left - right);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? (sorted[middle - 1]! + sorted[middle]!) / 2
+    : sorted[middle]!;
+}
+
+function getRepresentativeTextAngle(angles: number[]): number {
+  const reference = angles[0];
+  if (reference == null) return 0;
+  const normalizeAngle = (angle: number) =>
+    ((((angle + 180) % 360) + 360) % 360) - 180;
+  const offsets = angles.map((angle) => normalizeAngle(angle - reference));
+  return normalizeAngle(reference + (getMedian(offsets) ?? 0));
 }

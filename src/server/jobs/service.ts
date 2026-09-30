@@ -8,6 +8,7 @@ import {
 } from '@/server/content-policy/translation-gate';
 import { db } from '@/server/db';
 import { Prisma, ProviderType } from '@/server/db/generated/client';
+import { scaleOcrBlockTypographyForPlacement } from '@/server/jobs/ocr-block-typography-scaling';
 import {
   findTrialOnlyFreeTrialClaimForLicense,
   recordFreeTrialNetworkIdentityForLicense,
@@ -40,10 +41,10 @@ import {
 } from './ocr-block-grouping';
 import {
   getTranslationJobLogicalGeometryConflicts,
-  type TranslationLayoutMode,
   type TranslationJobOcrUploadMetadata,
   type TranslationJobResultManifest,
   type TranslationJobUploadSourcePage,
+  type TranslationLayoutMode,
   zCreateTranslationJobInput,
   zCreateTranslationJobResponse,
   zTranslationJobControlInput,
@@ -4210,10 +4211,15 @@ function mapOcrBlockToPlacement(
   const scaledTop = top * scaleY;
 
   return {
-    ...block,
+    ...scaleOcrBlockTypographyForPlacement({
+      block,
+      clipBounds,
+      offsetX: placement.offsetX,
+      offsetY: placement.offsetY,
+      scaleX,
+      scaleY,
+    }),
     height: scaledBottom - scaledTop,
-    symHeight: block.symHeight * scaleY,
-    symWidth: block.symWidth * scaleX,
     width: scaledRight - scaledLeft,
     x: scaledLeft,
     y: scaledTop,
