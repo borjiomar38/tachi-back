@@ -35,7 +35,7 @@ describe('PageMihonNayoviSetupGuide', () => {
       'Nayovi is a separate Android app for translating manga as you read.'
     );
     expect(html).toContain(
-      'Try about two average chapters free—no card required.'
+      'Try free translation tokens—no card required.'
     );
   });
 

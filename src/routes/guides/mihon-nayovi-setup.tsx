@@ -85,7 +85,7 @@ export const Route = createFileRoute('/guides/mihon-nayovi-setup')({
   head: () =>
     buildPublicPageHead(
       'Mihon & TachiyomiAT Setup Guide',
-      'Mihon or Tachiyomi reader? Nayovi is a separate Android app for translating manga as you read. Try about two average chapters free—no card required.',
+      'Mihon or Tachiyomi reader? Nayovi is a separate Android app for translating manga as you read. Try free translation tokens—no card required.',
       '/guides/mihon-nayovi-setup',
       {
         keywords: [
