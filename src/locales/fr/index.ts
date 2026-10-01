@@ -11,6 +11,7 @@ import dashboard from './dashboard.json' with { type: 'json' };
 import emailInbox from './email-inbox.json' with { type: 'json' };
 import emails from './emails.json' with { type: 'json' };
 import layout from './layout.json' with { type: 'json' };
+import publicContent from './public.json' with { type: 'json' };
 import releaseHistory from './release-history.json' with { type: 'json' };
 import settings from './settings.json' with { type: 'json' };
 import tokens from './tokens.json' with { type: 'json' };
@@ -28,6 +29,7 @@ export default {
   emails,
   emailInbox,
   layout,
+  public: publicContent,
   settings,
   releaseHistory,
   user,
