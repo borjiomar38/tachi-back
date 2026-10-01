@@ -12,7 +12,7 @@ const setupStructuredData = () => {
   const setupSteps = [
     {
       name: 'Download from the official Nayovi page',
-      text: 'Use the Nayovi download page as the source of truth for APK access, build context, support, and the no-mirror boundary.',
+      text: 'Open the Nayovi download page, install the Android APK, and use the free trial before choosing a plan.',
     },
     {
       name: 'Confirm the reader workflow separately',
@@ -85,7 +85,7 @@ export const Route = createFileRoute('/guides/mihon-nayovi-setup')({
   head: () =>
     buildPublicPageHead(
       'Mihon & TachiyomiAT Setup Guide',
-      'Set up Nayovi for Mihon and TachiyomiAT-style Android reading with the official APK, hosted OCR, AI translation, activation, and support steps.',
+      'Mihon or Tachiyomi reader? Nayovi is a separate Android app for translating manga as you read. Try about two average chapters free—no card required.',
       '/guides/mihon-nayovi-setup',
       {
         keywords: [

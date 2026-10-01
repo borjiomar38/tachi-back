@@ -8,6 +8,7 @@ import {
   ShieldCheckIcon,
   SmartphoneIcon,
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { cn } from '@/lib/tailwind/utils';
 
@@ -1016,7 +1017,15 @@ const mihonTachiyomiAtSetupGuideCopy: SetupGuideCopy = {
 };
 
 export const PageMihonNayoviSetupGuide = () => {
-  return <SetupGuidePage copy={mihonNayoviSetupGuideCopy} />;
+  const { t } = useTranslation(['public']);
+  const copy: SetupGuideCopy = {
+    ...mihonNayoviSetupGuideCopy,
+    description: t('public:mihonSetupGuide.description'),
+    eyebrow: t('public:mihonSetupGuide.eyebrow'),
+    title: t('public:mihonSetupGuide.title'),
+  };
+
+  return <SetupGuidePage copy={copy} />;
 };
 
 export const PageMihonTachiyomiAtSetupGuide = () => {
