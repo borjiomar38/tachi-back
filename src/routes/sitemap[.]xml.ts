@@ -7,6 +7,7 @@ import {
 import { fallbackBlogArticleSummary } from '@/features/blog/fallback';
 import { getManhwaSitemapEntries } from '@/features/manhwa/data';
 import { buildPublicAbsoluteUrl } from '@/features/public/head';
+import { latestPublicAppUpdate } from '@/features/public/latest-app-update';
 import {
   BlogSitemapEntry,
   getPublishedBlogSitemapEntries,
@@ -53,7 +54,7 @@ const staticSitemapEntryOverrides: Record<
     priority: '0.9',
   },
   '/download': {
-    lastModified: '2026-09-10',
+    lastModified: latestPublicAppUpdate.publishedDate,
     priority: '0.8',
   },
   '/manhwa': {
@@ -201,7 +202,7 @@ async function loadBlogSitemapEntries() {
   }
 }
 
-function buildSitemapXml(
+export function buildSitemapXml(
   blogEntries: BlogSitemapEntry[],
   buildAbsoluteUrl: (path: string) => string
 ) {
