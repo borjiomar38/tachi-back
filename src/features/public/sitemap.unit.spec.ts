@@ -17,4 +17,18 @@ describe('public sitemap', () => {
       ].join('\n')
     );
   });
+
+  it('uses the latest pricing metadata date for the pricing page', () => {
+    const sitemap = buildSitemapXml(
+      [],
+      (path) => `https://tachiyomiat.com${path}`
+    );
+
+    expect(sitemap).toContain(
+      [
+        '    <loc>https://tachiyomiat.com/pricing</loc>',
+        '    <lastmod>2026-10-03</lastmod>',
+      ].join('\n')
+    );
+  });
 });

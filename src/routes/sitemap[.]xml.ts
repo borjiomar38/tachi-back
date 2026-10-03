@@ -69,7 +69,7 @@ const staticSitemapEntryOverrides: Record<
   },
   '/pricing': {
     changeFrequency: 'weekly',
-    lastModified: '2026-07-31',
+    lastModified: '2026-10-03',
     priority: '0.9',
   },
   '/how-it-works': {
