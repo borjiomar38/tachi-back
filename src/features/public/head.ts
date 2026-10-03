@@ -21,6 +21,7 @@ import {
   fallbackPublicTokenPacks,
   formatCurrency,
 } from '@/features/public/data';
+import { resolvePricingSeoCopy } from '@/features/public/pricing-seo';
 
 const publicSiteName = PUBLIC_PRODUCT_NAME;
 const publicBaseUrlFallback = 'https://tachiyomiat.com';
@@ -268,7 +269,15 @@ export const buildPublicPageHead = (
     type?: string | null;
   }
 ) => {
-  const title = buildPublicTitle(pageTitle, options?.titleSuffix);
+  const resolvedCopy = resolvePricingSeoCopy({
+    description,
+    pageTitle,
+    path,
+  });
+  const title = buildPublicTitle(
+    resolvedCopy.pageTitle,
+    options?.titleSuffix
+  );
   const url = buildAbsoluteUrl(path);
   const imageUrl = toAbsoluteAssetUrl(options?.imagePath ?? socialImagePath);
   const imageAlt =
@@ -281,7 +290,7 @@ export const buildPublicPageHead = (
     : [];
   const structuredData = buildStructuredData(
     title,
-    description,
+    resolvedCopy.description,
     url,
     imageUrl,
     options?.structuredDataGraph
@@ -294,7 +303,7 @@ export const buildPublicPageHead = (
       },
       {
         name: 'description',
-        content: description,
+        content: resolvedCopy.description,
       },
       {
         name: 'robots',
@@ -330,7 +339,7 @@ export const buildPublicPageHead = (
       },
       {
         property: 'og:description',
-        content: description,
+        content: resolvedCopy.description,
       },
       {
         property: 'og:url',
@@ -370,7 +379,7 @@ export const buildPublicPageHead = (
       },
       {
         name: 'twitter:description',
-        content: description,
+        content: resolvedCopy.description,
       },
       {
         name: 'twitter:image',
